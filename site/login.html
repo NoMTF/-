@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN" class="is-live">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>登录 · MTF公益机场</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/gov-art.css">
+<link rel="stylesheet" href="assets/css/gov.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<!-- 由 design/canvas 的 login.dc.html 生成；样式见 assets/css/gov.css -->
+<div class="app">
+<div class="auth">
+<aside class="auth-hero">
+<div class="auth-rays"></div>
+<div class="auth-hero-in">
+<span class="emblem xxl" role="img" aria-label="MTF公益机场站徽"></span>
+<h1 class="auth-name">MTF公益机场</h1>
+<p class="auth-en">MTF PUBLIC WELFARE NETWORK</p>
+<p class="auth-slogan">互助共享　公益同行</p>
+<div class="values-line"><ul class="values"><li>免费公益</li><li>隐私为先</li><li>节约带宽</li><li>互助友爱</li></ul></div>
+<div class="auth-facts">
+<div><b>60 GB</b><span>每月保底</span></div>
+<div><b>+2 GB</b><span>每日签到</span></div>
+<div><b>6 台</b><span>物理机</span></div>
+<div><b>100 M</b><span>每 IP 上限</span></div>
+</div>
+<p class="auth-live"><span class="live-dot"></span>当前在线 24 · 已注册 279（示例）</p>
+</div>
+</aside>
+<main class="auth-main">
+<div class="auth-card">
+<header class="auth-card-hd">
+<p class="kicker">用户登录</p>
+<h2>欢迎回来</h2>
+<p>使用注册邮箱和密码登录。登录不需要邀请码。</p>
+</header>
+<form class="form" data-validate="1" data-success="示例：登录成功，将进入仪表盘（静态样本不会真正登录）" data-api="POST /api/v1/passport/auth/login" novalidate="novalidate">
+<div class="field">
+<label class="label" for="login-email">邮箱</label>
+<div class="control"><i class="i i-mail"></i><input class="input" id="login-email" type="email" placeholder="name@example.com" autocomplete="email" required="required"></div>
+<p class="field-error"><i class="i i-alert sm"></i>请填写注册时使用的邮箱</p>
+</div>
+<div class="field">
+<div class="row between"><label class="label" for="login-pw">密码</label><a class="small" href="forgot.html">忘记密码？</a></div>
+<div class="control"><i class="i i-lock"></i><input class="input" id="login-pw" type="password" placeholder="请输入密码" autocomplete="current-password" required="required"><button class="pw-toggle" type="button" data-pw-toggle="1" aria-label="显示或隐藏密码"><i class="i i-eye"></i></button></div>
+<p class="field-error"><i class="i i-alert sm"></i>请输入密码</p>
+</div>
+<label class="check" for="login-keep"><input type="checkbox" id="login-keep"><span>在这台设备上保持登录</span></label>
+<button class="btn btn-primary btn-lg btn-block" type="submit">登　录</button>
+</form>
+<div class="stack tight" style="margin-top: 18px">
+<p class="divider">还没有账号</p>
+<a class="btn btn-block" href="register.html"><i class="i i-tag"></i>凭邀请码注册</a>
+<p class="hint" style="text-align: center">本站实行邀请制。没有邀请码可私聊 @MTFLink_bot 申请，注册页有详细步骤。</p>
+</div>
+</div>
+<nav class="auth-foot" aria-label="公开页面">
+<a href="bandwidth.html">带宽看板</a><a href="docs.html">服务条款</a><a href="https://t.me/MTFLink_bot">审核机器人 @MTFLink_bot</a><a href="https://x.com/YuwenMewo">关注站长 X @YuwenMewo</a>
+</nav>
+<p class="demo-note small"><i class="i i-info sm"></i>静态 UI 样本，不会发送验证码或创建账号</p>
+</main>
+</div>
+</div>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

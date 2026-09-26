@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-CN" class="is-live">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>公告管理 · MTF公益机场</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/gov-art.css">
+<link rel="stylesheet" href="assets/css/gov.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<!-- 由 design/canvas 的 admin-notices.dc.html 生成；样式见 assets/css/gov.css -->
+<div class="app">
+<div class="shell">
+<aside class="side" aria-label="管理导航">
+<div class="side-inner">
+<button class="icon-btn on-red side-close" type="button" data-drawer-close="1" aria-label="关闭菜单"><i class="i i-close"></i></button>
+<a class="side-brand" href="admin.html"><span class="emblem lg" role="img" aria-label="MTF公益机场站徽"></span><span class="side-name">MTF公益机场</span><span class="side-en">站务管理 · ADMIN CONSOLE</span></a>
+<nav class="nav">
+<p class="nav-group">站务管理</p>
+<a class="nav-link" href="admin.html"><i class="i i-shield"></i><span>运维总览</span></a>
+<a class="nav-link" href="admin-users.html"><i class="i i-users"></i><span>用户与 IP</span></a>
+<a class="nav-link" href="admin-invites.html"><i class="i i-tag"></i><span>邀请码生成</span></a>
+<a class="nav-link" href="admin-bans.html"><i class="i i-ban"></i><span>封禁管理</span><span class="nav-tag">6</span></a>
+<a class="nav-link is-active" href="admin-notices.html"><i class="i i-megaphone"></i><span>公告管理</span></a>
+<p class="nav-group">快速前往</p>
+<a class="nav-link" href="dashboard.html"><i class="i i-home"></i><span>用户仪表盘</span></a>
+<a class="nav-link" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽看板</span></a>
+<a class="nav-link" href="nodes.html"><i class="i i-server"></i><span>节点状态</span></a>
+<a class="nav-link" href="docs.html"><i class="i i-book"></i><span>使用文档</span></a>
+</nav>
+<div class="side-foot">
+<p class="side-live"><span class="live-dot"></span>当前在线 <b class="num">24</b><span class="sep"></span>已注册 <b class="num">279</b></p>
+<blockquote class="side-quote">来源 IP 与使用行为仅管理员可见；细粒度记录只保留 1 小时。<cite>——《服务条款》第四条</cite></blockquote>
+</div>
+</div>
+</aside>
+<div class="main">
+<header class="mbar">
+<span class="emblem sm" role="img" aria-label="MTF公益机场站徽"></span>
+<p class="mbar-title"><b>公告管理</b><span>站务管理</span></p>
+<button class="icon-btn on-red" type="button" data-drawer-open="1" aria-label="打开菜单"><i class="i i-menu"></i></button>
+</header>
+<header class="topbar">
+<p class="crumbs"><i class="i i-shield sm"></i><span>站务管理</span><span class="sep">/</span><b>公告管理</b></p>
+<div class="top-actions">
+<button class="api-toggle" type="button" data-api-toggle="1"><i class="i i-code sm"></i>接口标注</button>
+<div class="theme-switch" role="group" aria-label="配色主题"><button type="button" data-theme-set="red"><span class="sw red"></span>朱红</button><button type="button" data-theme-set="navy"><span class="sw navy"></span>藏青</button></div>
+<span class="tag tag-solid"><i class="i i-shield"></i>管理员</span>
+<div class="user-chip"><span class="avatar">管</span><span>admin@example.com</span></div>
+<a class="icon-btn" href="login.html" aria-label="退出登录" data-api="清除本地 auth_data"><i class="i i-logout"></i></a>
+</div>
+</header>
+<div class="ticker">
+<span class="ticker-tag"><i class="i i-megaphone sm"></i>站务</span>
+<p class="ticker-text"><b>发布即同步，全群都知晓</b>机器人约每两分钟把新公告同步到 Telegram 主群</p>
+<a class="ticker-more" href="https://t.me/+MAIN_GROUP_INVITE">主群<i class="i i-external sm"></i></a>
+</div>
+<main class="content">
+<header class="page-head">
+<div class="grow">
+<p class="kicker">站务管理</p>
+<h1 class="page-title">公告管理</h1>
+<p class="page-sub">站内公告以通知文书样式展示；发布后由 @MTFLink_bot 约每两分钟同步一遍到 Telegram 主群。</p>
+</div>
+</header>
+<nav class="subnav" aria-label="站务管理分页">
+<a href="admin.html"><i class="i i-shield sm"></i>总览</a><a href="admin-users.html"><i class="i i-users sm"></i>用户与 IP</a><a href="admin-invites.html"><i class="i i-tag sm"></i>邀请码</a><a href="admin-bans.html"><i class="i i-ban sm"></i>封禁</a><a class="is-active" href="admin-notices.html"><i class="i i-megaphone sm"></i>公告</a>
+</nav>
+<div class="stack">
+<div class="split-5-7 align-start">
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-edit"></i>编辑公告</h2><div class="panel-extra"><span class="tag">草稿</span></div></header>
+<div class="panel-bd">
+<form class="form" data-validate="1" data-success="示例：公告已发布，约两分钟后同步到 Telegram 主群（静态样本不会发布）" data-api="POST 后台 notice/save → 机器人拉取 /api/v1/mtf/bot/notice/next" novalidate="novalidate">
+<div class="field">
+<label class="label" for="nt-title">标题<span class="req">*</span></label>
+<input class="input" id="nt-title" type="text" value="关于日本节点（2）临时维护的通知" required="required">
+<p class="field-error"><i class="i i-alert sm"></i>请填写标题</p>
+</div>
+<div class="cols-2">
+<div class="field">
+<label class="label" for="nt-no">文号</label>
+<input class="input" id="nt-no" type="text" value="MTF站发〔2026〕10号">
+</div>
+<div class="field">
+<label class="label" for="nt-tag">标签</label>
+<div class="control"><select class="input" id="nt-tag"><option>维护</option><option>重要</option><option>通知</option></select><i class="i i-down caret"></i></div>
+</div>
+</div>
+<div class="field">
+<label class="label" for="nt-body">正文（支持 Markdown）<span class="req">*</span></label>
+<textarea class="input" id="nt-body" rows="8" required="required">日本节点（2）心跳中断，已从订阅中暂时摘除。
+
+**影响**：使用该节点的连接会自动切到其他 1x 节点，Clash 系客户端 60 秒内无感切换。
+
+**预计恢复**：今晚 24:00 前。恢复后自动加入订阅，更新订阅即可。</textarea>
+<p class="field-error"><i class="i i-alert sm"></i>请填写正文</p>
+</div>
+<label class="check" for="nt-tg"><input type="checkbox" id="nt-tg" checked="checked"><span>同步到 Telegram 主群（@MTFLink_bot）</span></label>
+<label class="check" for="nt-pop"><input type="checkbox" id="nt-pop" checked="checked"><span>用户下次打开网站时弹窗提醒</span></label>
+<div class="btn-row"><button class="btn btn-primary" type="submit"><i class="i i-send"></i>发布公告</button><button class="btn" type="button" data-toast="示例：草稿已保存"><i class="i i-download"></i>保存草稿</button></div>
+</form>
+</div>
+</section>
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-eye"></i>发布预览</h2><div class="panel-extra"><span>用户端显示效果</span></div></header>
+<div class="panel-bd">
+<div class="preview-pane">
+<article class="doc">
+<p class="doc-org">MTF公益机场站务通知</p>
+<p class="doc-no">MTF站发〔2026〕10号</p>
+<div class="doc-rule"></div>
+<h2 class="doc-title">关于日本节点（2）临时维护的通知</h2>
+<p class="doc-to">各位站友：</p>
+<div class="doc-body">
+<p>日本节点（2）心跳中断，已从订阅中暂时摘除。</p>
+<p><b>影响：</b>使用该节点的连接会自动切到其他 1x 节点，Clash 系客户端 60 秒内无感切换。</p>
+<p><b>预计恢复：</b>今晚 24:00 前。恢复后自动加入订阅，更新订阅即可。</p>
+<p>特此通知。</p>
+</div>
+<div class="doc-sign">
+<p>MTF公益机场站务组</p>
+<p>2026年9月26日</p>
+<svg class="stamp" viewBox="0 0 160 160" role="img" aria-label="站务组印章">
+<defs><path id="stamp-arc-pv" d="M30 82 A50 50 0 1 1 130 82"></path></defs>
+<circle class="stamp-ring" cx="80" cy="80" r="74"></circle>
+<circle class="stamp-ring2" cx="80" cy="80" r="67"></circle>
+<text class="stamp-text"><textPath href="#stamp-arc-pv" startOffset="50%">MTF公益机场站务组</textPath></text>
+<polygon class="stamp-star" points="80,58 85.29,72.72 100.92,73.2 88.56,82.78 92.93,97.8 80,89 67.07,97.8 71.44,82.78 59.08,73.2 74.71,72.72"></polygon>
+<text class="stamp-sub" x="80" y="122">站务专用章</text>
+</svg>
+</div>
+</article>
+</div>
+</div>
+</section>
+</div>
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-list"></i>已发布公告</h2></header>
+<div class="panel-bd flush">
+<div class="table-wrap">
+<table class="table to-cards">
+<thead><tr><th>标题</th><th>文号</th><th>标签</th><th>发布时间</th><th>Telegram 同步</th><th>操作</th></tr></thead>
+<tbody>
+<tr><td class="card-title wrap-cell"><b>关于新增 cn2gia救命线路的通知</b></td><td data-label="文号">〔2026〕9号</td><td data-label="标签"><span class="tag tag-solid">重要</span></td><td data-label="发布时间">09-25 18:00</td><td data-label="同步"><span class="sync"><i class="i i-check-circle sm"></i>已同步 · 18:02</span></td><td data-label="操作"><span class="btn-row"><button class="btn btn-sm" type="button" data-toast="示例：进入编辑">编辑</button><button class="btn btn-sm btn-danger" type="button" data-toast="示例：已撤回（主群消息需手动删除）">撤回</button></span></td></tr>
+<tr><td class="card-title wrap-cell"><b>关于改为邀请制、启用 Telegram 主群及新服务条款的通知</b></td><td data-label="文号">〔2026〕8号</td><td data-label="标签"><span class="tag tag-red">通知</span></td><td data-label="发布时间">09-23 12:00</td><td data-label="同步"><span class="sync"><i class="i i-check-circle sm"></i>已同步 · 12:01</span></td><td data-label="操作"><span class="btn-row"><button class="btn btn-sm" type="button" data-toast="示例：进入编辑">编辑</button><button class="btn btn-sm btn-danger" type="button" data-toast="示例：已撤回（主群消息需手动删除）">撤回</button></span></td></tr>
+<tr><td class="card-title wrap-cell"><b>关于日本节点（2）临时维护的通知</b></td><td data-label="文号">〔2026〕10号</td><td data-label="标签"><span class="tag tag-warn">维护</span></td><td data-label="发布时间">未发布</td><td data-label="同步"><span class="sync wait"><i class="i i-clock sm"></i>待发布</span></td><td data-label="操作"><span class="btn-row"><button class="btn btn-sm" type="button" data-toast="示例：进入编辑">编辑</button></span></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="foot">
+<div class="foot-in">
+<p class="foot-org"><span class="emblem" role="img" aria-label="站徽"></span><span>站务管理 · 仅管理员可见</span><span>接口：/api/v1/mtf/admin/*（管理员鉴权）</span></p>
+<p class="demo-note"><i class="i i-info sm"></i>静态 UI 样本：发布按钮不会真正发布或同步到 Telegram。</p>
+</div>
+</footer>
+<nav class="tabbar" aria-label="管理快捷导航">
+<a class="tab" href="admin.html"><i class="i i-shield"></i><span>总览</span></a>
+<a class="tab" href="admin-users.html"><i class="i i-users"></i><span>用户</span></a>
+<a class="tab" href="admin-bans.html"><i class="i i-ban"></i><span>封禁</span></a>
+<a class="tab is-active" href="admin-notices.html"><i class="i i-megaphone"></i><span>公告</span></a>
+<button class="tab" type="button" data-drawer-open="1"><i class="i i-grid"></i><span>更多</span></button>
+</nav>
+</div>
+</div>
+<div class="scrim" data-drawer-close="1"></div>
+</div>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

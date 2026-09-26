@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN" class="is-live">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>邀请码生成 · MTF公益机场</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/gov-art.css">
+<link rel="stylesheet" href="assets/css/gov.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<!-- 由 design/canvas 的 admin-invites.dc.html 生成；样式见 assets/css/gov.css -->
+<div class="app">
+<div class="shell">
+<aside class="side" aria-label="管理导航">
+<div class="side-inner">
+<button class="icon-btn on-red side-close" type="button" data-drawer-close="1" aria-label="关闭菜单"><i class="i i-close"></i></button>
+<a class="side-brand" href="admin.html"><span class="emblem lg" role="img" aria-label="MTF公益机场站徽"></span><span class="side-name">MTF公益机场</span><span class="side-en">站务管理 · ADMIN CONSOLE</span></a>
+<nav class="nav">
+<p class="nav-group">站务管理</p>
+<a class="nav-link" href="admin.html"><i class="i i-shield"></i><span>运维总览</span></a>
+<a class="nav-link" href="admin-users.html"><i class="i i-users"></i><span>用户与 IP</span></a>
+<a class="nav-link is-active" href="admin-invites.html"><i class="i i-tag"></i><span>邀请码生成</span></a>
+<a class="nav-link" href="admin-bans.html"><i class="i i-ban"></i><span>封禁管理</span><span class="nav-tag">6</span></a>
+<a class="nav-link" href="admin-notices.html"><i class="i i-megaphone"></i><span>公告管理</span></a>
+<p class="nav-group">快速前往</p>
+<a class="nav-link" href="dashboard.html"><i class="i i-home"></i><span>用户仪表盘</span></a>
+<a class="nav-link" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽看板</span></a>
+<a class="nav-link" href="nodes.html"><i class="i i-server"></i><span>节点状态</span></a>
+<a class="nav-link" href="docs.html"><i class="i i-book"></i><span>使用文档</span></a>
+</nav>
+<div class="side-foot">
+<p class="side-live"><span class="live-dot"></span>当前在线 <b class="num">24</b><span class="sep"></span>已注册 <b class="num">279</b></p>
+<blockquote class="side-quote">来源 IP 与使用行为仅管理员可见；细粒度记录只保留 1 小时。<cite>——《服务条款》第四条</cite></blockquote>
+</div>
+</div>
+</aside>
+<div class="main">
+<header class="mbar">
+<span class="emblem sm" role="img" aria-label="MTF公益机场站徽"></span>
+<p class="mbar-title"><b>邀请码生成</b><span>站务管理</span></p>
+<button class="icon-btn on-red" type="button" data-drawer-open="1" aria-label="打开菜单"><i class="i i-menu"></i></button>
+</header>
+<header class="topbar">
+<p class="crumbs"><i class="i i-shield sm"></i><span>站务管理</span><span class="sep">/</span><b>邀请码生成</b></p>
+<div class="top-actions">
+<button class="api-toggle" type="button" data-api-toggle="1"><i class="i i-code sm"></i>接口标注</button>
+<div class="theme-switch" role="group" aria-label="配色主题"><button type="button" data-theme-set="red"><span class="sw red"></span>朱红</button><button type="button" data-theme-set="navy"><span class="sw navy"></span>藏青</button></div>
+<span class="tag tag-solid"><i class="i i-shield"></i>管理员</span>
+<div class="user-chip"><span class="avatar">管</span><span>admin@example.com</span></div>
+<a class="icon-btn" href="login.html" aria-label="退出登录" data-api="清除本地 auth_data"><i class="i i-logout"></i></a>
+</div>
+</header>
+<div class="ticker">
+<span class="ticker-tag"><i class="i i-megaphone sm"></i>站务</span>
+<p class="ticker-text"><b>审核通过的申请由机器人自动发码</b>这里用于人工补发与批量发放</p>
+<a class="ticker-more" href="admin-notices.html">公告管理<i class="i i-right sm"></i></a>
+</div>
+<main class="content">
+<header class="page-head">
+<div class="grow">
+<p class="kicker">站务管理</p>
+<h1 class="page-title">邀请码生成</h1>
+<p class="page-sub">从 Cloudflare 预存池按需领取，支持批量生成、一次复制。生成后即可发出，一码一用。</p>
+</div>
+</header>
+<nav class="subnav" aria-label="站务管理分页">
+<a href="admin.html"><i class="i i-shield sm"></i>总览</a><a href="admin-users.html"><i class="i i-users sm"></i>用户与 IP</a><a class="is-active" href="admin-invites.html"><i class="i i-tag sm"></i>邀请码</a><a href="admin-bans.html"><i class="i i-ban sm"></i>封禁</a><a href="admin-notices.html"><i class="i i-megaphone sm"></i>公告</a>
+</nav>
+<div class="split-5-7 align-start">
+<div class="stack">
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-plus"></i>批量生成</h2></header>
+<div class="panel-bd">
+<form class="form" data-api="POST /api/v1/mtf/admin/invite/gen {count}">
+<div class="field">
+<label class="label" for="gen-count">数量（1–200）</label>
+<div class="stepper"><button type="button" data-step="-1" aria-label="减少"><i class="i i-minus"></i></button><input id="gen-count" type="number" min="1" max="200" value="10" inputmode="numeric"><button type="button" data-step="1" aria-label="增加"><i class="i i-plus"></i></button></div>
+</div>
+<div class="field">
+<label class="label" for="gen-note">用途说明</label>
+<input class="input" id="gen-note" type="text" placeholder="例如：人工审核通过、活动补发">
+<p class="hint">写进发放记录，方便日后对账。</p>
+</div>
+<button class="btn btn-primary btn-block" type="button" data-reveal="gen-result" data-toast="示例：已生成 10 个邀请码（均为无效示例）" data-api="POST /api/v1/mtf/admin/invite/gen"><i class="i i-tag"></i>生成 <span data-count-label="1">10</span> 个邀请码</button>
+</form>
+</div>
+</section>
+<section class="panel" id="gen-result">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-check-circle"></i>本次生成</h2><div class="panel-extra"><span>10 个 · 09-26 23:12</span></div></header>
+<div class="panel-bd stack tight">
+<ul class="codes">
+<li><span>SAMPLE-0001-NOT-VALID</span><i class="i i-copy sm"></i></li>
+<li><span>SAMPLE-0002-NOT-VALID</span><i class="i i-copy sm"></i></li>
+<li><span>SAMPLE-0003-NOT-VALID</span><i class="i i-copy sm"></i></li>
+<li><span>SAMPLE-0004-NOT-VALID</span><i class="i i-copy sm"></i></li>
+<li><span>SAMPLE-0005-NOT-VALID</span><i class="i i-copy sm"></i></li>
+<li><span>SAMPLE-0006-NOT-VALID</span><i class="i i-copy sm"></i></li>
+</ul>
+<p class="hint">另有 4 个已折叠。示例码格式虚构，不能用于注册。</p>
+<div class="btn-row"><button class="btn btn-gold" type="button" data-toast="示例码不能复制使用"><i class="i i-copy"></i>全部复制（10 个）</button><button class="btn" type="button" data-toast="示例：已导出 CSV（静态样本不会下载）"><i class="i i-download"></i>导出</button></div>
+</div>
+</section>
+</div>
+<div class="stack">
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-layers"></i>预存邀请码池</h2><div class="panel-extra"><span class="tag tag-good">库存充足</span></div></header>
+<div class="panel-bd stack" data-api="GET /api/v1/mtf/admin/invite/pool">
+<div class="stats" style="--cols: 3; --mcols: 3">
+<div class="stat"><p class="stat-label">预存总数</p><p class="stat-value num">10,000</p></div>
+<div class="stat accent"><p class="stat-label">未使用</p><p class="stat-value num">9,817</p></div>
+<div class="stat"><p class="stat-label">已使用</p><p class="stat-value num">183</p></div>
+</div>
+<div><div class="meter"><span style="width: 1.83%"></span></div><p class="meter-meta"><span>已使用 1.8%</span><span>按当前速度可用很久</span></p></div>
+</div>
+</section>
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-history"></i>发放记录</h2></header>
+<div class="panel-bd flush">
+<div class="table-wrap">
+<table class="table to-cards">
+<thead><tr><th>时间</th><th class="r">数量</th><th>用途</th><th>操作人</th><th>已使用</th></tr></thead>
+<tbody>
+<tr><td class="card-title mono">09-26 23:12</td><td class="r" data-label="数量">10</td><td data-label="用途">人工审核通过</td><td data-label="操作人">admin</td><td data-label="已使用">0 / 10</td></tr>
+<tr><td class="card-title mono">09-24 18:40</td><td class="r" data-label="数量">5</td><td data-label="用途">主群活动补发</td><td data-label="操作人">admin</td><td data-label="已使用">3 / 5</td></tr>
+<tr><td class="card-title mono">09-23 12:00</td><td class="r" data-label="数量">279</td><td data-label="用途">老用户专属码（改为邀请制）</td><td data-label="操作人">系统</td><td data-label="已使用">142 / 279</td></tr>
+<tr><td class="card-title mono">09-23 自动</td><td class="r" data-label="数量">38</td><td data-label="用途">机器人审核通过自动发放</td><td data-label="操作人">@MTFLink_bot</td><td data-label="已使用">38 / 38</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<footer class="foot">
+<div class="foot-in">
+<p class="foot-org"><span class="emblem" role="img" aria-label="站徽"></span><span>站务管理 · 仅管理员可见</span><span>接口：/api/v1/mtf/admin/*（管理员鉴权）</span></p>
+<p class="demo-note"><i class="i i-info sm"></i>静态 UI 样本：邀请码均为虚构格式，不能用于注册。</p>
+</div>
+</footer>
+<nav class="tabbar" aria-label="管理快捷导航">
+<a class="tab" href="admin.html"><i class="i i-shield"></i><span>总览</span></a>
+<a class="tab" href="admin-users.html"><i class="i i-users"></i><span>用户</span></a>
+<a class="tab" href="admin-bans.html"><i class="i i-ban"></i><span>封禁</span></a>
+<a class="tab" href="admin-notices.html"><i class="i i-megaphone"></i><span>公告</span></a>
+<button class="tab" type="button" data-drawer-open="1"><i class="i i-grid"></i><span>更多</span></button>
+</nav>
+</div>
+</div>
+<div class="scrim" data-drawer-close="1"></div>
+</div>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

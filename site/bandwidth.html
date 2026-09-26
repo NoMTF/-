@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN" class="is-live">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>带宽看板 · MTF公益机场</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/gov-art.css">
+<link rel="stylesheet" href="assets/css/gov.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<!-- 由 design/canvas 的 bandwidth.dc.html 生成；样式见 assets/css/gov.css -->
+<div class="app">
+<div class="shell">
+<aside class="side" aria-label="主导航">
+<div class="side-inner">
+<button class="icon-btn on-red side-close" type="button" data-drawer-close="1" aria-label="关闭菜单"><i class="i i-close"></i></button>
+<a class="side-brand" href="dashboard.html"><span class="emblem lg" role="img" aria-label="MTF公益机场站徽"></span><span class="side-name">MTF公益机场</span><span class="side-en">MTF PUBLIC WELFARE NETWORK</span></a>
+<nav class="nav">
+<p class="nav-group">便民服务</p>
+<a class="nav-link" href="dashboard.html"><i class="i i-home"></i><span>仪表盘</span></a>
+<a class="nav-link" href="docs.html"><i class="i i-book"></i><span>使用文档</span></a>
+<a class="nav-link" href="checkin.html"><i class="i i-calendar"></i><span>每日签到</span><span class="nav-tag">+2GB</span></a>
+<a class="nav-link" href="ranking.html"><i class="i i-trophy"></i><span>流量排行</span></a>
+<p class="nav-group">线路资源</p>
+<a class="nav-link" href="nodes.html"><i class="i i-server"></i><span>节点状态</span></a>
+<a class="nav-link is-active" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽看板</span></a>
+<a class="nav-link" href="invites.html"><i class="i i-mail"></i><span>我的邀请</span></a>
+<p class="nav-group">个人事务</p>
+<a class="nav-link" href="profile.html"><i class="i i-user"></i><span>个人中心</span></a>
+<a class="nav-link" href="telegram.html"><i class="i i-send"></i><span>Telegram 绑定</span><span class="nav-tag">待办</span></a>
+<a class="nav-link" href="tickets.html"><i class="i i-ticket"></i><span>我的工单</span></a>
+<a class="nav-link" href="traffic.html"><i class="i i-chart"></i><span>流量明细</span></a>
+<p class="nav-group">站务管理</p>
+<a class="nav-link" href="admin.html"><i class="i i-shield"></i><span>管理后台</span><span class="nav-tag">管理员</span></a>
+</nav>
+<div class="side-foot">
+<p class="side-live"><span class="live-dot"></span>当前在线 <b class="num">24</b><span class="sep"></span>已注册 <b class="num">279</b></p>
+<blockquote class="side-quote">带宽和成本都有限，资源要留给真正需要它的人。<cite>——《服务条款》第二条</cite></blockquote>
+</div>
+</div>
+</aside>
+<div class="main">
+<header class="mbar">
+<span class="emblem sm" role="img" aria-label="MTF公益机场站徽"></span>
+<p class="mbar-title"><b>带宽看板</b><span>MTF公益机场</span></p>
+<button class="icon-btn on-red" type="button" data-drawer-open="1" aria-label="打开菜单"><i class="i i-menu"></i></button>
+</header>
+<header class="topbar">
+<p class="crumbs"><i class="i i-home sm"></i><span>线路资源</span><span class="sep">/</span><b>带宽看板</b></p>
+<div class="top-actions">
+<button class="api-toggle" type="button" data-api-toggle="1"><i class="i i-code sm"></i>接口标注</button>
+<div class="theme-switch" role="group" aria-label="配色主题"><button type="button" data-theme-set="red"><span class="sw red"></span>朱红</button><button type="button" data-theme-set="navy"><span class="sw navy"></span>藏青</button></div>
+<button class="icon-btn" type="button" aria-label="通知" data-toast="有 2 条公告未读，已在仪表盘的通知公告中标出"><i class="i i-bell"></i><span class="dot-badge"></span></button>
+<div class="user-chip"><span class="avatar">示</span><span>demo@example.com</span></div>
+<a class="icon-btn" href="login.html" aria-label="退出登录" data-api="清除本地 auth_data"><i class="i i-logout"></i></a>
+</div>
+</header>
+<div class="ticker">
+<span class="ticker-tag"><i class="i i-megaphone sm"></i>公告</span>
+<p class="ticker-text"><b>带宽公开透明，负载一目了然！</b>本页访客无需登录也可查看</p>
+<a class="ticker-more" href="nodes.html">节点状态<i class="i i-right sm"></i></a>
+</div>
+<main class="content">
+<header class="page-head">
+<div class="grow">
+<p class="kicker">线路资源</p>
+<h1 class="page-title">六台物理机带宽看板</h1>
+<p class="page-sub">每台物理机单独计算，占用率取网卡收发较忙的一侧。每 IP 最高 100 Mbps，只在整机实测接近满载时收紧。</p>
+</div>
+<div class="page-actions">
+<span class="tag tag-info"><i class="i i-eye"></i>访客可见</span>
+<span class="countdown" style="color: var(--ink-3)"><i class="i i-clock sm"></i>最近更新 <b>23:12:05</b></span>
+<button class="btn btn-sm" type="button" data-toast="已刷新（示例数据不会变化）" data-api="GET /api/v1/mtf/bandwidth"><i class="i i-refresh"></i>刷新</button>
+</div>
+</header>
+<div class="stack">
+<section class="panel">
+<div class="panel-bd">
+<div class="bw-hero">
+<div class="stack tight">
+<p class="stat-label"><i class="i i-gauge"></i>全站网卡占用 / 物理机配置端口总和</p>
+<p class="bw-total num">38.7 <small>Mbps</small> / 4800 <small>Mbps</small> · <em>0.8%</em></p>
+<div class="meter"><span style="width: 0.8%"></span></div>
+<p class="meter-meta"><span>用户近 3 分钟记账均速 <b>10 Mbps</b></span><span>今日全站已用 <b>49.4 GB</b></span></p>
+</div>
+<div class="kv">
+<div><span>运行中</span><b>5 / 6 台</b></div>
+<div><span>连接 IP 合计</span><b>35 个</b></div>
+<div><span>每 IP 限速</span><b>100 Mbps · 未收紧</b></div>
+<div><span>刷新频率</span><b>约 30 秒 · RTT 5 分钟</b></div>
+</div>
+</div>
+</div>
+</section>
+<p class="callout red"><i class="i i-alert"></i><span><b>延迟说明：</b>这里的延迟是<b>节点到北京清华镜像的 ICMP 参考 RTT</b>，约每 5 分钟更新，用来比较线路回国方向的大致情况，<b>不等于你到节点的实际延迟</b>。</span></p>
+<section class="panel schematic-panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-radar"></i>北京探测点参考 RTT</h2><div class="panel-extra"><span>虚线为探测方向，数值为参考 RTT</span></div></header>
+<div class="panel-bd">
+<svg class="schematic" viewBox="0 0 1080 330" role="img" aria-label="北京探测点到六台物理机的参考 RTT：日本节点（1）76 毫秒，香港移动优化 32 毫秒，日本原生节点 86 毫秒，日本原生双 ISP 家宽 97 毫秒，日本节点（2）离线，cn2gia救命线路 92 毫秒">
+<path class="sch-line" d="M168 165 C 420 165, 460 40, 700 40"></path>
+<path class="sch-line" d="M168 165 C 420 165, 460 90, 700 90"></path>
+<path class="sch-line" d="M168 165 C 420 165, 460 140, 700 140"></path>
+<path class="sch-line" d="M168 165 C 420 165, 460 190, 700 190"></path>
+<path class="sch-line off" d="M168 165 C 420 165, 460 240, 700 240"></path>
+<path class="sch-line" d="M168 165 C 420 165, 460 290, 700 290"></path>
+<circle class="sch-hub-ring" cx="130" cy="165" r="46"></circle>
+<circle class="sch-hub" cx="130" cy="165" r="36"></circle>
+<polygon class="sch-star" points="130,143 135.6,158.2 151.9,158.8 139.1,168.8 143.6,184.4 130,175.4 116.4,184.4 120.9,168.8 108.1,158.8 124.4,158.2"></polygon>
+<text class="sch-hub-t" x="130" y="238" style="text-anchor: middle">北京探测点</text>
+<text class="sch-s" x="130" y="260" style="text-anchor: middle">清华镜像 · ICMP</text>
+<rect class="sch-node" x="700" y="20" width="360" height="40" rx="20"></rect>
+<text class="sch-t" x="724" y="45">日本节点（1）</text><text class="sch-rtt" x="1040" y="45" style="text-anchor: end">76 ms</text>
+<rect class="sch-node" x="700" y="70" width="360" height="40" rx="20"></rect>
+<text class="sch-t" x="724" y="95">香港移动优化</text><text class="sch-rtt" x="1040" y="95" style="text-anchor: end">32 ms</text>
+<rect class="sch-node" x="700" y="120" width="360" height="40" rx="20"></rect>
+<text class="sch-t" x="724" y="145">日本原生节点</text><text class="sch-rtt" x="1040" y="145" style="text-anchor: end">86 ms</text>
+<rect class="sch-node" x="700" y="170" width="360" height="40" rx="20"></rect>
+<text class="sch-t" x="724" y="195">日本原生双 ISP 家宽</text><text class="sch-rtt" x="1040" y="195" style="text-anchor: end">97 ms</text>
+<rect class="sch-node off" x="700" y="220" width="360" height="40" rx="20"></rect>
+<text class="sch-t off" x="724" y="245">日本节点（2）</text><text class="sch-s" x="1040" y="245" style="text-anchor: end">离线 · 暂不可得</text>
+<rect class="sch-node" x="700" y="270" width="360" height="40" rx="20"></rect>
+<text class="sch-t" x="724" y="295">cn2gia救命线路</text><text class="sch-rtt" x="1040" y="295" style="text-anchor: end">92 ms</text>
+</svg>
+</div>
+</section>
+<div class="cols-2">
+<article class="bw-card">
+<div class="node-hd"><span class="region">日</span><div class="grow"><p class="node-name">日本节点（1）</p><p class="node-sub">1x · 今日 18.6 GB</p></div><p class="bw-pct num">1.8<small>%</small></p></div>
+<div class="meter"><span style="width: 1.8%"></span></div>
+<div class="kv"><div><span>占用 / 配置</span><b>18.2 / 1000 Mbps</b></div><div><span>每 IP 限速</span><b>100 Mbps</b></div><div><span>网卡收 · 发</span><b>17.1 · 18.2 Mbps</b></div><div><span>连接 IP</span><b>14 个</b></div><div><span>用户记账均速（近 3 分钟）</span><b>8.3 Mbps</b></div><div><span>近 1 分钟 ≥1 Mbps</span><b>2 个 IP</b></div><div><span>北京参考 RTT</span><b>76 ms</b></div><div><span>探测丢包</span><b>0%</b></div></div>
+</article>
+<article class="bw-card">
+<div class="node-hd"><span class="region hk">港</span><div class="grow"><p class="node-name">香港移动优化</p><p class="node-sub">1x · 今日 9.4 GB</p></div><p class="bw-pct num">0.9<small>%</small></p></div>
+<div class="meter"><span style="width: 0.9%"></span></div>
+<div class="kv"><div><span>占用 / 配置</span><b>9.1 / 1000 Mbps</b></div><div><span>每 IP 限速</span><b>100 Mbps</b></div><div><span>网卡收 · 发</span><b>8.7 · 9.1 Mbps</b></div><div><span>连接 IP</span><b>8 个</b></div><div><span>用户记账均速（近 3 分钟）</span><b>0.9 Mbps</b></div><div><span>近 1 分钟 ≥1 Mbps</span><b>1 个 IP</b></div><div><span>北京参考 RTT</span><b>32 ms</b></div><div><span>探测丢包</span><b>0%</b></div></div>
+</article>
+<article class="bw-card">
+<div class="node-hd"><span class="region">日</span><div class="grow"><p class="node-name">日本原生节点</p><p class="node-sub">1.5x · 今日 10.5 GB</p></div><p class="bw-pct num">1.3<small>%</small></p></div>
+<div class="meter"><span style="width: 1.3%"></span></div>
+<div class="kv"><div><span>占用 / 配置</span><b>6.4 / 500 Mbps</b></div><div><span>每 IP 限速</span><b>100 Mbps</b></div><div><span>网卡收 · 发</span><b>0.9 · 6.4 Mbps</b></div><div><span>连接 IP</span><b>5 个</b></div><div><span>用户记账均速（近 3 分钟）</span><b>0.4 Mbps</b></div><div><span>近 1 分钟 ≥1 Mbps</span><b>0 个 IP</b></div><div><span>北京参考 RTT</span><b>86 ms</b></div><div><span>探测丢包</span><b>0%</b></div></div>
+</article>
+<article class="bw-card">
+<div class="node-hd"><span class="region">日</span><div class="grow"><p class="node-name">日本原生双 ISP 家宽</p><p class="node-sub">2x · 今日 8.2 GB</p></div><p class="bw-pct num">1.1<small>%</small></p></div>
+<div class="meter"><span style="width: 1.1%"></span></div>
+<div class="kv"><div><span>占用 / 配置</span><b>3.2 / 300 Mbps</b></div><div><span>每 IP 限速</span><b>100 Mbps</b></div><div><span>网卡收 · 发</span><b>2.6 · 3.2 Mbps</b></div><div><span>连接 IP</span><b>7 个</b></div><div><span>用户记账均速（近 3 分钟）</span><b>0.8 Mbps</b></div><div><span>近 1 分钟 ≥1 Mbps</span><b>1 个 IP</b></div><div><span>北京参考 RTT</span><b>97 ms</b></div><div><span>探测丢包</span><b>0%</b></div></div>
+</article>
+<article class="bw-card is-off">
+<div class="node-hd"><span class="region">日</span><div class="grow"><p class="node-name">日本节点（2）</p><p class="node-sub">1x · 今日 1.2 GB</p></div><p class="bw-pct"><span class="status bad">离线</span></p></div>
+<div class="meter"><span style="width: 0%; min-width: 0"></span></div>
+<div class="kv"><div><span>占用 / 配置</span><b>— / 1000 Mbps</b></div><div><span>每 IP 限速</span><b>—</b></div><div><span>网卡收 · 发</span><b>—</b></div><div><span>连接 IP</span><b>0 个</b></div><div><span>最后心跳</span><b>4 分钟前</b></div><div><span>订阅状态</span><b>已暂时摘除</b></div><div><span>北京参考 RTT</span><b>暂不可得</b></div><div><span>探测丢包</span><b>100%</b></div></div>
+</article>
+<article class="bw-card">
+<div class="node-hd"><span class="region">日</span><div class="grow"><p class="node-name">cn2gia救命线路</p><p class="node-sub">1.8x · 今日 1.5 GB</p></div><p class="bw-pct num">0.2<small>%</small></p></div>
+<div class="meter"><span style="width: 0.2%"></span></div>
+<div class="kv"><div><span>占用 / 配置</span><b>1.8 / 1000 Mbps</b></div><div><span>每 IP 限速</span><b>100 Mbps</b></div><div><span>网卡收 · 发</span><b>1.2 · 1.8 Mbps</b></div><div><span>连接 IP</span><b>1 个</b></div><div><span>用户记账均速（近 3 分钟）</span><b>0.3 Mbps</b></div><div><span>近 1 分钟 ≥1 Mbps</span><b>0 个 IP</b></div><div><span>北京参考 RTT</span><b>92 ms</b></div><div><span>探测丢包</span><b>0%</b></div></div>
+</article>
+</div>
+<p class="hint"><i class="i i-info sm"></i> 每约 30 秒更新。网卡含管理流量，用户记账有上报延迟；各机端口不能互借，也不代表中国方向实测速度或月配额。</p>
+</div>
+</main>
+<footer class="foot">
+<div class="foot-in">
+<nav class="foot-links" aria-label="页脚导航"><a href="bandwidth.html">带宽看板</a><a href="ranking.html">流量排行</a><a href="telegram.html">Telegram 绑定</a><a href="docs.html">服务条款</a><a href="https://x.com/YuwenMewo">关注站长 X @YuwenMewo</a></nav>
+<p class="foot-org"><span class="emblem" role="img" aria-label="站徽"></span><span>主办：MTF公益机场站务组</span><span>联系：contact@mtf.llc</span><span>公益免费 · 非商业 · 不记录访问内容</span></p>
+<p class="demo-note"><i class="i i-info sm"></i>静态 UI 样本：邮箱、IP、邀请码与用量均为虚构示例，按钮不会调用线上接口。</p>
+</div>
+</footer>
+<nav class="tabbar" aria-label="快捷导航">
+<a class="tab" href="dashboard.html"><i class="i i-home"></i><span>首页</span></a>
+<a class="tab" href="checkin.html"><i class="i i-calendar"></i><span>签到</span></a>
+<a class="tab is-active" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽</span></a>
+<a class="tab" href="telegram.html"><i class="i i-send"></i><span>绑定</span></a>
+<button class="tab" type="button" data-drawer-open="1"><i class="i i-grid"></i><span>更多</span></button>
+</nav>
+</div>
+</div>
+<div class="scrim" data-drawer-close="1"></div>
+</div>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

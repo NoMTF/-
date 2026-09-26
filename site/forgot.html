@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN" class="is-live">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>忘记密码 · MTF公益机场</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/gov-art.css">
+<link rel="stylesheet" href="assets/css/gov.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<!-- 由 design/canvas 的 forgot.dc.html 生成；样式见 assets/css/gov.css -->
+<div class="app">
+<div class="auth">
+<aside class="auth-hero">
+<div class="auth-rays"></div>
+<div class="auth-hero-in">
+<span class="emblem xxl" role="img" aria-label="MTF公益机场站徽"></span>
+<h1 class="auth-name">MTF公益机场</h1>
+<p class="auth-en">MTF PUBLIC WELFARE NETWORK</p>
+<p class="auth-slogan">互助共享　公益同行</p>
+<div class="values-line"><ul class="values"><li>免费公益</li><li>隐私为先</li><li>节约带宽</li><li>互助友爱</li></ul></div>
+<div class="auth-facts">
+<div><b>60 GB</b><span>每月保底</span></div>
+<div><b>+2 GB</b><span>每日签到</span></div>
+<div><b>6 台</b><span>物理机</span></div>
+<div><b>100 M</b><span>每 IP 上限</span></div>
+</div>
+<p class="auth-live"><span class="live-dot"></span>当前在线 24 · 已注册 279（示例）</p>
+</div>
+</aside>
+<main class="auth-main">
+<div class="auth-card">
+<header class="auth-card-hd">
+<p class="kicker">找回密码</p>
+<h2>重设登录密码</h2>
+<p>填写注册邮箱，领取重设密码的验证码。</p>
+</header>
+<ol class="steps" style="--n: 3; margin-bottom: 22px">
+<li class="step is-now"><div><b>验证邮箱</b></div></li>
+<li class="step"><div><b>设置新密码</b></div></li>
+<li class="step"><div><b>重新登录</b></div></li>
+</ol>
+<form class="form" data-validate="1" data-success="示例：密码已重设，请用新密码登录（静态样本不会修改密码）" data-api="POST /api/v1/passport/auth/forget" novalidate="novalidate">
+<div class="field">
+<label class="label" for="fg-email">注册邮箱</label>
+<div class="input-group">
+<div class="control"><i class="i i-mail"></i><input class="input" id="fg-email" type="email" placeholder="name@example.com" autocomplete="email" required="required"></div>
+<button class="btn" type="button" data-send-code="示例：验证码已发送（静态样本不会真正发信）" data-api="POST /api/v1/passport/comm/sendEmailVerify（isforget=1）">发送验证码</button>
+</div>
+<p class="field-error"><i class="i i-alert sm"></i>请填写注册时使用的邮箱</p>
+</div>
+<div class="field">
+<label class="label" for="fg-code">邮箱验证码</label>
+<div class="control"><i class="i i-key"></i><input class="input mono" id="fg-code" type="text" inputmode="numeric" placeholder="6 位数字" autocomplete="one-time-code" required="required"></div>
+<p class="field-error"><i class="i i-alert sm"></i>请填写邮件里的验证码</p>
+</div>
+<div class="field">
+<label class="label" for="fg-pw">新密码</label>
+<div class="control"><i class="i i-lock"></i><input class="input" id="fg-pw" type="password" placeholder="至少 8 位" autocomplete="new-password" required="required"><button class="pw-toggle" type="button" data-pw-toggle="1" aria-label="显示或隐藏密码"><i class="i i-eye"></i></button></div>
+<p class="field-error"><i class="i i-alert sm"></i>请设置新密码</p>
+</div>
+<button class="btn btn-primary btn-lg btn-block" type="submit">重设密码</button>
+<p class="auth-links"><a href="login.html"><i class="i i-left sm"></i>返回登录</a><span class="sep"></span><a href="register.html">凭邀请码注册</a></p>
+</form>
+<p class="callout info" style="margin-top: 20px"><i class="i i-info"></i><span>没有收到邮件？先检查垃圾邮件箱，60 秒后可重新发送。仍收不到可在 Telegram 主群联系站务组。</span></p>
+</div>
+<nav class="auth-foot" aria-label="公开页面">
+<a href="bandwidth.html">带宽看板</a><a href="docs.html">服务条款</a><a href="https://t.me/MTFLink_bot">审核机器人 @MTFLink_bot</a><a href="https://x.com/YuwenMewo">关注站长 X @YuwenMewo</a>
+</nav>
+<p class="demo-note small"><i class="i i-info sm"></i>静态 UI 样本，不会发送验证码或修改密码</p>
+</main>
+</div>
+</div>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

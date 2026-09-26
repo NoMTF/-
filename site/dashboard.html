@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="zh-CN" class="is-live">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>仪表盘 · MTF公益机场</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/gov-art.css">
+<link rel="stylesheet" href="assets/css/gov.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<!-- 由 design/canvas 的 dashboard.dc.html 生成；样式见 assets/css/gov.css -->
+<div class="app">
+<div class="shell">
+<aside class="side" aria-label="主导航">
+<div class="side-inner">
+<button class="icon-btn on-red side-close" type="button" data-drawer-close="1" aria-label="关闭菜单"><i class="i i-close"></i></button>
+<a class="side-brand" href="dashboard.html"><span class="emblem lg" role="img" aria-label="MTF公益机场站徽"></span><span class="side-name">MTF公益机场</span><span class="side-en">MTF PUBLIC WELFARE NETWORK</span></a>
+<nav class="nav">
+<p class="nav-group">便民服务</p>
+<a class="nav-link is-active" href="dashboard.html"><i class="i i-home"></i><span>仪表盘</span></a>
+<a class="nav-link" href="docs.html"><i class="i i-book"></i><span>使用文档</span></a>
+<a class="nav-link" href="checkin.html"><i class="i i-calendar"></i><span>每日签到</span><span class="nav-tag">+2GB</span></a>
+<a class="nav-link" href="ranking.html"><i class="i i-trophy"></i><span>流量排行</span></a>
+<p class="nav-group">线路资源</p>
+<a class="nav-link" href="nodes.html"><i class="i i-server"></i><span>节点状态</span></a>
+<a class="nav-link" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽看板</span></a>
+<a class="nav-link" href="invites.html"><i class="i i-mail"></i><span>我的邀请</span></a>
+<p class="nav-group">个人事务</p>
+<a class="nav-link" href="profile.html"><i class="i i-user"></i><span>个人中心</span></a>
+<a class="nav-link" href="telegram.html"><i class="i i-send"></i><span>Telegram 绑定</span><span class="nav-tag">待办</span></a>
+<a class="nav-link" href="tickets.html"><i class="i i-ticket"></i><span>我的工单</span></a>
+<a class="nav-link" href="traffic.html"><i class="i i-chart"></i><span>流量明细</span></a>
+<p class="nav-group">站务管理</p>
+<a class="nav-link" href="admin.html"><i class="i i-shield"></i><span>管理后台</span><span class="nav-tag">管理员</span></a>
+</nav>
+<div class="side-foot">
+<p class="side-live"><span class="live-dot"></span>当前在线 <b class="num">24</b><span class="sep"></span>已注册 <b class="num">279</b></p>
+<blockquote class="side-quote">带宽和成本都有限，资源要留给真正需要它的人。<cite>——《服务条款》第二条</cite></blockquote>
+</div>
+</div>
+</aside>
+<div class="main">
+<header class="mbar">
+<span class="emblem sm" role="img" aria-label="MTF公益机场站徽"></span>
+<p class="mbar-title"><b>仪表盘</b><span>MTF公益机场</span></p>
+<button class="icon-btn on-red" type="button" data-drawer-open="1" aria-label="打开菜单"><i class="i i-menu"></i></button>
+</header>
+<header class="topbar">
+<p class="crumbs"><i class="i i-home sm"></i><span>便民服务</span><span class="sep">/</span><b>仪表盘</b></p>
+<div class="top-actions">
+<button class="api-toggle" type="button" data-api-toggle="1"><i class="i i-code sm"></i>接口标注</button>
+<div class="theme-switch" role="group" aria-label="配色主题"><button type="button" data-theme-set="red"><span class="sw red"></span>朱红</button><button type="button" data-theme-set="navy"><span class="sw navy"></span>藏青</button></div>
+<button class="icon-btn" type="button" aria-label="通知" data-toast="有 2 条公告未读，已在通知公告中标出"><i class="i i-bell"></i><span class="dot-badge"></span></button>
+<div class="user-chip"><span class="avatar">示</span><span>demo@example.com</span></div>
+<a class="icon-btn" href="login.html" aria-label="退出登录" data-api="清除本地 auth_data"><i class="i i-logout"></i></a>
+</div>
+</header>
+<div class="ticker">
+<span class="ticker-tag"><i class="i i-megaphone sm"></i>公告</span>
+<p class="ticker-text"><b>坚持公益定位，建设带宽强站！</b>新增 cn2gia救命线路：极端情况备用，按 1.8 倍扣配额</p>
+<a class="ticker-more" href="#notice-1" data-open="notice-1">查看公告<i class="i i-right sm"></i></a>
+</div>
+<main class="content">
+<header class="page-head">
+<div class="grow">
+<p class="kicker">便民服务</p>
+<h1 class="page-title">仪表盘</h1>
+<p class="page-sub">欢迎回来。今天是 2026 年 9 月 26 日，本月额度将于 10 月 1 日零点重置。</p>
+</div>
+<div class="page-actions">
+<a class="btn" href="docs.html"><i class="i i-book"></i>导入教程</a>
+<a class="btn btn-primary" href="checkin.html"><i class="i i-calendar"></i>今日签到 +2 GB</a>
+</div>
+</header>
+<div class="stack">
+<section class="hero" aria-labelledby="sub-title">
+<div class="hero-rays"></div>
+<div class="hero-skyline"></div>
+<div class="ring" role="img" aria-label="本月剩余 55.6 GB，已用 28.7%">
+<svg viewBox="0 0 220 220" aria-hidden="true">
+<circle class="ring-ticks" cx="110" cy="110" r="102"></circle>
+<circle class="ring-track" cx="110" cy="110" r="86"></circle>
+<circle class="ring-val" cx="110" cy="110" r="86" style="stroke-dasharray: 385.2 540.4"></circle>
+</svg>
+<div class="ring-center"><span class="ring-k">本月剩余</span><b class="ring-v num">55.6<small>GB</small></b><span class="ring-sub">已用 28.7%</span></div>
+</div>
+<div class="hero-main">
+<div class="hero-top">
+<h2 class="hero-title" id="sub-title">我的订阅</h2>
+<span class="tag tag-gold-solid"><i class="i i-check-circle"></i>长期有效</span>
+<span class="hero-note">公益套餐随注册自动发放 · 每月 1 日重置</span>
+</div>
+<div class="hero-stats">
+<div><span>本月总额</span><b class="num">78.0<small>GB</small></b><em>保底 60 + 签到 9 天</em></div>
+<div><span>本月已用</span><b class="num">22.4<small>GB</small></b><em>实际 22.1 · 1.8x 线路多扣 0.3</em></div>
+<div><span>在线设备</span><b class="num">2<small>/ 5 台</small></b><em>按同时在线 IP 计</em></div>
+</div>
+<div class="stack tight">
+<p class="hero-label"><i class="i i-lock sm"></i>订阅链接等同于账号密码，请勿分享或公开</p>
+<div class="codebox on-red"><i class="i i-link"></i><span class="code-text">https://mtf.llc/api/v1/client/subscribe?token=••••••••••••••••</span></div>
+<div class="btn-row m-stack">
+<button class="btn btn-gold" type="button" data-toast="示例链接不可复制：真实订阅链接属于账号凭证" data-api="GET /api/v1/user/getSubscribe"><i class="i i-copy"></i>复制订阅链接</button>
+<a class="btn btn-onred" href="docs.html"><i class="i i-book"></i>导入教程</a>
+<button class="btn btn-onred" type="button" data-open="reset-sub" data-api="GET /api/v1/user/resetSecurity"><i class="i i-refresh"></i>重置订阅链接</button>
+</div>
+</div>
+</div>
+</section>
+<div class="facts">
+<div class="fact"><span class="seal-ico"><i class="i i-shield"></i></span><div><p class="fact-k">连接协议</p><p class="fact-v">REALITY · HY2 · TUIC</p><p class="fact-s">每台物理机都提供三种协议</p></div></div>
+<div class="fact"><span class="seal-ico"><i class="i i-scroll"></i></span><div><p class="fact-k">计量规则</p><p class="fact-v">1 GB 扣 1 GB</p><p class="fact-s">仅 cn2gia救命线路按 1.8 倍扣</p></div></div>
+<div class="fact"><span class="seal-ico"><i class="i i-zap"></i></span><div><p class="fact-k">速率上限</p><p class="fact-v">100 Mbps / 来源 IP</p><p class="fact-s">整机接近满载时才动态收紧</p></div></div>
+</div>
+<div class="split-7-5">
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-grid"></i>快捷办理</h2></header>
+<div class="panel-bd">
+<div class="quick">
+<a class="quick-item" href="checkin.html"><span class="quick-ico"><i class="i i-calendar"></i></span><div><b>每日签到</b><span>每天固定 +2 GB</span></div></a>
+<a class="quick-item" href="bandwidth.html"><span class="quick-ico"><i class="i i-gauge"></i></span><div><b>带宽看板</b><span>六台物理机实时负载</span></div></a>
+<a class="quick-item" href="telegram.html"><span class="quick-ico"><i class="i i-send"></i></span><div><b>Telegram 绑定</b><span>9 月 30 日前完成</span></div></a>
+<a class="quick-item" href="ranking.html"><span class="quick-ico"><i class="i i-trophy"></i></span><div><b>流量排行</b><span>今日全站用量</span></div></a>
+<a class="quick-item" href="docs.html"><span class="quick-ico"><i class="i i-book"></i></span><div><b>使用文档</b><span>三分钟连上</span></div></a>
+<a class="quick-item" href="tickets.html"><span class="quick-ico"><i class="i i-ticket"></i></span><div><b>提交工单</b><span>连不上、速度慢</span></div></a>
+</div>
+</div>
+</section>
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-clipboard"></i>待办事项</h2><div class="panel-extra"><span class="tag tag-red">2 项待办</span></div></header>
+<div class="panel-bd">
+<ul class="todo">
+<li><span class="todo-ico red"><i class="i i-send"></i></span><div class="grow"><b>绑定 Telegram</b><span>截止 9 月 30 日，剩余 4 天；逾期暂停，补绑自动恢复</span></div><a class="btn btn-sm btn-primary" href="telegram.html">去绑定</a></li>
+<li><span class="todo-ico"><i class="i i-calendar"></i></span><div class="grow"><b>今日签到</b><span>今天还没签到，可领 2 GB</span></div><a class="btn btn-sm" href="checkin.html">签到</a></li>
+<li><span class="todo-ico good"><i class="i i-check"></i></span><div class="grow"><b>阅读服务条款</b><span>9 月 22 日版 · 已阅读</span></div><span class="tag tag-good">已完成</span></li>
+</ul>
+</div>
+</section>
+</div>
+<div class="split-7-5">
+<section class="panel" id="notices">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-megaphone"></i>通知公告</h2><div class="panel-extra"><span>同步发布至 Telegram 主群</span></div></header>
+<div class="panel-bd">
+<ul class="notice-list">
+<li><a class="notice-item" href="#notice-1" data-open="notice-1"><span class="tag tag-solid">重要</span><span class="notice-title">关于新增 cn2gia救命线路的通知</span><time>09-25</time></a></li>
+<li><a class="notice-item" href="#notice-2" data-open="notice-2"><span class="tag tag-red">通知</span><span class="notice-title">关于改为邀请制、启用 Telegram 主群及新服务条款的通知</span><time>09-23</time></a></li>
+<li><a class="notice-item" href="docs.html"><span class="tag">条款</span><span class="notice-title">服务条款与免责声明（9 月 22 日更新）</span><time>09-22</time></a></li>
+</ul>
+</div>
+<div class="panel-ft"><i class="i i-send sm"></i><span>公告发布后约两分钟内由 @MTFLink_bot 同步到 Telegram 主群</span></div>
+</section>
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-route"></i>推荐线路</h2><div class="panel-extra"><a class="link-more" href="nodes.html">全部节点<i class="i i-right sm"></i></a></div></header>
+<div class="panel-bd stack tight">
+<div class="line-card"><span class="region">日</span><div class="grow"><div class="row wrap"><b class="serif">日本节点（1）</b><span class="rate">1x</span><span class="tag tag-gold">推荐</span></div><p class="small muted">日常首选 · ChatGPT 网页版可用</p></div><span class="signal" aria-label="信号良好"><i></i><i></i><i></i><i></i></span></div>
+<div class="kv"><div><span>北京参考 RTT</span><b>76 ms</b></div><div><span>当前负载</span><b>1.8%</b></div><div><span>推荐分组</span><b>MTF · 1x 优先</b></div><div><span>今日已用</span><b>18.6 GB</b></div></div>
+<p class="small muted">RTT 是节点到北京探测点的参考值，不等于你到节点的实际延迟。</p>
+</div>
+</section>
+</div>
+</div>
+</main>
+<footer class="foot">
+<div class="foot-in">
+<nav class="foot-links" aria-label="页脚导航"><a href="bandwidth.html">带宽看板</a><a href="ranking.html">流量排行</a><a href="telegram.html">Telegram 绑定</a><a href="docs.html">服务条款</a><a href="https://x.com/YuwenMewo">关注站长 X @YuwenMewo</a></nav>
+<p class="foot-org"><span class="emblem" role="img" aria-label="站徽"></span><span>主办：MTF公益机场站务组</span><span>联系：contact@mtf.llc</span><span>公益免费 · 非商业 · 不记录访问内容</span></p>
+<p class="demo-note"><i class="i i-info sm"></i>静态 UI 样本：邮箱、IP、邀请码与用量均为虚构示例，按钮不会调用线上接口。</p>
+</div>
+</footer>
+<nav class="tabbar" aria-label="快捷导航">
+<a class="tab is-active" href="dashboard.html"><i class="i i-home"></i><span>首页</span></a>
+<a class="tab" href="checkin.html"><i class="i i-calendar"></i><span>签到</span></a>
+<a class="tab" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽</span></a>
+<a class="tab" href="telegram.html"><i class="i i-send"></i><span>绑定</span></a>
+<button class="tab" type="button" data-drawer-open="1"><i class="i i-grid"></i><span>更多</span></button>
+</nav>
+</div>
+</div>
+<div class="scrim" data-drawer-close="1"></div>
+<div class="modal-scrim is-hidden" id="notice-1" data-modal="1">
+<div class="modal wide" role="dialog" aria-modal="true" aria-labelledby="n1-title">
+<div class="modal-hd"><p class="modal-title">通知公告</p><button class="icon-btn" type="button" data-close="1" aria-label="关闭"><i class="i i-close"></i></button></div>
+<article class="doc">
+<p class="doc-org">MTF公益机场站务通知</p>
+<p class="doc-no">MTF站发〔2026〕9号</p>
+<div class="doc-rule"></div>
+<h2 class="doc-title" id="n1-title">关于新增 cn2gia救命线路的通知</h2>
+<p class="doc-to">各位站友：</p>
+<div class="doc-body">
+<p>为在极端网络情况下尽量保持可连接，站务组新增 <b>cn2gia救命线路 [1.8x]</b>。现将有关事项通知如下：</p>
+<h3>一、线路配置</h3>
+<p>日本入口机直接出网，配置端口上下行各 1000 Mbps；每 IP 最高仍为 100 Mbps，并随整机实际负载动态调整。此线为独立直出，没有串联此前测试未达标的 KDDI NAT 落地机。</p>
+<h3>二、扣量规则</h3>
+<p>在这条线路实际使用 1 GB，扣账号配额 <b>1.8 GB</b>。其他旧节点继续按 1:1 扣量。</p>
+<h3>三、使用建议</h3>
+<p>这台机器极其昂贵，仅作为普通线路在极端网络情况下不可用时的救命备用，不是随时可用的保证。日常请优先使用普通 1x 节点；需要应急时，手动选择「cn2gia救命线路」或「MTF · 1.8x 优先」分组，该分组故障时会依次切到 1.5x、1x。</p>
+<h3>四、其他说明</h3>
+<p>名称中的 CN2 GIA 是线路命名，具体中国电信回程仍待路由实测确认，请以当地体验为准。官网「带宽看板」可查看这台机器的带宽占用、限速和到北京探测点的参考延迟。</p>
+<p>特此通知。</p>
+</div>
+<div class="doc-sign">
+<p>MTF公益机场站务组</p>
+<p>2026年9月25日</p>
+<svg class="stamp" viewBox="0 0 160 160" role="img" aria-label="站务组印章">
+<defs><path id="stamp-arc-n1" d="M30 82 A50 50 0 1 1 130 82"></path></defs>
+<circle class="stamp-ring" cx="80" cy="80" r="74"></circle>
+<circle class="stamp-ring2" cx="80" cy="80" r="67"></circle>
+<text class="stamp-text"><textPath href="#stamp-arc-n1" startOffset="50%">MTF公益机场站务组</textPath></text>
+<polygon class="stamp-star" points="80,58 85.29,72.72 100.92,73.2 88.56,82.78 92.93,97.8 80,89 67.07,97.8 71.44,82.78 59.08,73.2 74.71,72.72"></polygon>
+<text class="stamp-sub" x="80" y="122">站务专用章</text>
+</svg>
+</div>
+<p class="doc-meta"><span>公开方式：站内公告、Telegram 主群同步</span><span>发布：@MTFLink_bot</span></p>
+</article>
+</div>
+</div>
+<div class="modal-scrim is-hidden" id="notice-2" data-modal="1">
+<div class="modal wide" role="dialog" aria-modal="true" aria-labelledby="n2-title">
+<div class="modal-hd"><p class="modal-title">通知公告</p><button class="icon-btn" type="button" data-close="1" aria-label="关闭"><i class="i i-close"></i></button></div>
+<article class="doc">
+<p class="doc-org">MTF公益机场站务通知</p>
+<p class="doc-no">MTF站发〔2026〕8号</p>
+<div class="doc-rule"></div>
+<h2 class="doc-title" id="n2-title">关于改为邀请制、启用 Telegram 主群及新服务条款的通知</h2>
+<p class="doc-to">各位站友：</p>
+<div class="doc-body">
+<p>本站有三项变化，老用户请花两分钟看完，有需要你配合的事。</p>
+<h3>一、改为邀请制</h3>
+<p>即日起注册需要邀请码。老用户已有一个专属邀请码，可在「我的邀请」页面查看，也已发到注册邮箱；一码一用，请只分享给符合本站受众的朋友。新用户请私聊 @MTFLink_bot，发送 X 账号 ID 或文字主页链接及邮箱，经社群审核通过后发放一次性邀请码。</p>
+<h3>二、启用 Telegram 主群并绑定账号</h3>
+<p>公告、故障通知、节点变动以后都发在主群。请在 7 天内完成加群和绑定：登录官网，打开「Telegram 绑定」领取绑定码，推荐私聊 @MTFLink_bot 发送 <code>/bind 绑定码</code>。逾期未绑定的账号会被暂停，补绑之后自动恢复，不丢数据、不丢流量。</p>
+<h3>三、施行新的服务条款</h3>
+<p>文档区新增「服务条款」，写明服务性质、受众范围、可接受使用，以及我们记什么、不记什么、留多久。我们<b>不记录</b>你访问了哪些网站或任何通信内容；连接记录 1 小时后自动删除，每日用量汇总 5 天后删除。</p>
+<h3>四、请你配合的两件事</h3>
+<p>不要跑 BT / PT 下载，这会导致 IP 被投诉、整台机器被封；不要分享订阅链接，那个链接就是你的账号。</p>
+<p>特此通知。</p>
+</div>
+<div class="doc-sign">
+<p>MTF公益机场站务组</p>
+<p>2026年9月23日</p>
+<svg class="stamp" viewBox="0 0 160 160" role="img" aria-label="站务组印章">
+<defs><path id="stamp-arc-n2" d="M30 82 A50 50 0 1 1 130 82"></path></defs>
+<circle class="stamp-ring" cx="80" cy="80" r="74"></circle>
+<circle class="stamp-ring2" cx="80" cy="80" r="67"></circle>
+<text class="stamp-text"><textPath href="#stamp-arc-n2" startOffset="50%">MTF公益机场站务组</textPath></text>
+<polygon class="stamp-star" points="80,58 85.29,72.72 100.92,73.2 88.56,82.78 92.93,97.8 80,89 67.07,97.8 71.44,82.78 59.08,73.2 74.71,72.72"></polygon>
+<text class="stamp-sub" x="80" y="122">站务专用章</text>
+</svg>
+</div>
+<p class="doc-meta"><span>有问题可在主群说明或提交工单，也可写信至 contact@mtf.llc</span></p>
+</article>
+</div>
+</div>
+<div class="modal-scrim is-hidden" id="reset-sub" data-modal="1">
+<div class="modal" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+<div class="modal-hd"><i class="i i-alert" style="color: var(--bad)"></i><p class="modal-title" id="reset-title">确认重置订阅链接？</p></div>
+<div class="modal-bd"><p>重置后旧链接立即失效，所有设备都需要重新导入新链接。只有在链接可能泄露时才需要这样做。</p></div>
+<div class="modal-ft"><button class="btn" type="button" data-close="1">取消</button><button class="btn btn-danger solid" type="button" data-close="1" data-toast="示例：订阅链接已重置（静态样本不会真正重置）" data-api="GET /api/v1/user/resetSecurity">确认重置</button></div>
+</div>
+</div>
+</div>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

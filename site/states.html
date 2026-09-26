@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-CN" class="is-live">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>状态与反馈 · MTF公益机场</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/gov-art.css">
+<link rel="stylesheet" href="assets/css/gov.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<!-- 由 design/canvas 的 states.dc.html 生成；样式见 assets/css/gov.css -->
+<div class="app board">
+<header class="board-hd">
+<span class="emblem xl" role="img" aria-label="MTF公益机场站徽"></span>
+<div class="grow">
+<p class="kicker">界面状态样张</p>
+<h1 class="board-title">状态与反馈</h1>
+<p class="page-sub">交接要求中的输入错误、加载中、空列表、已签到、节点离线、绑定成功 / 未绑定，以及轻提示、确认弹窗、公告文书与手机抽屉菜单。所有文案可直接用于接入。</p>
+</div>
+<a class="btn btn-onred" href="dashboard.html"><i class="i i-home"></i>返回仪表盘</a>
+</header>
+<div class="board-grid">
+<section class="state-card">
+<p class="state-label"><span class="state-no">01</span>输入错误 · 登录</p>
+<div class="state-body">
+<form class="form" novalidate="novalidate">
+<p class="callout bad"><i class="i i-alert"></i><span>邮箱或密码不正确，请检查后重试。</span></p>
+<div class="field is-error"><label class="label" for="st-email">邮箱</label><div class="control"><i class="i i-mail"></i><input class="input" id="st-email" type="email" value="demo@example"></div><p class="field-error"><i class="i i-alert sm"></i>邮箱格式不正确，例如 name@example.com</p></div>
+<div class="field is-error"><label class="label" for="st-pw">密码</label><div class="control"><i class="i i-lock"></i><input class="input" id="st-pw" type="password" placeholder="请输入密码"></div><p class="field-error"><i class="i i-alert sm"></i>请输入密码</p></div>
+<button class="btn btn-primary btn-block" type="button">登　录</button>
+</form>
+</div>
+</section>
+<section class="state-card">
+<p class="state-label"><span class="state-no">02</span>加载中 · 骨架与按钮</p>
+<div class="state-body stack tight">
+<div class="stats" style="--cols: 2; --mcols: 2">
+<div class="stat"><span class="skel" style="width: 50%"></span><span class="skel lg" style="width: 70%; margin-top: 8px"></span></div>
+<div class="stat"><span class="skel" style="width: 40%"></span><span class="skel lg" style="width: 60%; margin-top: 8px"></span></div>
+</div>
+<div class="loading-row"><span class="skel circle"></span><span class="skel" style="width: 40%"></span><span class="skel" style="flex: 1"></span></div>
+<div class="loading-row"><span class="skel circle"></span><span class="skel" style="width: 32%"></span><span class="skel" style="flex: 1"></span></div>
+<div class="btn-row"><button class="btn btn-primary is-loading" type="button"><i class="i i-loader"></i>签到中…</button><button class="btn is-loading" type="button"><i class="i i-loader"></i>正在读取绑定状态…</button></div>
+</div>
+</section>
+<section class="state-card">
+<p class="state-label"><span class="state-no">03</span>空列表</p>
+<div class="state-body">
+<div class="empty"><span class="empty-seal"><i class="i i-inbox xl"></i></span><b>这一天还没有流量记录</b><span>切换到其他日期看看；排行按当天实际用量统计。</span></div>
+<div class="empty" style="padding-top: 8px"><span class="empty-seal"><i class="i i-mail xl"></i></span><b>你的邀请码还没有被使用</b><span>朋友注册成功后，这里会显示使用记录。</span></div>
+</div>
+</section>
+<section class="state-card">
+<p class="state-label"><span class="state-no">04</span>已签到</p>
+<div class="state-body">
+<div class="checkin is-done" data-state="demo">
+<div class="checkin-hero">
+<div class="seal-done" role="img" aria-label="今日已签到"><div><b>已签</b><span>+2 GB</span></div></div>
+<div class="stack tight grow">
+<p class="checkin-msg">签到成功，今日已领 <em>2 GB</em></p>
+<p class="muted small">本月额度 80.0 GB · 连续签到 6 天 · 明天 00:00 后可再签</p>
+<span class="tag tag-good" style="align-self: flex-start"><i class="i i-check"></i>今日已签到</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="state-card">
+<p class="state-label"><span class="state-no">05</span>节点离线</p>
+<div class="state-body">
+<article class="node is-off" style="box-shadow: none">
+<div class="node-hd"><span class="region">日</span><div class="grow"><p class="node-name">日本节点（2）</p><p class="node-sub">REALITY · HY2 · TUIC</p></div><span class="status bad">离线</span></div>
+<p class="callout bad"><i class="i i-offline"></i><span><b>探活失败 4 分钟</b>，已从订阅中暂时摘除。恢复后自动加入。</span></p>
+</article>
+</div>
+</section>
+<section class="state-card">
+<p class="state-label"><span class="state-no">06</span>网络错误 · 登录失效</p>
+<div class="state-body stack tight">
+<p class="callout bad"><i class="i i-offline"></i><span><b>网络错误</b>，30 秒后自动重试。<a href="#" data-toast="示例：已重新读取">立即重试</a></span></p>
+<p class="callout"><i class="i i-lock"></i><span><b>登录已失效</b>，请重新登录后领取绑定码。<a href="login.html">去登录</a></span></p>
+<p class="callout info"><i class="i i-clock"></i><span><b>数据暂未更新</b>：网卡速率采样中，下一轮约 30 秒后更新。</span></p>
+</div>
+</section>
+<section class="state-card">
+<p class="state-label"><span class="state-no">07</span>Telegram 未绑定</p>
+<div class="state-body">
+<div class="bind-box">
+<p class="label">你的绑定码</p>
+<p class="bigcode">DEMO2026</p>
+<p class="countdown"><i class="i i-clock sm"></i><b>29:41</b> 后失效</p>
+<button class="btn btn-primary" type="button"><i class="i i-copy"></i>复制 /bind 指令</button>
+</div>
+</div>
+</section>
+<section class="state-card">
+<p class="state-label"><span class="state-no">08</span>Telegram 绑定成功</p>
+<div class="state-body">
+<div class="bind-box" style="background: linear-gradient(180deg, var(--good-bg), var(--surface)); border-color: var(--good-line)">
+<span class="bound-seal"><i class="i i-check"></i></span>
+<p class="serif" style="font-size: 22px; font-weight: 800">Telegram 已绑定</p>
+<p class="muted small">账号 @demo_user（示例）· 绑定于 2026-09-26 23:14</p>
+</div>
+</div>
+</section>
+<section class="state-card">
+<p class="state-label"><span class="state-no">09</span>轻提示</p>
+<div class="state-body stack tight toast-demo">
+<div class="toast good"><i class="i i-check-circle"></i><span>签到成功：今日 +2 GB</span></div>
+<div class="toast"><i class="i i-info"></i><span>已复制，去机器人粘贴发送</span></div>
+<div class="toast bad"><i class="i i-alert"></i><span>复制失败，请手动复制上方绑定码</span></div>
+</div>
+</section>
+<section class="state-card span-2">
+<p class="state-label"><span class="state-no">10</span>公告弹窗 · 红头文书样式</p>
+<div class="state-body">
+<article class="doc">
+<p class="doc-org">MTF公益机场站务通知</p>
+<p class="doc-no">MTF站发〔2026〕9号</p>
+<div class="doc-rule"></div>
+<h2 class="doc-title">关于新增 cn2gia救命线路的通知</h2>
+<p class="doc-to">各位站友：</p>
+<div class="doc-body">
+<p>为在极端网络情况下尽量保持可连接，站务组新增 <b>cn2gia救命线路 [1.8x]</b>。日本入口机直接出网，配置端口上下行各 1000 Mbps；每 IP 最高仍为 100 Mbps。</p>
+<p>在这条线路实际使用 1 GB，扣账号配额 <b>1.8 GB</b>；其他旧节点继续按 1:1 扣量。日常请优先使用普通 1x 节点。</p>
+<p>特此通知。</p>
+</div>
+<div class="doc-sign">
+<p>MTF公益机场站务组</p>
+<p>2026年9月25日</p>
+<svg class="stamp" viewBox="0 0 160 160" role="img" aria-label="站务组印章">
+<defs><path id="stamp-arc-st" d="M30 82 A50 50 0 1 1 130 82"></path></defs>
+<circle class="stamp-ring" cx="80" cy="80" r="74"></circle>
+<circle class="stamp-ring2" cx="80" cy="80" r="67"></circle>
+<text class="stamp-text"><textPath href="#stamp-arc-st" startOffset="50%">MTF公益机场站务组</textPath></text>
+<polygon class="stamp-star" points="80,58 85.29,72.72 100.92,73.2 88.56,82.78 92.93,97.8 80,89 67.07,97.8 71.44,82.78 59.08,73.2 74.71,72.72"></polygon>
+<text class="stamp-sub" x="80" y="122">站务专用章</text>
+</svg>
+</div>
+</article>
+</div>
+</section>
+<section class="state-card">
+<p class="state-label"><span class="state-no">11</span>手机抽屉菜单</p>
+<div class="state-body" style="display: flex; justify-content: center">
+<div class="drawer-demo">
+<aside class="side" aria-label="主导航（示意）">
+<div class="side-inner">
+<span class="icon-btn on-red side-close" aria-hidden="true"><i class="i i-close"></i></span>
+<a class="side-brand" href="dashboard.html"><span class="emblem lg" role="img" aria-label="站徽"></span><span class="side-name">MTF公益机场</span></a>
+<nav class="nav">
+<p class="nav-group">便民服务</p>
+<a class="nav-link is-active" href="dashboard.html"><i class="i i-home"></i><span>仪表盘</span></a>
+<a class="nav-link" href="checkin.html"><i class="i i-calendar"></i><span>每日签到</span><span class="nav-tag">+2GB</span></a>
+<p class="nav-group">线路资源</p>
+<a class="nav-link" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽看板</span></a>
+<a class="nav-link" href="nodes.html"><i class="i i-server"></i><span>节点状态</span></a>
+<p class="nav-group">个人事务</p>
+<a class="nav-link" href="telegram.html"><i class="i i-send"></i><span>Telegram 绑定</span><span class="nav-tag">待办</span></a>
+<a class="nav-link" href="tickets.html"><i class="i i-ticket"></i><span>我的工单</span></a>
+</nav>
+</div>
+</aside>
+</div>
+</div>
+</section>
+<section class="state-card span-2">
+<p class="state-label"><span class="state-no">12</span>确认弹窗 · 危险操作</p>
+<div class="state-body">
+<div class="modal-demo">
+<div class="modal-demo-bg"><span class="skel lg" style="width: 40%"></span><span class="skel" style="width: 80%"></span><span class="skel" style="width: 70%"></span><span class="skel" style="width: 76%"></span></div>
+<div class="modal-scrim is-inline">
+<div class="modal" role="dialog" aria-modal="true" aria-labelledby="st-ban-title">
+<div class="modal-hd"><i class="i i-ban" style="color: var(--bad)"></i><p class="modal-title" id="st-ban-title">确认封禁？</p><span class="icon-btn" aria-hidden="true"><i class="i i-close"></i></span></div>
+<div class="modal-bd"><p>将封禁 <b>#1024 user1024@example.com</b>，并断开其当前 2 个来源 IP 的连接。原因会写入封禁记录。</p></div>
+<div class="modal-ft"><button class="btn" type="button">取消</button><button class="btn btn-danger solid" type="button">确认封禁</button></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="state-card">
+<p class="state-label"><span class="state-no">13</span>额度告急</p>
+<div class="state-body stack tight">
+<div class="meter warn"><span style="width: 92%"></span></div>
+<p class="meter-meta"><span>本月已用 <b>71.8 GB</b></span><span>总额 <b>78.0 GB</b></span></p>
+<p class="callout"><i class="i i-alert"></i><span>本月额度只剩 <b>6.2 GB</b>。每日签到可再领 2 GB，10 月 1 日重置。</span></p>
+<a class="btn btn-gold" href="checkin.html"><i class="i i-calendar"></i>去签到 +2 GB</a>
+</div>
+</section>
+</div>
+</div>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

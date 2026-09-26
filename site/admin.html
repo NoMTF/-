@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN" class="is-live">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>运维总览 · MTF公益机场</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/gov-art.css">
+<link rel="stylesheet" href="assets/css/gov.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<!-- 由 design/canvas 的 admin.dc.html 生成；样式见 assets/css/gov.css -->
+<div class="app">
+<div class="shell">
+<aside class="side" aria-label="管理导航">
+<div class="side-inner">
+<button class="icon-btn on-red side-close" type="button" data-drawer-close="1" aria-label="关闭菜单"><i class="i i-close"></i></button>
+<a class="side-brand" href="admin.html"><span class="emblem lg" role="img" aria-label="MTF公益机场站徽"></span><span class="side-name">MTF公益机场</span><span class="side-en">站务管理 · ADMIN CONSOLE</span></a>
+<nav class="nav">
+<p class="nav-group">站务管理</p>
+<a class="nav-link is-active" href="admin.html"><i class="i i-shield"></i><span>运维总览</span></a>
+<a class="nav-link" href="admin-users.html"><i class="i i-users"></i><span>用户与 IP</span></a>
+<a class="nav-link" href="admin-invites.html"><i class="i i-tag"></i><span>邀请码生成</span></a>
+<a class="nav-link" href="admin-bans.html"><i class="i i-ban"></i><span>封禁管理</span><span class="nav-tag">6</span></a>
+<a class="nav-link" href="admin-notices.html"><i class="i i-megaphone"></i><span>公告管理</span></a>
+<p class="nav-group">快速前往</p>
+<a class="nav-link" href="dashboard.html"><i class="i i-home"></i><span>用户仪表盘</span></a>
+<a class="nav-link" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽看板</span></a>
+<a class="nav-link" href="nodes.html"><i class="i i-server"></i><span>节点状态</span></a>
+<a class="nav-link" href="docs.html"><i class="i i-book"></i><span>使用文档</span></a>
+</nav>
+<div class="side-foot">
+<p class="side-live"><span class="live-dot"></span>当前在线 <b class="num">24</b><span class="sep"></span>已注册 <b class="num">279</b></p>
+<blockquote class="side-quote">来源 IP 与使用行为仅管理员可见；细粒度记录只保留 1 小时。<cite>——《服务条款》第四条</cite></blockquote>
+</div>
+</div>
+</aside>
+<div class="main">
+<header class="mbar">
+<span class="emblem sm" role="img" aria-label="MTF公益机场站徽"></span>
+<p class="mbar-title"><b>运维总览</b><span>站务管理</span></p>
+<button class="icon-btn on-red" type="button" data-drawer-open="1" aria-label="打开菜单"><i class="i i-menu"></i></button>
+</header>
+<header class="topbar">
+<p class="crumbs"><i class="i i-shield sm"></i><span>站务管理</span><span class="sep">/</span><b>运维总览</b></p>
+<div class="top-actions">
+<button class="api-toggle" type="button" data-api-toggle="1"><i class="i i-code sm"></i>接口标注</button>
+<div class="theme-switch" role="group" aria-label="配色主题"><button type="button" data-theme-set="red"><span class="sw red"></span>朱红</button><button type="button" data-theme-set="navy"><span class="sw navy"></span>藏青</button></div>
+<span class="tag tag-solid"><i class="i i-shield"></i>管理员</span>
+<div class="user-chip"><span class="avatar">管</span><span>admin@example.com</span></div>
+<a class="icon-btn" href="login.html" aria-label="退出登录" data-api="清除本地 auth_data"><i class="i i-logout"></i></a>
+</div>
+</header>
+<div class="ticker alert">
+<span class="ticker-tag"><i class="i i-alert sm"></i>站务</span>
+<p class="ticker-text"><b>日本节点（2）心跳中断 4 分钟</b>已从订阅暂时摘除，恢复后自动加入</p>
+<a class="ticker-more" href="#machines">查看物理机<i class="i i-right sm"></i></a>
+</div>
+<main class="content">
+<header class="page-head">
+<div class="grow">
+<p class="kicker">站务管理</p>
+<h1 class="page-title">运维总览</h1>
+<p class="page-sub">六台物理机负载、用户行为、封禁和邀请码一起看。数据约 30 秒刷新一次。</p>
+</div>
+<div class="page-actions">
+<span class="countdown" style="color: var(--ink-3)"><i class="i i-clock sm"></i>最近更新 <b>23:12:05</b></span>
+<button class="btn btn-sm" type="button" data-toast="已刷新（示例数据不会变化）" data-api="GET /api/v1/mtf/admin/overview"><i class="i i-refresh"></i>刷新</button>
+</div>
+</header>
+<nav class="subnav" aria-label="站务管理分页">
+<a class="is-active" href="admin.html"><i class="i i-shield sm"></i>总览</a><a href="admin-users.html"><i class="i i-users sm"></i>用户与 IP</a><a href="admin-invites.html"><i class="i i-tag sm"></i>邀请码</a><a href="admin-bans.html"><i class="i i-ban sm"></i>封禁</a><a href="admin-notices.html"><i class="i i-megaphone sm"></i>公告</a>
+</nav>
+<div class="stack">
+<div class="cols-4">
+<div class="kpi"><p class="stat-label"><i class="i i-users"></i>已注册用户</p><p class="stat-value num">279</p><p class="kpi-trend">本周 +12</p></div>
+<div class="kpi"><p class="stat-label"><i class="i i-pulse"></i>当前在线</p><p class="stat-value num">24</p><p class="stat-note">今日峰值 41 · 21:40</p></div>
+<div class="kpi"><p class="stat-label"><i class="i i-chart"></i>今日全站流量</p><p class="stat-value num">49.4<small>GB</small></p><p class="stat-note">网卡占用 38.7 / 4800 Mbps</p></div>
+<div class="kpi"><p class="stat-label"><i class="i i-ban"></i>生效封禁</p><p class="stat-value num">6</p><p class="stat-note">账户 3 · IP 2 · 域名 1</p></div>
+</div>
+<section class="panel" id="machines">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-server"></i>物理机负载</h2><div class="panel-extra"><span class="tag tag-info"><i class="i i-info"></i>按物理机汇总</span></div></header>
+<div class="panel-bd flush">
+<p class="callout info" style="margin: 16px 20px 4px"><i class="i i-layers"></i><span>REALITY / HY2 / TUIC 是<b>同一台物理机</b>上的三种协议，统计合并计算，不算三台服务器。占用率取网卡收发较忙的一侧。</span></p>
+<div class="table-wrap">
+<table class="table to-cards">
+<thead><tr><th>物理机</th><th>协议</th><th>状态</th><th>CPU</th><th>内存</th><th>网卡占用 / 配置</th><th>每 IP 限速</th><th class="r">在线 IP</th><th>心跳</th></tr></thead>
+<tbody>
+<tr><td class="card-title"><b>日本节点（1）</b> <span class="rate">1x</span></td><td data-label="协议"><span class="chip">R</span> <span class="chip">H</span> <span class="chip">T</span></td><td data-label="状态"><span class="status good">运行中</span></td><td data-label="CPU">12%</td><td data-label="内存">1.1 / 2 GB</td><td data-label="网卡占用"><span class="mini-meter"><span class="meter"><span style="width: 1.8%"></span></span><b>18.2 / 1000</b></span></td><td data-label="每 IP 限速">100 · 正常</td><td class="r" data-label="在线 IP">14</td><td data-label="心跳">12 秒前</td></tr>
+<tr><td class="card-title"><b>香港移动优化</b> <span class="rate">1x</span></td><td data-label="协议"><span class="chip">R</span> <span class="chip">H</span> <span class="chip">T</span></td><td data-label="状态"><span class="status good">运行中</span></td><td data-label="CPU">8%</td><td data-label="内存">0.8 / 1 GB</td><td data-label="网卡占用"><span class="mini-meter"><span class="meter"><span style="width: 0.9%"></span></span><b>9.1 / 1000</b></span></td><td data-label="每 IP 限速">100 · 正常</td><td class="r" data-label="在线 IP">8</td><td data-label="心跳">9 秒前</td></tr>
+<tr><td class="card-title"><b>日本原生节点</b> <span class="rate r15">1.5x</span></td><td data-label="协议"><span class="chip">R</span> <span class="chip">H</span> <span class="chip">T</span></td><td data-label="状态"><span class="status good">运行中</span></td><td data-label="CPU">5%</td><td data-label="内存">0.6 / 1 GB</td><td data-label="网卡占用"><span class="mini-meter"><span class="meter"><span style="width: 1.3%"></span></span><b>6.4 / 500</b></span></td><td data-label="每 IP 限速">100 · 正常</td><td class="r" data-label="在线 IP">5</td><td data-label="心跳">15 秒前</td></tr>
+<tr><td class="card-title"><b>日本原生双 ISP 家宽</b> <span class="rate r2">2x</span></td><td data-label="协议"><span class="chip">R</span> <span class="chip">H</span> <span class="chip">T</span></td><td data-label="状态"><span class="status good">运行中</span></td><td data-label="CPU">6%</td><td data-label="内存">0.7 / 2 GB</td><td data-label="网卡占用"><span class="mini-meter"><span class="meter"><span style="width: 1.1%"></span></span><b>3.2 / 300</b></span></td><td data-label="每 IP 限速">100 · 正常</td><td class="r" data-label="在线 IP">7</td><td data-label="心跳">11 秒前</td></tr>
+<tr><td class="card-title"><b>日本节点（2）</b> <span class="rate">1x</span></td><td data-label="协议"><span class="chip">R</span> <span class="chip">H</span> <span class="chip">T</span></td><td data-label="状态"><span class="status bad">离线</span></td><td data-label="CPU">—</td><td data-label="内存">—</td><td data-label="网卡占用"><span class="mini-meter"><span class="meter"><span style="width: 0%; min-width: 0"></span></span><b>— / 1000</b></span></td><td data-label="每 IP 限速">—</td><td class="r" data-label="在线 IP">0</td><td data-label="心跳"><span class="tag tag-bad">4 分钟前</span></td></tr>
+<tr><td class="card-title"><b>cn2gia救命线路</b> <span class="rate r18">1.8x</span></td><td data-label="协议"><span class="chip">R</span> <span class="chip">H</span> <span class="chip">T</span></td><td data-label="状态"><span class="status good">运行中</span></td><td data-label="CPU">3%</td><td data-label="内存">0.4 / 1 GB</td><td data-label="网卡占用"><span class="mini-meter"><span class="meter"><span style="width: 0.2%"></span></span><b>1.8 / 1000</b></span></td><td data-label="每 IP 限速">100 · 正常</td><td class="r" data-label="在线 IP">1</td><td data-label="心跳">8 秒前</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="panel-ft"><span>合计：网卡占用 38.7 / 4800 Mbps（0.8%）· 用户近 3 分钟记账均速 10 Mbps · 在线 IP 35</span></div>
+</section>
+<div class="split-7-5 align-start">
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-pulse"></i>最近连接用户</h2><div class="panel-extra"><a class="link-more" href="admin-users.html">全部用户<i class="i i-right sm"></i></a></div></header>
+<div class="panel-bd flush">
+<div class="table-wrap">
+<table class="table to-cards">
+<thead><tr><th>用户</th><th>来源 IP · 最近节点</th><th class="r">今日计费</th><th></th></tr></thead>
+<tbody>
+<tr><td class="card-title"><b>#1024</b> <span class="tag tag-good">正常</span><span class="cell-sub">user1024@example.com</span></td><td data-label="来源 IP"><span class="ip">192.0.2.10</span><span class="cell-sub">日本节点（1）· HY2</span></td><td class="r" data-label="今日计费">2.4 GB</td><td data-label="操作"><a class="btn btn-sm" href="admin-users.html">详情</a></td></tr>
+<tr><td class="card-title"><b>#1025</b> <span class="tag tag-good">正常</span><span class="cell-sub">user1025@example.net</span></td><td data-label="来源 IP"><span class="ip">198.51.100.20</span><span class="cell-sub">香港移动优化 · REALITY</span></td><td class="r" data-label="今日计费">1.1 GB</td><td data-label="操作"><a class="btn btn-sm" href="admin-users.html">详情</a></td></tr>
+<tr><td class="card-title"><b>#1026</b> <span class="tag tag-warn">设备 5/5</span><span class="cell-sub">user1026@example.org</span></td><td data-label="来源 IP"><span class="ip">203.0.113.30</span> +4<span class="cell-sub">cn2gia救命线路 · TUIC</span></td><td class="r" data-label="今日计费">0.6 GB</td><td data-label="操作"><a class="btn btn-sm" href="admin-users.html">详情</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-bell"></i>需要关注</h2><div class="panel-extra"><span class="tag tag-red">2 项</span></div></header>
+<div class="panel-bd">
+<ul class="todo">
+<li><span class="todo-ico red"><i class="i i-offline"></i></span><div class="grow"><b>日本节点（2）心跳中断</b><span>4 分钟无心跳，已从订阅摘除</span></div><a class="btn btn-sm" href="bandwidth.html">查看</a></li>
+<li><span class="todo-ico"><i class="i i-device"></i></span><div class="grow"><b>#1026 在线设备已满</b><span>5 个来源 IP 同时在线，可能多人共用</span></div><a class="btn btn-sm" href="admin-users.html">核查</a></li>
+<li><span class="todo-ico good"><i class="i i-tag"></i></span><div class="grow"><b>邀请码池充足</b><span>未使用 9,817 / 10,000</span></div><span class="tag tag-good">正常</span></li>
+<li><span class="todo-ico good"><i class="i i-send"></i></span><div class="grow"><b>公告已同步 Telegram</b><span>「cn2gia救命线路」09-25 18:02</span></div><span class="tag tag-good">已同步</span></li>
+</ul>
+</div>
+</section>
+</div>
+</div>
+</main>
+<footer class="foot">
+<div class="foot-in">
+<p class="foot-org"><span class="emblem" role="img" aria-label="站徽"></span><span>站务管理 · 仅管理员可见</span><span>接口：/api/v1/mtf/admin/*（管理员鉴权）</span></p>
+<p class="demo-note"><i class="i i-info sm"></i>静态 UI 样本：用户、邮箱、IP 与用量均为虚构示例（文档保留地址段），按钮不会封禁任何人。</p>
+</div>
+</footer>
+<nav class="tabbar" aria-label="管理快捷导航">
+<a class="tab is-active" href="admin.html"><i class="i i-shield"></i><span>总览</span></a>
+<a class="tab" href="admin-users.html"><i class="i i-users"></i><span>用户</span></a>
+<a class="tab" href="admin-bans.html"><i class="i i-ban"></i><span>封禁</span></a>
+<a class="tab" href="admin-notices.html"><i class="i i-megaphone"></i><span>公告</span></a>
+<button class="tab" type="button" data-drawer-open="1"><i class="i i-grid"></i><span>更多</span></button>
+</nav>
+</div>
+</div>
+<div class="scrim" data-drawer-close="1"></div>
+</div>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

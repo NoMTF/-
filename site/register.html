@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN" class="is-live">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>邀请码注册 · MTF公益机场</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/gov-art.css">
+<link rel="stylesheet" href="assets/css/gov.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<!-- 由 design/canvas 的 register.dc.html 生成；样式见 assets/css/gov.css -->
+<div class="app">
+<div class="auth">
+<aside class="auth-hero">
+<div class="auth-rays"></div>
+<div class="auth-hero-in">
+<span class="emblem xxl" role="img" aria-label="MTF公益机场站徽"></span>
+<h1 class="auth-name">MTF公益机场</h1>
+<p class="auth-en">MTF PUBLIC WELFARE NETWORK</p>
+<p class="auth-slogan">互助共享　公益同行</p>
+<div class="values-line"><ul class="values"><li>免费公益</li><li>隐私为先</li><li>节约带宽</li><li>互助友爱</li></ul></div>
+<div class="auth-facts">
+<div><b>60 GB</b><span>每月保底</span></div>
+<div><b>+2 GB</b><span>每日签到</span></div>
+<div><b>6 台</b><span>物理机</span></div>
+<div><b>100 M</b><span>每 IP 上限</span></div>
+</div>
+<p class="auth-live"><span class="live-dot"></span>当前在线 24 · 已注册 279（示例）</p>
+</div>
+</aside>
+<main class="auth-main">
+<div class="auth-card wide">
+<header class="auth-card-hd">
+<p class="kicker">邀请码注册</p>
+<h2>加入 MTF公益机场</h2>
+<p>本站实行邀请制，注册需要一次性邀请码。先填邀请码，再给邮箱领取注册验证码。</p>
+</header>
+<form class="form" data-validate="1" data-success="示例：注册成功（静态样本不会创建账户）。请在 7 天内绑定 Telegram。" data-api="POST /api/v1/passport/auth/register" novalidate="novalidate">
+<div class="field">
+<label class="label" for="reg-invite">邀请码<span class="req">*</span></label>
+<div class="control"><i class="i i-tag"></i><input class="input mono" id="reg-invite" type="text" placeholder="审核通过后收到的一次性邀请码" autocomplete="off" required="required"></div>
+<p class="field-error"><i class="i i-alert sm"></i>注册必须填写邀请码</p>
+</div>
+<div class="field">
+<label class="label" for="reg-email">邮箱<span class="req">*</span></label>
+<div class="input-group">
+<div class="control"><i class="i i-mail"></i><input class="input" id="reg-email" type="email" placeholder="name@example.com" autocomplete="email" required="required"></div>
+<button class="btn" type="button" data-send-code="示例：注册验证码已发送至邮箱（静态样本不会真正发信）" data-api="POST /api/v1/mtf/invite/email/send">发送验证码</button>
+</div>
+<p class="hint">先填上方邀请码再点发送。审核机器人发给你的 6 位验证码不能填在这里。</p>
+<p class="field-error"><i class="i i-alert sm"></i>邮箱格式不正确，例如 name@example.com</p>
+</div>
+<div class="field">
+<label class="label" for="reg-code">邮箱验证码<span class="req">*</span></label>
+<div class="control"><i class="i i-key"></i><input class="input mono" id="reg-code" type="text" inputmode="numeric" placeholder="6 位数字" autocomplete="one-time-code" required="required"></div>
+<p class="field-error"><i class="i i-alert sm"></i>请填写邮件里的注册验证码</p>
+</div>
+<div class="cols-2">
+<div class="field">
+<label class="label" for="reg-pw">设置密码<span class="req">*</span></label>
+<div class="control"><i class="i i-lock"></i><input class="input" id="reg-pw" type="password" placeholder="至少 8 位" autocomplete="new-password" required="required"><button class="pw-toggle" type="button" data-pw-toggle="1" aria-label="显示或隐藏密码"><i class="i i-eye"></i></button></div>
+<p class="field-error"><i class="i i-alert sm"></i>请设置密码</p>
+</div>
+<div class="field">
+<label class="label" for="reg-pw2">确认密码<span class="req">*</span></label>
+<div class="control"><i class="i i-lock"></i><input class="input" id="reg-pw2" type="password" placeholder="再输入一次" autocomplete="new-password" required="required" data-match="reg-pw"></div>
+<p class="field-error"><i class="i i-alert sm"></i>两次输入的密码不一致</p>
+</div>
+</div>
+<div class="field">
+<label class="check" for="reg-terms"><input type="checkbox" id="reg-terms" required="required"><span>我已阅读并同意<a href="docs.html">《服务条款与免责声明》</a>，不分享订阅链接，不跑 BT / PT。</span></label>
+<p class="field-error"><i class="i i-alert sm"></i>请先阅读并勾选服务条款</p>
+</div>
+<button class="btn btn-primary btn-lg btn-block" type="submit">注　册</button>
+<p class="auth-links"><span>已有账号？</span><a href="login.html">去登录</a></p>
+</form>
+<div class="guide" style="margin-top: 22px">
+<p class="guide-hd"><i class="i i-send"></i>没有邀请码？按以下步骤申请</p>
+<ol class="vsteps">
+<li class="vstep"><div>私聊审核机器人 <b>@MTFLink_bot</b></div></li>
+<li class="vstep"><div>发送 X 账号 ID（@ 后面的用户名）或文字主页链接，<b>不要发截图</b>；邮箱可分开发，先发哪个都行</div></li>
+<li class="vstep"><div>把邮件里的 6 位验证码发回机器人</div></li>
+<li class="vstep"><div>社群伙伴审核后，结果会同时发到 Telegram 和邮箱</div></li>
+<li class="vstep"><div>拿到邀请码后填在本页，再点「发送验证码」领取注册验证码</div></li>
+</ol>
+<div class="btn-row m-stack" style="margin-top: 16px">
+<a class="btn btn-primary" href="https://t.me/MTFLink_bot"><i class="i i-send"></i>私聊 @MTFLink_bot 申请</a>
+<a class="btn btn-ghost" href="docs.html">查看受众与服务条款<i class="i i-right sm"></i></a>
+</div>
+</div>
+<p class="callout red" style="margin-top: 16px"><i class="i i-clock"></i><span>注册后 <b>7 天内</b>需加入 Telegram 主群并绑定账号，逾期暂停，补绑后自动恢复。</span></p>
+</div>
+<nav class="auth-foot" aria-label="公开页面">
+<a href="bandwidth.html">带宽看板</a><a href="docs.html">服务条款</a><a href="https://t.me/MTFLink_bot">审核机器人 @MTFLink_bot</a><a href="https://x.com/YuwenMewo">关注站长 X @YuwenMewo</a>
+</nav>
+<p class="demo-note small"><i class="i i-info sm"></i>静态 UI 样本，不会发送验证码或创建账号</p>
+</main>
+</div>
+</div>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

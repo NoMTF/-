@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN" class="is-live">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>流量明细 · MTF公益机场</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/gov-art.css">
+<link rel="stylesheet" href="assets/css/gov.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<!-- 由 design/canvas 的 traffic.dc.html 生成；样式见 assets/css/gov.css -->
+<div class="app">
+<div class="shell">
+<aside class="side" aria-label="主导航">
+<div class="side-inner">
+<button class="icon-btn on-red side-close" type="button" data-drawer-close="1" aria-label="关闭菜单"><i class="i i-close"></i></button>
+<a class="side-brand" href="dashboard.html"><span class="emblem lg" role="img" aria-label="MTF公益机场站徽"></span><span class="side-name">MTF公益机场</span><span class="side-en">MTF PUBLIC WELFARE NETWORK</span></a>
+<nav class="nav">
+<p class="nav-group">便民服务</p>
+<a class="nav-link" href="dashboard.html"><i class="i i-home"></i><span>仪表盘</span></a>
+<a class="nav-link" href="docs.html"><i class="i i-book"></i><span>使用文档</span></a>
+<a class="nav-link" href="checkin.html"><i class="i i-calendar"></i><span>每日签到</span><span class="nav-tag">+2GB</span></a>
+<a class="nav-link" href="ranking.html"><i class="i i-trophy"></i><span>流量排行</span></a>
+<p class="nav-group">线路资源</p>
+<a class="nav-link" href="nodes.html"><i class="i i-server"></i><span>节点状态</span></a>
+<a class="nav-link" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽看板</span></a>
+<a class="nav-link" href="invites.html"><i class="i i-mail"></i><span>我的邀请</span></a>
+<p class="nav-group">个人事务</p>
+<a class="nav-link" href="profile.html"><i class="i i-user"></i><span>个人中心</span></a>
+<a class="nav-link" href="telegram.html"><i class="i i-send"></i><span>Telegram 绑定</span><span class="nav-tag">待办</span></a>
+<a class="nav-link" href="tickets.html"><i class="i i-ticket"></i><span>我的工单</span></a>
+<a class="nav-link is-active" href="traffic.html"><i class="i i-chart"></i><span>流量明细</span></a>
+<p class="nav-group">站务管理</p>
+<a class="nav-link" href="admin.html"><i class="i i-shield"></i><span>管理后台</span><span class="nav-tag">管理员</span></a>
+</nav>
+<div class="side-foot">
+<p class="side-live"><span class="live-dot"></span>当前在线 <b class="num">24</b><span class="sep"></span>已注册 <b class="num">279</b></p>
+<blockquote class="side-quote">带宽和成本都有限，资源要留给真正需要它的人。<cite>——《服务条款》第二条</cite></blockquote>
+</div>
+</div>
+</aside>
+<div class="main">
+<header class="mbar">
+<span class="emblem sm" role="img" aria-label="MTF公益机场站徽"></span>
+<p class="mbar-title"><b>流量明细</b><span>MTF公益机场</span></p>
+<button class="icon-btn on-red" type="button" data-drawer-open="1" aria-label="打开菜单"><i class="i i-menu"></i></button>
+</header>
+<header class="topbar">
+<p class="crumbs"><i class="i i-home sm"></i><span>个人事务</span><span class="sep">/</span><b>流量明细</b></p>
+<div class="top-actions">
+<button class="api-toggle" type="button" data-api-toggle="1"><i class="i i-code sm"></i>接口标注</button>
+<div class="theme-switch" role="group" aria-label="配色主题"><button type="button" data-theme-set="red"><span class="sw red"></span>朱红</button><button type="button" data-theme-set="navy"><span class="sw navy"></span>藏青</button></div>
+<button class="icon-btn" type="button" aria-label="通知" data-toast="有 2 条公告未读，已在仪表盘的通知公告中标出"><i class="i i-bell"></i><span class="dot-badge"></span></button>
+<div class="user-chip"><span class="avatar">示</span><span>demo@example.com</span></div>
+<a class="icon-btn" href="login.html" aria-label="退出登录" data-api="清除本地 auth_data"><i class="i i-logout"></i></a>
+</div>
+</header>
+<div class="ticker">
+<span class="ticker-tag"><i class="i i-megaphone sm"></i>公告</span>
+<p class="ticker-text"><b>用量明明白白，扣量清清楚楚！</b>只有 cn2gia救命线路按 1.8 倍计入配额</p>
+<a class="ticker-more" href="docs.html">流量规则<i class="i i-right sm"></i></a>
+</div>
+<main class="content">
+<header class="page-head">
+<div class="grow">
+<p class="kicker">个人事务</p>
+<h1 class="page-title">流量明细</h1>
+<p class="page-sub">实际流量 = 上传 + 下载；计入配额时，cn2gia救命线路按 1.8 倍，其余节点按 1:1。</p>
+</div>
+</header>
+<div class="stack" data-api="GET /api/v1/user/stat/getTrafficLog">
+<div class="stats" style="--cols: 4">
+<div class="stat accent"><p class="stat-label"><i class="i i-scroll"></i>本月计入配额</p><p class="stat-value num">22.4<small>/ 78.0 GB</small></p><p class="stat-note">剩余 55.6 GB · 10 月 1 日重置</p></div>
+<div class="stat"><p class="stat-label"><i class="i i-download"></i>本月下载</p><p class="stat-value num">20.3<small>GB</small></p></div>
+<div class="stat"><p class="stat-label"><i class="i i-upload"></i>本月上传</p><p class="stat-value num">1.8<small>GB</small></p></div>
+<div class="stat"><p class="stat-label"><i class="i i-zap"></i>倍率多扣</p><p class="stat-value num">0.3<small>GB</small></p><p class="stat-note">1.8x 线路实际 0.4 GB</p></div>
+</div>
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-chart"></i>近 14 天每日用量</h2><div class="panel-extra"><div class="legend" role="list"><span role="listitem"><i class="dl"></i>下载</span><span role="listitem"><i class="ul"></i>上传</span></div></div></header>
+<div class="panel-bd">
+<div class="chart-scroll">
+<svg class="chart" viewBox="0 0 760 266" role="img" aria-label="9 月 13 日至 26 日每日上传与下载用量柱状图，最高为 9 月 23 日 2.08 GB，数据见下表">
+<text class="chart-axis" x="0" y="12">GB</text>
+<line class="chart-grid" x1="48" y1="222" x2="748" y2="222"></line><text class="chart-axis r" x="40" y="226">0</text>
+<line class="chart-grid" x1="48" y1="182" x2="748" y2="182"></line><text class="chart-axis r" x="40" y="186">0.5</text>
+<line class="chart-grid" x1="48" y1="142" x2="748" y2="142"></line><text class="chart-axis r" x="40" y="146">1</text>
+<line class="chart-grid" x1="48" y1="102" x2="748" y2="102"></line><text class="chart-axis r" x="40" y="106">1.5</text>
+<line class="chart-grid" x1="48" y1="62" x2="748" y2="62"></line><text class="chart-axis r" x="40" y="66">2</text>
+<line class="chart-grid" x1="48" y1="22" x2="748" y2="22"></line><text class="chart-axis r" x="40" y="26">2.5</text>
+<g class="bar"><rect class="bar-dl" x="59" y="182" width="28" height="40"></rect><rect class="bar-ul" x="59" y="176" width="28" height="4" rx="3"></rect><text class="chart-axis c" x="73" y="244">13</text><rect class="bar-hit" x="48" y="22" width="50" height="200" data-tip="09-13|下载 0.50 GB · 上传 0.05 GB|实际合计 0.55 GB"></rect></g>
+<g class="bar"><rect class="bar-dl" x="109" y="142" width="28" height="80"></rect><rect class="bar-ul" x="109" y="133.6" width="28" height="6.4" rx="3"></rect><text class="chart-axis c" x="123" y="244">14</text><rect class="bar-hit" x="98" y="22" width="50" height="200" data-tip="09-14|下载 1.00 GB · 上传 0.08 GB|实际合计 1.08 GB"></rect></g>
+<g class="bar"><rect class="bar-dl" x="159" y="190" width="28" height="32"></rect><rect class="bar-ul" x="159" y="184.8" width="28" height="3.2" rx="3"></rect><text class="chart-axis c" x="173" y="244">15</text><rect class="bar-hit" x="148" y="22" width="50" height="200" data-tip="09-15|下载 0.40 GB · 上传 0.04 GB|实际合计 0.44 GB"></rect></g>
+<g class="bar"><rect class="bar-dl" x="209" y="166" width="28" height="56"></rect><rect class="bar-ul" x="209" y="159.2" width="28" height="4.8" rx="3"></rect><text class="chart-axis c" x="223" y="244">16</text><rect class="bar-hit" x="198" y="22" width="50" height="200" data-tip="09-16|下载 0.70 GB · 上传 0.06 GB|实际合计 0.76 GB"></rect></g>
+<g class="bar"><rect class="bar-dl" x="259" y="118" width="28" height="104"></rect><rect class="bar-ul" x="259" y="105.6" width="28" height="10.4" rx="3"></rect><text class="chart-axis c" x="273" y="244">17</text><rect class="bar-hit" x="248" y="22" width="50" height="200" data-tip="09-17|下载 1.30 GB · 上传 0.13 GB|实际合计 1.43 GB"></rect></g>
+<g class="bar"><rect class="bar-dl" x="309" y="198" width="28" height="24"></rect><rect class="bar-ul" x="309" y="193.6" width="28" height="2.4" rx="3"></rect><text class="chart-axis c" x="323" y="244">18</text><rect class="bar-hit" x="298" y="22" width="50" height="200" data-tip="09-18|下载 0.30 GB · 上传 0.03 GB|实际合计 0.33 GB"></rect></g>
+<g class="bar"><rect class="bar-dl" x="359" y="158" width="28" height="64"></rect><rect class="bar-ul" x="359" y="149.6" width="28" height="6.4" rx="3"></rect><text class="chart-axis c" x="373" y="244">19</text><rect class="bar-hit" x="348" y="22" width="50" height="200" data-tip="09-19|下载 0.80 GB · 上传 0.08 GB|实际合计 0.88 GB"></rect></g>
+<g class="bar"><rect class="bar-dl" x="409" y="134" width="28" height="88"></rect><rect class="bar-ul" x="409" y="123.2" width="28" height="8.8" rx="3"></rect><text class="chart-axis c" x="423" y="244">20</text><rect class="bar-hit" x="398" y="22" width="50" height="200" data-tip="09-20|下载 1.10 GB · 上传 0.11 GB|实际合计 1.21 GB"></rect></g>
+<g class="bar"><rect class="bar-dl" x="459" y="182" width="28" height="40"></rect><rect class="bar-ul" x="459" y="176.8" width="28" height="3.2" rx="3"></rect><text class="chart-axis c" x="473" y="244">21</text><rect class="bar-hit" x="448" y="22" width="50" height="200" data-tip="09-21|下载 0.50 GB · 上传 0.04 GB|实际合计 0.54 GB"></rect></g>
+<g class="bar"><rect class="bar-dl" x="509" y="134" width="28" height="88"></rect><rect class="bar-ul" x="509" y="126.4" width="28" height="5.6" rx="3"></rect><text class="chart-axis c" x="523" y="244">22</text><rect class="bar-hit" x="498" y="22" width="50" height="200" data-tip="09-22|下载 1.10 GB · 上传 0.07 GB|实际合计 1.17 GB"></rect></g>
+<g class="bar"><rect class="bar-dl" x="559" y="70" width="28" height="152"></rect><rect class="bar-ul" x="559" y="53.6" width="28" height="14.4" rx="3"></rect><text class="chart-label" x="573" y="44">2.08</text><text class="chart-axis c" x="573" y="244">23</text><rect class="bar-hit" x="548" y="22" width="50" height="200" data-tip="09-23|下载 1.90 GB · 上传 0.18 GB|实际合计 2.08 GB|计入配额 2.40 GB（含 1.8x 线路 0.4 GB）"></rect></g>
+<g class="bar"><rect class="bar-dl" x="609" y="110" width="28" height="112"></rect><rect class="bar-ul" x="609" y="98.4" width="28" height="9.6" rx="3"></rect><text class="chart-axis c" x="623" y="244">24</text><rect class="bar-hit" x="598" y="22" width="50" height="200" data-tip="09-24|下载 1.40 GB · 上传 0.12 GB|实际合计 1.52 GB"></rect></g>
+<g class="bar"><rect class="bar-dl" x="659" y="150" width="28" height="72"></rect><rect class="bar-ul" x="659" y="141.6" width="28" height="6.4" rx="3"></rect><text class="chart-axis c" x="673" y="244">25</text><rect class="bar-hit" x="648" y="22" width="50" height="200" data-tip="09-25|下载 0.90 GB · 上传 0.08 GB|实际合计 0.98 GB"></rect></g>
+<g class="bar today"><rect class="bar-dl" x="709" y="198" width="28" height="24"></rect><rect class="bar-ul" x="709" y="193.6" width="28" height="2.4" rx="3"></rect><text class="chart-axis c" x="723" y="244">26</text><text class="chart-axis c" x="723" y="262">今日</text><rect class="bar-hit" x="698" y="22" width="50" height="200" data-tip="09-26（今日，统计中）|下载 0.30 GB · 上传 0.03 GB|实际合计 0.33 GB"></rect></g>
+</svg>
+</div>
+<p class="hint">横轴为 9 月日期，今日数据仍在统计中。把鼠标移到柱上可查看当天明细。</p>
+</div>
+</section>
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-list"></i>每日统计（近 7 天）</h2><div class="panel-extra"><span>按自然日统计，今日数据仍在累计</span></div></header>
+<div class="panel-bd flush">
+<div class="table-wrap">
+<table class="table">
+<thead><tr><th>日期</th><th class="r">上传</th><th class="r">下载</th><th class="r">实际合计</th><th class="r">计入配额</th><th>备注</th></tr></thead>
+<tbody>
+<tr><td class="mono">2026-09-26</td><td class="r num">0.03 GB</td><td class="r num">0.30 GB</td><td class="r num">0.33 GB</td><td class="r num">0.33 GB</td><td><span class="tag">统计中</span></td></tr>
+<tr><td class="mono">2026-09-25</td><td class="r num">0.08 GB</td><td class="r num">0.90 GB</td><td class="r num">0.98 GB</td><td class="r num">0.98 GB</td><td></td></tr>
+<tr><td class="mono">2026-09-24</td><td class="r num">0.12 GB</td><td class="r num">1.40 GB</td><td class="r num">1.52 GB</td><td class="r num">1.52 GB</td><td></td></tr>
+<tr><td class="mono">2026-09-23</td><td class="r num">0.18 GB</td><td class="r num">1.90 GB</td><td class="r num">2.08 GB</td><td class="r num"><b>2.40 GB</b></td><td><span class="tag tag-red">含 1.8x 线路 0.4 GB</span></td></tr>
+<tr><td class="mono">2026-09-22</td><td class="r num">0.07 GB</td><td class="r num">1.10 GB</td><td class="r num">1.17 GB</td><td class="r num">1.17 GB</td><td></td></tr>
+<tr><td class="mono">2026-09-21</td><td class="r num">0.04 GB</td><td class="r num">0.50 GB</td><td class="r num">0.54 GB</td><td class="r num">0.54 GB</td><td></td></tr>
+<tr><td class="mono">2026-09-20</td><td class="r num">0.11 GB</td><td class="r num">1.10 GB</td><td class="r num">1.21 GB</td><td class="r num">1.21 GB</td><td></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="foot">
+<div class="foot-in">
+<nav class="foot-links" aria-label="页脚导航"><a href="bandwidth.html">带宽看板</a><a href="ranking.html">流量排行</a><a href="telegram.html">Telegram 绑定</a><a href="docs.html">服务条款</a><a href="https://x.com/YuwenMewo">关注站长 X @YuwenMewo</a></nav>
+<p class="foot-org"><span class="emblem" role="img" aria-label="站徽"></span><span>主办：MTF公益机场站务组</span><span>联系：contact@mtf.llc</span><span>公益免费 · 非商业 · 不记录访问内容</span></p>
+<p class="demo-note"><i class="i i-info sm"></i>静态 UI 样本：邮箱、IP、邀请码与用量均为虚构示例，按钮不会调用线上接口。</p>
+</div>
+</footer>
+<nav class="tabbar" aria-label="快捷导航">
+<a class="tab" href="dashboard.html"><i class="i i-home"></i><span>首页</span></a>
+<a class="tab" href="checkin.html"><i class="i i-calendar"></i><span>签到</span></a>
+<a class="tab" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽</span></a>
+<a class="tab" href="telegram.html"><i class="i i-send"></i><span>绑定</span></a>
+<button class="tab" type="button" data-drawer-open="1"><i class="i i-grid"></i><span>更多</span></button>
+</nav>
+</div>
+</div>
+<div class="scrim" data-drawer-close="1"></div>
+</div>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

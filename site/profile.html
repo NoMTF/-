@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN" class="is-live">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>个人中心 · MTF公益机场</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/gov-art.css">
+<link rel="stylesheet" href="assets/css/gov.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<!-- 由 design/canvas 的 profile.dc.html 生成；样式见 assets/css/gov.css -->
+<div class="app">
+<div class="shell">
+<aside class="side" aria-label="主导航">
+<div class="side-inner">
+<button class="icon-btn on-red side-close" type="button" data-drawer-close="1" aria-label="关闭菜单"><i class="i i-close"></i></button>
+<a class="side-brand" href="dashboard.html"><span class="emblem lg" role="img" aria-label="MTF公益机场站徽"></span><span class="side-name">MTF公益机场</span><span class="side-en">MTF PUBLIC WELFARE NETWORK</span></a>
+<nav class="nav">
+<p class="nav-group">便民服务</p>
+<a class="nav-link" href="dashboard.html"><i class="i i-home"></i><span>仪表盘</span></a>
+<a class="nav-link" href="docs.html"><i class="i i-book"></i><span>使用文档</span></a>
+<a class="nav-link" href="checkin.html"><i class="i i-calendar"></i><span>每日签到</span><span class="nav-tag">+2GB</span></a>
+<a class="nav-link" href="ranking.html"><i class="i i-trophy"></i><span>流量排行</span></a>
+<p class="nav-group">线路资源</p>
+<a class="nav-link" href="nodes.html"><i class="i i-server"></i><span>节点状态</span></a>
+<a class="nav-link" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽看板</span></a>
+<a class="nav-link" href="invites.html"><i class="i i-mail"></i><span>我的邀请</span></a>
+<p class="nav-group">个人事务</p>
+<a class="nav-link is-active" href="profile.html"><i class="i i-user"></i><span>个人中心</span></a>
+<a class="nav-link" href="telegram.html"><i class="i i-send"></i><span>Telegram 绑定</span><span class="nav-tag">待办</span></a>
+<a class="nav-link" href="tickets.html"><i class="i i-ticket"></i><span>我的工单</span></a>
+<a class="nav-link" href="traffic.html"><i class="i i-chart"></i><span>流量明细</span></a>
+<p class="nav-group">站务管理</p>
+<a class="nav-link" href="admin.html"><i class="i i-shield"></i><span>管理后台</span><span class="nav-tag">管理员</span></a>
+</nav>
+<div class="side-foot">
+<p class="side-live"><span class="live-dot"></span>当前在线 <b class="num">24</b><span class="sep"></span>已注册 <b class="num">279</b></p>
+<blockquote class="side-quote">带宽和成本都有限，资源要留给真正需要它的人。<cite>——《服务条款》第二条</cite></blockquote>
+</div>
+</div>
+</aside>
+<div class="main">
+<header class="mbar">
+<span class="emblem sm" role="img" aria-label="MTF公益机场站徽"></span>
+<p class="mbar-title"><b>个人中心</b><span>MTF公益机场</span></p>
+<button class="icon-btn on-red" type="button" data-drawer-open="1" aria-label="打开菜单"><i class="i i-menu"></i></button>
+</header>
+<header class="topbar">
+<p class="crumbs"><i class="i i-home sm"></i><span>个人事务</span><span class="sep">/</span><b>个人中心</b></p>
+<div class="top-actions">
+<button class="api-toggle" type="button" data-api-toggle="1"><i class="i i-code sm"></i>接口标注</button>
+<div class="theme-switch" role="group" aria-label="配色主题"><button type="button" data-theme-set="red"><span class="sw red"></span>朱红</button><button type="button" data-theme-set="navy"><span class="sw navy"></span>藏青</button></div>
+<button class="icon-btn" type="button" aria-label="通知" data-toast="有 2 条公告未读，已在仪表盘的通知公告中标出"><i class="i i-bell"></i><span class="dot-badge"></span></button>
+<div class="user-chip"><span class="avatar">示</span><span>demo@example.com</span></div>
+<a class="icon-btn" href="login.html" aria-label="退出登录" data-api="清除本地 auth_data"><i class="i i-logout"></i></a>
+</div>
+</header>
+<div class="ticker">
+<span class="ticker-tag"><i class="i i-megaphone sm"></i>公告</span>
+<p class="ticker-text"><b>订阅链接就是账号，切勿外传！</b>怀疑泄露时可在本页重置订阅链接</p>
+<a class="ticker-more" href="docs.html">服务条款<i class="i i-right sm"></i></a>
+</div>
+<main class="content">
+<header class="page-head">
+<div class="grow">
+<p class="kicker">个人事务</p>
+<h1 class="page-title">个人中心</h1>
+<p class="page-sub">账号资料、服务状态与安全设置。</p>
+</div>
+</header>
+<div class="stack">
+<div class="split-5-7">
+<article class="idcard" aria-label="站友证" data-api="GET /api/v1/user/info">
+<header class="idcard-hd"><span class="emblem sm" role="img" aria-label="站徽"></span><b>站友证</b><span>MTF PUBLIC WELFARE</span></header>
+<div class="idcard-bd">
+<div class="idcard-photo"><span class="avatar">示</span><span class="tag tag-good"><i class="i i-check"></i>账户正常</span></div>
+<dl class="dl">
+<dt>编　号</dt><dd class="idcard-no">No.000279</dd>
+<dt>邮　箱</dt><dd>demo@example.com</dd>
+<dt>注　册</dt><dd>2026-08-15</dd>
+<dt>套　餐</dt><dd>公益套餐 · 长期有效</dd>
+<dt>设　备</dt><dd>最多 5 台同时在线</dd>
+</dl>
+</div>
+</article>
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-idcard"></i>服务状态</h2></header>
+<div class="panel-bd stack tight">
+<div class="stats" style="--cols: 3; --mcols: 2">
+<div class="stat"><p class="stat-label">本月额度</p><p class="stat-value num">78.0<small>GB</small></p></div>
+<div class="stat"><p class="stat-label">本月已用</p><p class="stat-value num">22.4<small>GB</small></p></div>
+<div class="stat"><p class="stat-label">在线设备</p><p class="stat-value num">2<small>/ 5</small></p></div>
+<div class="stat"><p class="stat-label">Telegram</p><p class="stat-value" style="color: var(--warn)">未绑定</p><p class="stat-note">9 月 30 日前完成</p></div>
+<div class="stat"><p class="stat-label">专属邀请码</p><p class="stat-value">1<small>枚未用</small></p></div>
+<div class="stat"><p class="stat-label">连续签到</p><p class="stat-value num">5<small>天</small></p></div>
+</div>
+<div class="btn-row">
+<a class="btn btn-primary" href="telegram.html"><i class="i i-send"></i>去绑定 Telegram</a>
+<a class="btn" href="invites.html"><i class="i i-mail"></i>我的邀请</a>
+<a class="btn" href="traffic.html"><i class="i i-chart"></i>流量明细</a>
+</div>
+</div>
+</section>
+</div>
+<div class="split-7-5">
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-lock"></i>修改密码</h2></header>
+<div class="panel-bd">
+<form class="form" data-validate="1" data-success="示例：密码已修改（静态样本不会真正修改）" data-api="POST /api/v1/user/changePassword" novalidate="novalidate">
+<div class="field">
+<label class="label" for="pf-old">当前密码</label>
+<div class="control"><i class="i i-lock"></i><input class="input" id="pf-old" type="password" autocomplete="current-password" placeholder="请输入当前密码" required="required"></div>
+<p class="field-error"><i class="i i-alert sm"></i>请输入当前密码</p>
+</div>
+<div class="cols-2">
+<div class="field">
+<label class="label" for="pf-new">新密码</label>
+<div class="control"><i class="i i-key"></i><input class="input" id="pf-new" type="password" autocomplete="new-password" placeholder="至少 8 位" required="required"></div>
+<p class="field-error"><i class="i i-alert sm"></i>请设置新密码</p>
+</div>
+<div class="field">
+<label class="label" for="pf-new2">确认新密码</label>
+<div class="control"><i class="i i-key"></i><input class="input" id="pf-new2" type="password" autocomplete="new-password" placeholder="再输入一次" required="required" data-match="pf-new"></div>
+<p class="field-error"><i class="i i-alert sm"></i>两次输入的密码不一致</p>
+</div>
+</div>
+<div class="btn-row"><button class="btn btn-primary" type="submit">保存新密码</button><span class="hint">修改后其他设备需要重新登录。</span></div>
+</form>
+</div>
+</section>
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-shield"></i>账号安全</h2></header>
+<div class="panel-bd stack tight">
+<p class="label">当前在线设备（按来源 IP）</p>
+<ul class="todo">
+<li><span class="todo-ico"><i class="i i-device"></i></span><div class="grow"><b class="mono">198.51.100.x</b><span>日本节点（1）· HY2 · 12 分钟前</span></div></li>
+<li><span class="todo-ico"><i class="i i-device"></i></span><div class="grow"><b class="mono">203.0.113.x</b><span>香港移动优化 · REALITY · 刚刚</span></div></li>
+</ul>
+<p class="callout red"><i class="i i-alert"></i><span>怀疑订阅链接泄露？重置后旧链接立即失效，所有设备需重新导入。</span></p>
+<button class="btn btn-danger" type="button" data-open="reset-sub" data-api="GET /api/v1/user/resetSecurity"><i class="i i-refresh"></i>重置订阅链接</button>
+</div>
+</section>
+</div>
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-eye"></i>隐私说明：我们记什么、不记什么、留多久</h2></header>
+<div class="panel-bd">
+<div class="cols-3">
+<div class="privacy-col"><p class="privacy-hd"><i class="i i-check-circle"></i>会记录</p><ul class="bullets"><li>注册邮箱</li><li>流量用量</li><li>连接时的来源 IP</li><li>在线设备数量</li></ul></div>
+<div class="privacy-col no"><p class="privacy-hd"><i class="i i-x-circle"></i>不会记录</p><ul class="bullets"><li>你访问了哪些网站、域名</li><li>任何通信内容</li><li>技术上就没有采集这些数据</li></ul></div>
+<div class="privacy-col"><p class="privacy-hd"><i class="i i-clock"></i>保留多久</p><div class="kv" style="grid-template-columns: minmax(0, 1fr)"><div><span>详细连接记录（时间 / 节点 / 来源 IP）</span><b>1 小时后自动删除</b></div><div><span>每日用量汇总</span><b>5 天后自动删除</b></div><div><span>签到记录中的 IP</span><b>7 天后抹除</b></div></div></div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="foot">
+<div class="foot-in">
+<nav class="foot-links" aria-label="页脚导航"><a href="bandwidth.html">带宽看板</a><a href="ranking.html">流量排行</a><a href="telegram.html">Telegram 绑定</a><a href="docs.html">服务条款</a><a href="https://x.com/YuwenMewo">关注站长 X @YuwenMewo</a></nav>
+<p class="foot-org"><span class="emblem" role="img" aria-label="站徽"></span><span>主办：MTF公益机场站务组</span><span>联系：contact@mtf.llc</span><span>公益免费 · 非商业 · 不记录访问内容</span></p>
+<p class="demo-note"><i class="i i-info sm"></i>静态 UI 样本：邮箱、IP、邀请码与用量均为虚构示例，按钮不会调用线上接口。</p>
+</div>
+</footer>
+<nav class="tabbar" aria-label="快捷导航">
+<a class="tab" href="dashboard.html"><i class="i i-home"></i><span>首页</span></a>
+<a class="tab" href="checkin.html"><i class="i i-calendar"></i><span>签到</span></a>
+<a class="tab" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽</span></a>
+<a class="tab" href="telegram.html"><i class="i i-send"></i><span>绑定</span></a>
+<button class="tab" type="button" data-drawer-open="1"><i class="i i-grid"></i><span>更多</span></button>
+</nav>
+</div>
+</div>
+<div class="scrim" data-drawer-close="1"></div>
+<div class="modal-scrim is-hidden" id="reset-sub" data-modal="1">
+<div class="modal" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+<div class="modal-hd"><i class="i i-alert" style="color: var(--bad)"></i><p class="modal-title" id="reset-title">确认重置订阅链接？</p></div>
+<div class="modal-bd"><p>重置后旧链接立即失效，所有设备都需要重新导入新链接。只有在链接可能泄露时才需要这样做。</p></div>
+<div class="modal-ft"><button class="btn" type="button" data-close="1">取消</button><button class="btn btn-danger solid" type="button" data-close="1" data-toast="示例：订阅链接已重置（静态样本不会真正重置）" data-api="GET /api/v1/user/resetSecurity">确认重置</button></div>
+</div>
+</div>
+</div>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

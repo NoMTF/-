@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN" class="is-live">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>每日签到 · MTF公益机场</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/gov-art.css">
+<link rel="stylesheet" href="assets/css/gov.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<!-- 由 design/canvas 的 checkin.dc.html 生成；样式见 assets/css/gov.css -->
+<div class="app">
+<div class="shell">
+<aside class="side" aria-label="主导航">
+<div class="side-inner">
+<button class="icon-btn on-red side-close" type="button" data-drawer-close="1" aria-label="关闭菜单"><i class="i i-close"></i></button>
+<a class="side-brand" href="dashboard.html"><span class="emblem lg" role="img" aria-label="MTF公益机场站徽"></span><span class="side-name">MTF公益机场</span><span class="side-en">MTF PUBLIC WELFARE NETWORK</span></a>
+<nav class="nav">
+<p class="nav-group">便民服务</p>
+<a class="nav-link" href="dashboard.html"><i class="i i-home"></i><span>仪表盘</span></a>
+<a class="nav-link" href="docs.html"><i class="i i-book"></i><span>使用文档</span></a>
+<a class="nav-link is-active" href="checkin.html"><i class="i i-calendar"></i><span>每日签到</span><span class="nav-tag">+2GB</span></a>
+<a class="nav-link" href="ranking.html"><i class="i i-trophy"></i><span>流量排行</span></a>
+<p class="nav-group">线路资源</p>
+<a class="nav-link" href="nodes.html"><i class="i i-server"></i><span>节点状态</span></a>
+<a class="nav-link" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽看板</span></a>
+<a class="nav-link" href="invites.html"><i class="i i-mail"></i><span>我的邀请</span></a>
+<p class="nav-group">个人事务</p>
+<a class="nav-link" href="profile.html"><i class="i i-user"></i><span>个人中心</span></a>
+<a class="nav-link" href="telegram.html"><i class="i i-send"></i><span>Telegram 绑定</span><span class="nav-tag">待办</span></a>
+<a class="nav-link" href="tickets.html"><i class="i i-ticket"></i><span>我的工单</span></a>
+<a class="nav-link" href="traffic.html"><i class="i i-chart"></i><span>流量明细</span></a>
+<p class="nav-group">站务管理</p>
+<a class="nav-link" href="admin.html"><i class="i i-shield"></i><span>管理后台</span><span class="nav-tag">管理员</span></a>
+</nav>
+<div class="side-foot">
+<p class="side-live"><span class="live-dot"></span>当前在线 <b class="num">24</b><span class="sep"></span>已注册 <b class="num">279</b></p>
+<blockquote class="side-quote">带宽和成本都有限，资源要留给真正需要它的人。<cite>——《服务条款》第二条</cite></blockquote>
+</div>
+</div>
+</aside>
+<div class="main">
+<header class="mbar">
+<span class="emblem sm" role="img" aria-label="MTF公益机场站徽"></span>
+<p class="mbar-title"><b>每日签到</b><span>MTF公益机场</span></p>
+<button class="icon-btn on-red" type="button" data-drawer-open="1" aria-label="打开菜单"><i class="i i-menu"></i></button>
+</header>
+<header class="topbar">
+<p class="crumbs"><i class="i i-home sm"></i><span>便民服务</span><span class="sep">/</span><b>每日签到</b></p>
+<div class="top-actions">
+<button class="api-toggle" type="button" data-api-toggle="1"><i class="i i-code sm"></i>接口标注</button>
+<div class="theme-switch" role="group" aria-label="配色主题"><button type="button" data-theme-set="red"><span class="sw red"></span>朱红</button><button type="button" data-theme-set="navy"><span class="sw navy"></span>藏青</button></div>
+<button class="icon-btn" type="button" aria-label="通知" data-toast="有 2 条公告未读，已在仪表盘的通知公告中标出"><i class="i i-bell"></i><span class="dot-badge"></span></button>
+<div class="user-chip"><span class="avatar">示</span><span>demo@example.com</span></div>
+<a class="icon-btn" href="login.html" aria-label="退出登录" data-api="清除本地 auth_data"><i class="i i-logout"></i></a>
+</div>
+</header>
+<div class="ticker">
+<span class="ticker-tag"><i class="i i-megaphone sm"></i>公告</span>
+<p class="ticker-text"><b>天天签到，流量不愁！</b>全勤一个月：60 GB 保底 + 60 GB 签到 = 120 GB</p>
+<a class="ticker-more" href="docs.html">流量规则<i class="i i-right sm"></i></a>
+</div>
+<main class="content">
+<header class="page-head">
+<div class="grow">
+<p class="kicker">便民服务</p>
+<h1 class="page-title">每日签到</h1>
+<p class="page-sub">每天固定领取 2 GB，注册当天就能签，没有冷却期。签到所得叠加在 60 GB 保底之上，每月 1 日随额度一并重置。</p>
+</div>
+</header>
+<div class="checkin stack" data-state="checkin" data-api="GET /api/v1/mtf/checkin/info">
+<div class="split-7-5">
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-stamp"></i>签到领流量</h2><div class="panel-extra"><span class="tag tag-warn when-todo"><i class="i i-clock"></i>今日未签到</span><span class="tag tag-good when-done"><i class="i i-check"></i>今日已签到</span></div></header>
+<div class="panel-bd stack">
+<div class="checkin-hero">
+<button class="seal-btn" type="button" data-checkin="1" data-api="POST /api/v1/mtf/checkin" aria-label="签到，领取 2 GB"><b>签到</b><span>今日 +2 GB</span></button>
+<div class="seal-done" role="img" aria-label="今日已签到"><div><b>已签</b><span>+2 GB</span></div></div>
+<div class="stack tight grow">
+<p class="checkin-msg"><span class="when-todo">今天还没签到，点印章领取 <em>2 GB</em></span><span class="when-done">签到成功，今日已领 <em>2 GB</em></span></p>
+<p class="muted">固定额度，不抽奖、不看运气。同一 IP 每天最多 3 个账号可以签到。</p>
+<div class="stats" style="--cols: 3; --mcols: 3">
+<div class="stat"><p class="stat-label">连续签到</p><p class="stat-value num"><span class="when-todo">5</span><span class="when-done">6</span><small>天</small></p></div>
+<div class="stat"><p class="stat-label">本月已签</p><p class="stat-value num"><span class="when-todo">9</span><span class="when-done">10</span><small>天</small></p></div>
+<div class="stat"><p class="stat-label">距本月重置</p><p class="stat-value num">5<small>天</small></p></div>
+</div>
+</div>
+</div>
+<div>
+<div class="meter"><span style="width: 28.7%"></span></div>
+<div class="meter-meta"><span>本月已用 <b>22.4 GB</b></span><span>本月总额 <b class="when-todo">78.0 GB</b><b class="when-done">80.0 GB</b>（保底 60 + 签到）</span></div>
+</div>
+<p class="callout good when-done"><i class="i i-check-circle"></i><span>签到成功：今日 +2 GB，本月额度 80.0 GB。明天再来，连续签到不设额外奖励，只图天天有流量。</span></p>
+</div>
+</section>
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-calendar"></i>签到日历</h2><div class="panel-extra"><b class="serif">2026 年 9 月</b></div></header>
+<div class="panel-bd">
+<div class="cal" aria-label="2026 年 9 月签到记录">
+<span class="cal-h">一</span><span class="cal-h">二</span><span class="cal-h">三</span><span class="cal-h">四</span><span class="cal-h">五</span><span class="cal-h">六</span><span class="cal-h">日</span>
+<span class="cal-d blank"></span><span class="cal-d">1</span><span class="cal-d on">2</span><span class="cal-d">3</span><span class="cal-d">4</span><span class="cal-d on">5</span><span class="cal-d">6</span>
+<span class="cal-d">7</span><span class="cal-d">8</span><span class="cal-d">9</span><span class="cal-d">10</span><span class="cal-d on">11</span><span class="cal-d">12</span><span class="cal-d">13</span>
+<span class="cal-d">14</span><span class="cal-d">15</span><span class="cal-d">16</span><span class="cal-d">17</span><span class="cal-d">18</span><span class="cal-d on">19</span><span class="cal-d">20</span>
+<span class="cal-d on">21</span><span class="cal-d on">22</span><span class="cal-d on">23</span><span class="cal-d on">24</span><span class="cal-d on">25</span><span class="cal-d today">26</span><span class="cal-d future">27</span>
+<span class="cal-d future">28</span><span class="cal-d future">29</span><span class="cal-d future">30</span>
+</div>
+<div class="cal-legend"><span><i style="background: var(--brand-600)"></i>已签到</span><span><i style="background: var(--gold-100); box-shadow: inset 0 0 0 2px var(--gold-500)"></i>今天</span><span><i style="background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--line)"></i>未签到</span></div>
+<p class="callout" style="margin-top: 14px"><i class="i i-history"></i><span>10 月 1 日零点重置：额度回到 60 GB 保底，签到所得一并清零。</span></p>
+</div>
+</section>
+</div>
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-scroll"></i>签到规则</h2></header>
+<div class="panel-bd">
+<div class="cols-4">
+<div class="rule"><p class="rule-no">壹</p><b>固定 2 GB</b><p>每天一次，额度固定，不看运气。</p></div>
+<div class="rule"><p class="rule-no">贰</p><b>注册当天可签</b><p>没有冷却期，注册后立刻就能签。</p></div>
+<div class="rule"><p class="rule-no">叁</p><b>不跨月累积</b><p>每月 1 日清零；全勤一个月共 120 GB。</p></div>
+<div class="rule"><p class="rule-no">肆</p><b>防止刷号</b><p>同一 IP 每天最多 3 个账号；签到 IP 7 天后抹除。</p></div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="foot">
+<div class="foot-in">
+<nav class="foot-links" aria-label="页脚导航"><a href="bandwidth.html">带宽看板</a><a href="ranking.html">流量排行</a><a href="telegram.html">Telegram 绑定</a><a href="docs.html">服务条款</a><a href="https://x.com/YuwenMewo">关注站长 X @YuwenMewo</a></nav>
+<p class="foot-org"><span class="emblem" role="img" aria-label="站徽"></span><span>主办：MTF公益机场站务组</span><span>联系：contact@mtf.llc</span><span>公益免费 · 非商业 · 不记录访问内容</span></p>
+<p class="demo-note"><i class="i i-info sm"></i>静态 UI 样本：邮箱、IP、邀请码与用量均为虚构示例，按钮不会调用线上接口。</p>
+</div>
+</footer>
+<nav class="tabbar" aria-label="快捷导航">
+<a class="tab" href="dashboard.html"><i class="i i-home"></i><span>首页</span></a>
+<a class="tab is-active" href="checkin.html"><i class="i i-calendar"></i><span>签到</span></a>
+<a class="tab" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽</span></a>
+<a class="tab" href="telegram.html"><i class="i i-send"></i><span>绑定</span></a>
+<button class="tab" type="button" data-drawer-open="1"><i class="i i-grid"></i><span>更多</span></button>
+</nav>
+</div>
+</div>
+<div class="scrim" data-drawer-close="1"></div>
+</div>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

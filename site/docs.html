@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="zh-CN" class="is-live">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>使用文档 · MTF公益机场</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/gov-art.css">
+<link rel="stylesheet" href="assets/css/gov.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<!-- 由 design/canvas 的 docs.dc.html 生成；样式见 assets/css/gov.css -->
+<div class="app">
+<div class="shell">
+<aside class="side" aria-label="主导航">
+<div class="side-inner">
+<button class="icon-btn on-red side-close" type="button" data-drawer-close="1" aria-label="关闭菜单"><i class="i i-close"></i></button>
+<a class="side-brand" href="dashboard.html"><span class="emblem lg" role="img" aria-label="MTF公益机场站徽"></span><span class="side-name">MTF公益机场</span><span class="side-en">MTF PUBLIC WELFARE NETWORK</span></a>
+<nav class="nav">
+<p class="nav-group">便民服务</p>
+<a class="nav-link" href="dashboard.html"><i class="i i-home"></i><span>仪表盘</span></a>
+<a class="nav-link is-active" href="docs.html"><i class="i i-book"></i><span>使用文档</span></a>
+<a class="nav-link" href="checkin.html"><i class="i i-calendar"></i><span>每日签到</span><span class="nav-tag">+2GB</span></a>
+<a class="nav-link" href="ranking.html"><i class="i i-trophy"></i><span>流量排行</span></a>
+<p class="nav-group">线路资源</p>
+<a class="nav-link" href="nodes.html"><i class="i i-server"></i><span>节点状态</span></a>
+<a class="nav-link" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽看板</span></a>
+<a class="nav-link" href="invites.html"><i class="i i-mail"></i><span>我的邀请</span></a>
+<p class="nav-group">个人事务</p>
+<a class="nav-link" href="profile.html"><i class="i i-user"></i><span>个人中心</span></a>
+<a class="nav-link" href="telegram.html"><i class="i i-send"></i><span>Telegram 绑定</span><span class="nav-tag">待办</span></a>
+<a class="nav-link" href="tickets.html"><i class="i i-ticket"></i><span>我的工单</span></a>
+<a class="nav-link" href="traffic.html"><i class="i i-chart"></i><span>流量明细</span></a>
+<p class="nav-group">站务管理</p>
+<a class="nav-link" href="admin.html"><i class="i i-shield"></i><span>管理后台</span><span class="nav-tag">管理员</span></a>
+</nav>
+<div class="side-foot">
+<p class="side-live"><span class="live-dot"></span>当前在线 <b class="num">24</b><span class="sep"></span>已注册 <b class="num">279</b></p>
+<blockquote class="side-quote">带宽和成本都有限，资源要留给真正需要它的人。<cite>——《服务条款》第二条</cite></blockquote>
+</div>
+</div>
+</aside>
+<div class="main">
+<header class="mbar">
+<span class="emblem sm" role="img" aria-label="MTF公益机场站徽"></span>
+<p class="mbar-title"><b>使用文档</b><span>MTF公益机场</span></p>
+<button class="icon-btn on-red" type="button" data-drawer-open="1" aria-label="打开菜单"><i class="i i-menu"></i></button>
+</header>
+<header class="topbar">
+<p class="crumbs"><i class="i i-home sm"></i><span>便民服务</span><span class="sep">/</span><b>使用文档</b></p>
+<div class="top-actions">
+<button class="api-toggle" type="button" data-api-toggle="1"><i class="i i-code sm"></i>接口标注</button>
+<div class="theme-switch" role="group" aria-label="配色主题"><button type="button" data-theme-set="red"><span class="sw red"></span>朱红</button><button type="button" data-theme-set="navy"><span class="sw navy"></span>藏青</button></div>
+<button class="icon-btn" type="button" aria-label="通知" data-toast="有 2 条公告未读，已在仪表盘的通知公告中标出"><i class="i i-bell"></i><span class="dot-badge"></span></button>
+<div class="user-chip"><span class="avatar">示</span><span>demo@example.com</span></div>
+<a class="icon-btn" href="login.html" aria-label="退出登录" data-api="清除本地 auth_data"><i class="i i-logout"></i></a>
+</div>
+</header>
+<div class="ticker">
+<span class="ticker-tag"><i class="i i-megaphone sm"></i>公告</span>
+<p class="ticker-text"><b>坚持公益定位，建设带宽强站！</b>新增 cn2gia救命线路：极端情况备用，按 1.8 倍扣配额</p>
+<a class="ticker-more" href="dashboard.html">查看公告<i class="i i-right sm"></i></a>
+</div>
+<main class="content">
+<header class="page-head">
+<div class="grow">
+<p class="kicker">便民服务</p>
+<h1 class="page-title">使用文档</h1>
+<p class="page-sub">办事指南七篇，从连上网络到服务条款。遇到问题先按第五篇排查，仍不行再提交工单。</p>
+</div>
+<div class="page-actions">
+<div class="control doc-search"><i class="i i-search"></i><input class="input" id="doc-q" type="search" placeholder="搜索文档，如 HY2、签到" aria-label="搜索文档"></div>
+</div>
+</header>
+<div class="split-4-8 align-start" data-tabs="docs">
+<nav class="panel doc-nav" aria-label="文档目录">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-list"></i>办事指南</h2><div class="panel-extra"><span>共 7 篇</span></div></header>
+<ol class="doc-toc">
+<li><a class="doc-toc-link is-active" href="#doc-1" data-tab="1"><span class="doc-toc-no">一</span><span>三分钟连上：下载客户端 → 导入订阅 → 选节点</span></a></li>
+<li><a class="doc-toc-link" href="#doc-2" data-tab="2"><span class="doc-toc-no">二</span><span>Telegram 绑定：加群、领码、验证</span></a></li>
+<li><a class="doc-toc-link" href="#doc-3" data-tab="3"><span class="doc-toc-no">三</span><span>节点怎么选：倍率是什么意思</span></a></li>
+<li><a class="doc-toc-link" href="#doc-4" data-tab="4"><span class="doc-toc-no">四</span><span>流量规则：每月保底 60 GB，签到再加 2 GB/天</span></a></li>
+<li><a class="doc-toc-link" href="#doc-5" data-tab="5"><span class="doc-toc-no">五</span><span>连不上 / 速度慢 / 某个网站打不开</span></a></li>
+<li><a class="doc-toc-link" href="#doc-6" data-tab="6"><span class="doc-toc-no">六</span><span>这是公益站：请珍惜，以及我们不做什么</span></a></li>
+<li><a class="doc-toc-link" href="#doc-7" data-tab="7"><span class="doc-toc-no">七</span><span>服务条款与免责声明</span></a></li>
+</ol>
+<div class="panel-ft"><i class="i i-ticket sm"></i><span>没找到答案？</span><a href="tickets.html">提交工单</a></div>
+</nav>
+<div class="stack">
+<div class="field doc-select">
+<label class="label" for="doc-pick">选择文档</label>
+<div class="control"><select class="input" id="doc-pick" data-tab-select="1"><option value="1">一、三分钟连上</option><option value="2">二、Telegram 绑定</option><option value="3">三、节点怎么选</option><option value="4">四、流量规则</option><option value="5">五、连不上 / 速度慢</option><option value="6">六、这是公益站</option><option value="7">七、服务条款与免责声明</option></select><i class="i i-down caret"></i></div>
+</div>
+<article class="panel doc-article" id="doc-1" data-panel="1">
+<div class="panel-bd">
+<p class="kicker">办事指南 · 第一篇</p>
+<h2 class="doc-h">三分钟连上：下载客户端 → 导入订阅 → 选节点</h2>
+<p class="doc-info"><span>发布：MTF公益机场站务组</span><span>更新：2026-09-22</span><span>阅读约 3 分钟</span></p>
+<div class="prose">
+<h3>1. 装客户端</h3>
+<p>按你的设备挑一个，<b>优先选支持故障切换的</b>（表中标「故障切换」的）：</p>
+<div class="table-wrap"><table>
+<thead><tr><th>平台</th><th>推荐</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>Windows</td><td><b>Clash Verge Rev</b> / v2rayN</td><td><span class="tag tag-good">故障切换</span> Verge 支持自动故障切换</td></tr>
+<tr><td>macOS</td><td><b>ClashX Meta</b> / Mihomo Party</td><td><span class="tag tag-good">故障切换</span></td></tr>
+<tr><td>Android</td><td><b>Clash Meta for Android</b> / NekoBox</td><td><span class="tag tag-good">故障切换</span></td></tr>
+<tr><td>iOS</td><td><b>Shadowrocket</b>（付费）/ Stash</td><td><span class="tag tag-good">故障切换</span></td></tr>
+</tbody>
+</table></div>
+<blockquote>为什么强调 Clash 系：我们在订阅里预置了<b>故障切换分组</b>，某个节点挂了，客户端会在 60 秒内自动切走，你基本无感。用纯 URI 订阅的客户端（如部分 v2rayN 配置）拿不到这个能力。</blockquote>
+<h3>2. 复制订阅链接</h3>
+<p>仪表盘 →「我的订阅」→ 复制订阅地址。<b>这个链接等于你的账号密码，别发给别人。</b></p>
+<h3>3. 导入并选分组</h3>
+<p>导入后在策略组里选：</p>
+<ul>
+<li><b>MTF · 1x 优先</b>：日常节点，故障时在 1x 节点间切换</li>
+<li><b>MTF · 1.5x 优先</b>：先选日本原生节点，故障时切到 1x</li>
+<li><b>MTF · 1.8x 优先</b>：先选 cn2gia救命线路，故障时切到 1.5x、1x</li>
+<li><b>MTF · 2x 优先</b>：先选原生双 ISP 家宽，再逐级切换</li>
+<li><b>MTF · 自动择优</b>：纯按延迟自动挑，不管倍率</li>
+</ul>
+<h3>4. 测试</h3>
+<p>访问 <code>https://www.google.com</code> 能打开就成了。连不上先看第五篇《连不上 / 速度慢》。</p>
+<h3>5. 绑定 Telegram</h3>
+<p>注册后 7 天内需要加入主群并绑定 Telegram。登录官网，点左侧「Telegram 绑定」领取绑定码；完整步骤见第二篇。</p>
+</div>
+</div>
+</article>
+<article class="panel doc-article is-hidden" id="doc-2" data-panel="2">
+<div class="panel-bd">
+<p class="kicker">办事指南 · 第二篇</p>
+<h2 class="doc-h">Telegram 绑定：加群、领码、验证</h2>
+<p class="doc-info"><span>发布：MTF公益机场站务组</span><span>更新：2026-09-23</span><span>阅读约 2 分钟</span></p>
+<div class="prose">
+<p>注册完成后，<b>7 天内</b>加入主群并绑定 Telegram。申请邀请码时私聊过机器人，和注册后绑定官网账号是两件事；注册完成还需要做下面几步。</p>
+<ol>
+<li><a href="https://t.me/+MAIN_GROUP_INVITE">点击加入 MTF 主群</a>，确认自己已经在群里。</li>
+<li>登录官网。电脑和手机都打开左侧菜单「<b>Telegram 绑定</b>」；手机也可以点底部标签栏的「绑定」。页面会显示你的绑定码和「复制 /bind 指令」按钮。</li>
+<li>点「复制 /bind 指令」，<b>私聊 <a href="https://t.me/MTFLink_bot">@MTFLink_bot</a></b>，粘贴发送。完整格式是 <code>/bind 你的绑定码</code>。也可以在主群发送，机器人会尝试删除群内消息，但别人可能短暂看到，建议私聊。</li>
+<li>机器人回复「绑定成功」后，回官网点击「已发送？检查状态」；看到「Telegram 已绑定」就完成了。</li>
+</ol>
+<p>绑定码 <b>30 分钟有效、一次性使用</b>。过期就在官网刷新领取新码；机器人说「未加入主群」时，先确认加入的是上面的主群，再重发。已经绑定的账号无需重复领取。需要帮助可在主群咨询，<b>不要把绑定码或订阅链接发给其他人</b>。</p>
+</div>
+</div>
+</article>
+<article class="panel doc-article is-hidden" id="doc-3" data-panel="3">
+<div class="panel-bd">
+<p class="kicker">办事指南 · 第三篇</p>
+<h2 class="doc-h">节点怎么选：倍率是什么意思</h2>
+<p class="doc-info"><span>发布：MTF公益机场站务组</span><span>更新：2026-09-25</span><span>阅读约 4 分钟</span></p>
+<div class="prose">
+<h3>倍率与流量扣除</h3>
+<p>倍率不决定最高速度，也用于故障切换分组。新 cn2gia救命线路按 1.8 倍扣流量；其他节点保留原来的 1:1 计量：</p>
+<div class="table-wrap"><table>
+<thead><tr><th>节点</th><th>标签</th><th>限速算法</th><th>跑 1 GB 扣多少</th></tr></thead>
+<tbody>
+<tr><td>日本节点（1）</td><td><span class="rate">1x</span></td><td>每 IP 最高 100 Mbps，按实测负载调整</td><td>1 GB</td></tr>
+<tr><td>日本节点（2）</td><td><span class="rate">1x</span></td><td>每 IP 最高 100 Mbps，按实测负载调整</td><td>1 GB</td></tr>
+<tr><td>香港移动优化</td><td><span class="rate">1x</span></td><td>每 IP 最高 100 Mbps，按实测负载调整</td><td>1 GB</td></tr>
+<tr><td>日本原生节点</td><td><span class="rate r15">1.5x</span></td><td>每 IP 最高 100 Mbps，按实测负载调整</td><td>1 GB</td></tr>
+<tr><td>cn2gia救命线路</td><td><span class="rate r18">1.8x</span></td><td>每 IP 最高 100 Mbps，按实测负载调整</td><td><b>1.8 GB</b></td></tr>
+<tr><td>日本原生双 ISP 家宽</td><td><span class="rate r2">2x</span></td><td>每 IP 最高 100 Mbps，按实测负载调整</td><td>1 GB</td></tr>
+</tbody>
+</table></div>
+<p><b>只有 cn2gia救命线路是 1 GB 扣 1.8 GB。</b>其他节点仍是 1 GB 扣 1 GB；2x 节点目前也按 1:1 扣量。线路的实际速度仍受各自带宽、中国方向路由和实测负载影响，官网「带宽看板」可查看六台机器当前占用和每 IP 限速。</p>
+<blockquote>每 IP 最高 100 Mbps；连接人数不用于平分带宽。有人用不到 100 Mbps，不会因此拉低别人的上限。机器实测接近满载时才逐步调低，负载回落后自动回升。</blockquote>
+<h3>各节点适合干什么</h3>
+<ul>
+<li><b>日本节点（1）[1x]</b>：原日本干净高速。流媒体全部日本原生解锁，<b>ChatGPT 网页版可用</b>。日常首选。</li>
+<li><b>日本节点（2）[1x]</b>：新增日本直出线路，与（1）独立，可作为备用。解锁能力仍需持续复检。</li>
+<li><b>cn2gia救命线路 [1.8x]</b>：独立日本直出线路，每用 1 GB 扣 1.8 GB 配额。线路名是运营命名，中国电信 CN2 GIA 路由尚待实测证实。</li>
+<li><b>香港移动优化 [1x]</b>：延迟低，流媒体走香港区。注意 <b>ChatGPT 只能用 App，网页版不行</b>。</li>
+<li><b>日本原生节点 [1.5x]</b>：IP 记录最干净（423 个黑名单库零命中），适合对 IP 信誉敏感的场景。<b>YouTube 会把它识别成中国大陆地区</b>，看 YouTube 别用这个。</li>
+<li><b>日本原生双 ISP 家宽 [2x]</b>：冲绳原生家宽 IP，解锁能力最强；流量仍按 1:1 扣除。</li>
+</ul>
+<h3>三个协议怎么选</h3>
+<p>每个节点都有三条，端口协议不同：</p>
+<ul>
+<li><b>不带后缀</b>（VLESS-REALITY）：默认用这个，抗封锁最强</li>
+<li><b>· HY2</b>（Hysteria2）：走 UDP 443。<b>网络差、丢包高、校园网或移动网络下优先试这个</b></li>
+<li><b>· TUIC</b>：HY2 的备选，HY2 不通时换它</li>
+</ul>
+</div>
+</div>
+</article>
+<article class="panel doc-article is-hidden" id="doc-4" data-panel="4">
+<div class="panel-bd">
+<p class="kicker">办事指南 · 第四篇</p>
+<h2 class="doc-h">流量规则：每月保底 60 GB，签到再加 2 GB/天</h2>
+<p class="doc-info"><span>发布：MTF公益机场站务组</span><span>更新：2026-09-22</span><span>阅读约 3 分钟</span></p>
+<div class="prose">
+<h3>基础配额</h3>
+<ul>
+<li>每个账号<b>每月保底 60 GB</b></li>
+<li><b>每月 1 号</b>重置，用不完不累积</li>
+<li>最多 <b>5 台设备</b>同时在线（按同时在线的 IP 数算）</li>
+</ul>
+<h3>签到领流量（额外叠加）</h3>
+<p>左侧菜单「<b>每日签到</b>」，每天固定领 <b>2 GB</b>，<b>注册后立刻就能签</b>，没有冷却期。签到所得是在 60 GB 保底之上额外加的，一个月全勤 30 天就是 60 + 60 = <b>120 GB</b>。</p>
+<p><b>签到所得不跨月累积</b>：每月 1 号重置会连同签到部分一并清掉，回到 60 GB 保底。这是故意的，鼓励每天来看看，而不是攒一整年。签到页上有「距本月重置还有 N 天」的提示。</p>
+<p>防刷规则：同一个 IP 每天最多 3 个账号能签到。</p>
+<h3>流量怎么算</h3>
+<p>流量排行显示实际上传 + 下载流量。配额扣除另算：cn2gia救命线路按 1.8 倍，其余节点按 1:1。</p>
+<h3>速度为什么会变</h3>
+<p>我们按<b>实测带宽负载动态调速</b>：每账号、每来源 IP 最高 100 Mbps。连接数和低流量 IP 数都不会拿来平分带宽；有人用不到上限，别人仍可使用空余带宽。机器接近满载时逐步收紧，负载回落后放宽。没有 10 Mbps 保底，10 Mbps 是拥堵切换阈值。</p>
+<p>另外每个 IP 有独立的动态速度上限（最高 100 Mbps）和每日 15 GB 的用量上限，防止单个人把一台机器吃满。</p>
+</div>
+</div>
+</article>
+<article class="panel doc-article is-hidden" id="doc-5" data-panel="5">
+<div class="panel-bd">
+<p class="kicker">办事指南 · 第五篇</p>
+<h2 class="doc-h">连不上 / 速度慢 / 某个网站打不开</h2>
+<p class="doc-info"><span>发布：MTF公益机场站务组</span><span>更新：2026-09-22</span><span>阅读约 3 分钟</span></p>
+<div class="prose">
+<h3>完全连不上</h3>
+<ol>
+<li><b>换协议</b>：VLESS 不通就试 <b>· HY2</b>（走 UDP 443，穿透性最好），再不行试 <b>· TUIC</b></li>
+<li><b>更新订阅</b>：客户端里手动点一次「更新订阅」，节点可能有变动</li>
+<li><b>对时间</b>：设备时间偏差超过 1 分钟会导致握手失败，开自动对时</li>
+<li><b>换节点</b>：某个节点可能临时下线，探活会自动把它从订阅里摘掉，更新订阅即可</li>
+</ol>
+<h3>能连上但很慢</h3>
+<ul>
+<li>先看是不是<b>流量用完了</b>（仪表盘能看剩余）</li>
+<li>速度按实测负载调整，最高 100 Mbps；连接人数多但大家空闲时不会白白降速，实测拥堵时才调低</li>
+<li>同一个 IP 上开太多设备会互相抢带宽（单 IP 有总速率上限）</li>
+<li>试试别的节点，线路对不同地区网络质量差别很大</li>
+</ul>
+<h3>设备数超了</h3>
+<p>同时在线 IP 超过 5 个会被拒。注意：手机切换 Wi-Fi / 流量会换 IP，旧连接要几分钟才释放。</p>
+<h3>ChatGPT 打不开</h3>
+<ul>
+<li><b>网页版</b>请先用「日本节点（1）[1x]」；其他节点的网页版解锁状态需自行测试</li>
+<li>记得清浏览器 Cookie，并关掉「自动择优」改成固定节点</li>
+</ul>
+<h3>YouTube 显示中国地区</h3>
+<p>别用「日本原生节点 [1.5x]」，那个 IP 被 YouTube 判成大陆。换 1x 的日本或香港节点。</p>
+<h3>流媒体解锁</h3>
+<ul>
+<li>Netflix / Disney+ / TikTok：日本和香港节点都能解锁，但<b>区域不同</b>（日本节点走日区，香港节点走港区）</li>
+<li>解锁能力会随时间变化，我们每月自动复检一次</li>
+</ul>
+<h3>还是不行</h3>
+<p>提工单（左侧「我的工单」），<b>带上这几样</b>：用了哪个节点、哪个协议、客户端名字和版本、错误提示截图。</p>
+</div>
+</div>
+</article>
+<article class="panel doc-article is-hidden" id="doc-6" data-panel="6">
+<div class="panel-bd">
+<p class="kicker">办事指南 · 第六篇</p>
+<h2 class="doc-h">这是公益站：请珍惜，以及我们不做什么</h2>
+<p class="doc-info"><span>发布：MTF公益机场站务组</span><span>更新：2026-09-22</span><span>阅读约 2 分钟</span></p>
+<div class="prose">
+<p>这是个<b>完全免费</b>的公益项目，服务器和带宽都是自掏腰包。</p>
+<h3>请不要</h3>
+<ul>
+<li><b>不要跑 BT / PT 下载</b>，会导致 IP 被投诉、整台机器被封，影响所有人</li>
+<li>不要拿去做扫描、爆破、发垃圾邮件等任何滥用行为</li>
+<li>不要把订阅链接分享给别人，你的链接就是你的账号</li>
+<li>不要注册一堆小号刷签到（同 IP 每日 3 个账号的限制就是为这个）</li>
+</ul>
+<h3>我们不做</h3>
+<ul>
+<li><b>不收费</b>，没有任何付费档位。任何人问你要钱都是骗子</li>
+<li><b>不记录你的访问内容</b>。我们只统计流量字节数和在线 IP 数，用于计费和防滥用</li>
+<li><b>不保证 SLA</b>。公益项目，机器随时可能因为不可抗力下线</li>
+</ul>
+<h3>想帮忙</h3>
+<p>用得舒服的话，帮忙做到这几点就是最大的支持：日常挂 1x 节点、不跑大流量下载、发现问题提工单告诉我们。</p>
+</div>
+</div>
+</article>
+<article class="panel doc-article is-hidden" id="doc-7" data-panel="7">
+<div class="panel-bd">
+<p class="kicker">办事指南 · 第七篇</p>
+<h2 class="doc-h">服务条款与免责声明</h2>
+<p class="doc-info"><span>最后更新：2026 年 9 月 22 日</span><span>注册或使用本服务，即表示你已阅读并接受以下条款</span></p>
+<div class="prose">
+<h3>一、这是什么</h3>
+<p>MTF公益机场是一个<b>免费、非商业</b>的代理服务，由个人自费搭建与维护。我们不收取任何费用，也因此<b>不提供任何服务等级承诺（SLA）</b>：速度、可用性、稳定性、特定网站的解锁能力，都不在保证范围内。服务可能因为机器故障、线路问题、成本压力或运营者个人原因随时调整、降级或终止。</p>
+<h3>二、服务对象</h3>
+<p>本站主要面向 <b>MTF / MTX / FTM / FTX 等跨性别与性别多元群体</b>，不面向一般用户。</p>
+<ul>
+<li>请<b>不要</b>把本站的订阅链接、地址或邀请扩散到上述群体之外的社区、群聊、论坛或公开平台。</li>
+<li>非本站受众使用本服务，一经发现可能被停用账号。</li>
+<li>非受众用户提出的使用体验问题，不在受理范围内。</li>
+</ul>
+<p><b>关于这条怎么执行：</b>我们<b>不会要求任何人证明或披露自己的身份</b>，也不会因为怀疑而去查问谁是谁。这条规则靠自觉。我们只在发现<b>明显的对外传播行为</b>时才会处理，比如订阅链接出现在无关社区、被公开发布或被批量分享。之所以要划这条线，是因为带宽和成本都是有限的：这些资源是为一个特定群体准备的，扩散出去，真正需要它的人就用不上了。</p>
+<h3>三、可接受使用</h3>
+<p><b>禁止：</b></p>
+<ul>
+<li>违反你所在地或服务器所在地法律的任何行为</li>
+<li>BT / PT 下载、PCDN、挖矿、大规模爬虫、DDoS、发送垃圾邮件</li>
+<li>转售、二次分发、公开发布订阅链接</li>
+<li>攻击本站，或滥用注册、签到、验证码等接口</li>
+<li>把账号共享给多人使用（每个账号最多 5 台设备同时在线）</li>
+</ul>
+<h3>四、隐私与日志</h3>
+<p>我们尽量少记，并明确告诉你记了什么。<b>会记录：</b>注册邮箱、流量用量、连接时的来源 IP、在线设备数量。<b>不会记录：</b>你访问了哪些网站、域名或任何通信内容。<b>我们在技术上就没有采集这些数据。</b></p>
+<div class="table-wrap"><table>
+<thead><tr><th>数据</th><th>保留时间</th></tr></thead>
+<tbody>
+<tr><td>详细连接记录（时间 / 节点 / 来源 IP）</td><td><b>1 小时</b>后自动删除</td></tr>
+<tr><td>每日用量汇总</td><td><b>5 天</b>后自动删除</td></tr>
+<tr><td>签到记录中的 IP</td><td><b>7 天</b>后抹除</td></tr>
+</tbody>
+</table></div>
+<p>这些数据只用于排查故障和处理滥用。我们不会主动向第三方提供，除非受到法律强制要求。</p>
+<h3>五、账号与封禁</h3>
+<p>出现以下情况，账号可能被停用（可能同时封禁对应 IP）：违反第二条或第三条；异常流量、明显的自动化滥用；多人共用同一账号；对本站或其他用户的攻击行为。</p>
+<h3>六、免责声明</h3>
+<ul>
+<li>本服务按<b>「现状」</b>提供，不附带任何明示或默示的担保。</li>
+<li>对于因使用或无法使用本服务而产生的任何直接或间接损失，我们不承担责任。</li>
+<li>不保证任何特定网站、应用或服务能够访问、解锁或保持可用。</li>
+<li><b>你对自己通过本服务进行的一切行为负责。</b></li>
+</ul>
+<h3>七、条款变更</h3>
+<p>条款可能随时修改，以本页最新版本为准。继续使用即视为接受修改后的条款。</p>
+<h3>八、反馈</h3>
+<p>有改进建议、发现问题、或觉得某条规则不合理，<b>欢迎开工单告诉我们</b>。这个站是做给大家用的，你的反馈会被认真看。</p>
+</div>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="foot">
+<div class="foot-in">
+<nav class="foot-links" aria-label="页脚导航"><a href="bandwidth.html">带宽看板</a><a href="ranking.html">流量排行</a><a href="telegram.html">Telegram 绑定</a><a href="docs.html">服务条款</a><a href="https://x.com/YuwenMewo">关注站长 X @YuwenMewo</a></nav>
+<p class="foot-org"><span class="emblem" role="img" aria-label="站徽"></span><span>主办：MTF公益机场站务组</span><span>联系：contact@mtf.llc</span><span>公益免费 · 非商业 · 不记录访问内容</span></p>
+<p class="demo-note"><i class="i i-info sm"></i>静态 UI 样本：邮箱、IP、邀请码与用量均为虚构示例，按钮不会调用线上接口。</p>
+</div>
+</footer>
+<nav class="tabbar" aria-label="快捷导航">
+<a class="tab" href="dashboard.html"><i class="i i-home"></i><span>首页</span></a>
+<a class="tab" href="checkin.html"><i class="i i-calendar"></i><span>签到</span></a>
+<a class="tab" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽</span></a>
+<a class="tab" href="telegram.html"><i class="i i-send"></i><span>绑定</span></a>
+<button class="tab" type="button" data-drawer-open="1"><i class="i i-grid"></i><span>更多</span></button>
+</nav>
+</div>
+</div>
+<div class="scrim" data-drawer-close="1"></div>
+</div>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

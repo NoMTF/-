@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-CN" class="is-live">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>节点状态 · MTF公益机场</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/gov-art.css">
+<link rel="stylesheet" href="assets/css/gov.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<!-- 由 design/canvas 的 nodes.dc.html 生成；样式见 assets/css/gov.css -->
+<div class="app">
+<div class="shell">
+<aside class="side" aria-label="主导航">
+<div class="side-inner">
+<button class="icon-btn on-red side-close" type="button" data-drawer-close="1" aria-label="关闭菜单"><i class="i i-close"></i></button>
+<a class="side-brand" href="dashboard.html"><span class="emblem lg" role="img" aria-label="MTF公益机场站徽"></span><span class="side-name">MTF公益机场</span><span class="side-en">MTF PUBLIC WELFARE NETWORK</span></a>
+<nav class="nav">
+<p class="nav-group">便民服务</p>
+<a class="nav-link" href="dashboard.html"><i class="i i-home"></i><span>仪表盘</span></a>
+<a class="nav-link" href="docs.html"><i class="i i-book"></i><span>使用文档</span></a>
+<a class="nav-link" href="checkin.html"><i class="i i-calendar"></i><span>每日签到</span><span class="nav-tag">+2GB</span></a>
+<a class="nav-link" href="ranking.html"><i class="i i-trophy"></i><span>流量排行</span></a>
+<p class="nav-group">线路资源</p>
+<a class="nav-link is-active" href="nodes.html"><i class="i i-server"></i><span>节点状态</span></a>
+<a class="nav-link" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽看板</span></a>
+<a class="nav-link" href="invites.html"><i class="i i-mail"></i><span>我的邀请</span></a>
+<p class="nav-group">个人事务</p>
+<a class="nav-link" href="profile.html"><i class="i i-user"></i><span>个人中心</span></a>
+<a class="nav-link" href="telegram.html"><i class="i i-send"></i><span>Telegram 绑定</span><span class="nav-tag">待办</span></a>
+<a class="nav-link" href="tickets.html"><i class="i i-ticket"></i><span>我的工单</span></a>
+<a class="nav-link" href="traffic.html"><i class="i i-chart"></i><span>流量明细</span></a>
+<p class="nav-group">站务管理</p>
+<a class="nav-link" href="admin.html"><i class="i i-shield"></i><span>管理后台</span><span class="nav-tag">管理员</span></a>
+</nav>
+<div class="side-foot">
+<p class="side-live"><span class="live-dot"></span>当前在线 <b class="num">24</b><span class="sep"></span>已注册 <b class="num">279</b></p>
+<blockquote class="side-quote">带宽和成本都有限，资源要留给真正需要它的人。<cite>——《服务条款》第二条</cite></blockquote>
+</div>
+</div>
+</aside>
+<div class="main">
+<header class="mbar">
+<span class="emblem sm" role="img" aria-label="MTF公益机场站徽"></span>
+<p class="mbar-title"><b>节点状态</b><span>MTF公益机场</span></p>
+<button class="icon-btn on-red" type="button" data-drawer-open="1" aria-label="打开菜单"><i class="i i-menu"></i></button>
+</header>
+<header class="topbar">
+<p class="crumbs"><i class="i i-home sm"></i><span>线路资源</span><span class="sep">/</span><b>节点状态</b></p>
+<div class="top-actions">
+<button class="api-toggle" type="button" data-api-toggle="1"><i class="i i-code sm"></i>接口标注</button>
+<div class="theme-switch" role="group" aria-label="配色主题"><button type="button" data-theme-set="red"><span class="sw red"></span>朱红</button><button type="button" data-theme-set="navy"><span class="sw navy"></span>藏青</button></div>
+<button class="icon-btn" type="button" aria-label="通知" data-toast="有 2 条公告未读，已在仪表盘的通知公告中标出"><i class="i i-bell"></i><span class="dot-badge"></span></button>
+<div class="user-chip"><span class="avatar">示</span><span>demo@example.com</span></div>
+<a class="icon-btn" href="login.html" aria-label="退出登录" data-api="清除本地 auth_data"><i class="i i-logout"></i></a>
+</div>
+</header>
+<div class="ticker">
+<span class="ticker-tag"><i class="i i-megaphone sm"></i>公告</span>
+<p class="ticker-text"><b>日常优先 1x，应急再用救命线路！</b>日本节点（2）暂时离线，探活已把它从订阅中摘除</p>
+<a class="ticker-more" href="bandwidth.html">带宽看板<i class="i i-right sm"></i></a>
+</div>
+<main class="content">
+<header class="page-head">
+<div class="grow">
+<p class="kicker">线路资源</p>
+<h1 class="page-title">节点状态</h1>
+<p class="page-sub">六台物理机，每台都提供 REALITY / Hysteria2 / TUIC 三种协议。状态每分钟探活一次，真实连通性以你的客户端为准。</p>
+</div>
+<div class="page-actions">
+<a class="btn" href="docs.html"><i class="i i-book"></i>节点怎么选</a>
+<button class="btn btn-primary" type="button" data-toast="请在客户端里点「更新订阅」，节点变动会同步下来" data-api="GET /api/v1/user/server/fetch"><i class="i i-refresh"></i>刷新状态</button>
+</div>
+</header>
+<div class="stack">
+<div class="stats" style="--cols: 4">
+<div class="stat"><p class="stat-label"><i class="i i-server"></i>运行中</p><p class="stat-value num">5<small>/ 6 台</small></p><p class="stat-note">日本 ×5 · 香港 ×1</p></div>
+<div class="stat"><p class="stat-label"><i class="i i-offline"></i>暂时离线</p><p class="stat-value num">1<small>台</small></p><p class="stat-note">已从订阅摘除，恢复后自动加入</p></div>
+<div class="stat"><p class="stat-label"><i class="i i-layers"></i>协议</p><p class="stat-value num">3<small>种 / 台</small></p><p class="stat-note">REALITY · HY2 · TUIC</p></div>
+<div class="stat"><p class="stat-label"><i class="i i-zap"></i>每 IP 上限</p><p class="stat-value num">100<small>Mbps</small></p><p class="stat-note">整机接近满载时动态收紧</p></div>
+</div>
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-scroll"></i>倍率与计量</h2><div class="panel-extra"><span>倍率不决定最高速度</span></div></header>
+<div class="panel-bd">
+<div class="cols-4">
+<div class="rate-item"><span class="rate">1x</span><div><b>普通计量</b><p>1 GB 扣 1 GB，日常首选</p></div></div>
+<div class="rate-item"><span class="rate r15">1.5x</span><div><b>日本原生 IP</b><p>分组标签；目前仍按 1:1 扣量</p></div></div>
+<div class="rate-item hot"><span class="rate r18">1.8x</span><div><b>救命线路</b><p>1 GB 扣 1.8 GB，仅应急使用</p></div></div>
+<div class="rate-item"><span class="rate r2">2x</span><div><b>双 ISP 家宽</b><p>分组标签；目前仍按 1:1 扣量</p></div></div>
+</div>
+</div>
+</section>
+<div class="cols-2">
+<article class="node">
+<div class="node-hd"><span class="region">日</span><div class="grow"><p class="node-name">日本节点（1）</p><p class="node-sub">REALITY · HY2 · TUIC</p></div><span class="rate">1x</span><span class="status good">运行中</span></div>
+<div class="node-uses"><span class="tag tag-gold">日常首选</span><span class="tag">ChatGPT 网页版可用</span><span class="tag">流媒体日区</span></div>
+<div class="node-metrics"><div><span>配置端口</span><b>1000 Mbps</b></div><div><span>每 IP 上限</span><b>100 Mbps</b></div><div><span>北京参考 RTT</span><b>76 ms</b></div><div><span>连接 IP</span><b>14</b></div></div>
+</article>
+<article class="node">
+<div class="node-hd"><span class="region hk">港</span><div class="grow"><p class="node-name">香港移动优化</p><p class="node-sub">REALITY · HY2 · TUIC</p></div><span class="rate">1x</span><span class="status good">运行中</span></div>
+<div class="node-uses"><span class="tag">延迟低</span><span class="tag">流媒体港区</span><span class="tag tag-warn"><i class="i i-alert"></i>ChatGPT 仅 App</span></div>
+<div class="node-metrics"><div><span>配置端口</span><b>1000 Mbps</b></div><div><span>每 IP 上限</span><b>100 Mbps</b></div><div><span>北京参考 RTT</span><b>32 ms</b></div><div><span>连接 IP</span><b>8</b></div></div>
+</article>
+<article class="node">
+<div class="node-hd"><span class="region">日</span><div class="grow"><p class="node-name">日本原生节点</p><p class="node-sub">REALITY · HY2 · TUIC</p></div><span class="rate r15">1.5x</span><span class="status good">运行中</span></div>
+<div class="node-uses"><span class="tag">IP 记录最干净</span><span class="tag">423 个黑名单库零命中</span><span class="tag tag-warn"><i class="i i-alert"></i>YouTube 判为大陆</span></div>
+<div class="node-metrics"><div><span>配置端口</span><b>500 Mbps</b></div><div><span>每 IP 上限</span><b>100 Mbps</b></div><div><span>北京参考 RTT</span><b>86 ms</b></div><div><span>连接 IP</span><b>5</b></div></div>
+</article>
+<article class="node">
+<div class="node-hd"><span class="region">日</span><div class="grow"><p class="node-name">日本原生双 ISP 家宽</p><p class="node-sub">REALITY · HY2 · TUIC</p></div><span class="rate r2">2x</span><span class="status good">运行中</span></div>
+<div class="node-uses"><span class="tag">冲绳原生家宽 IP</span><span class="tag">解锁能力最强</span><span class="tag">按 1:1 扣量</span></div>
+<div class="node-metrics"><div><span>配置端口</span><b>300 Mbps</b></div><div><span>每 IP 上限</span><b>100 Mbps</b></div><div><span>北京参考 RTT</span><b>97 ms</b></div><div><span>连接 IP</span><b>7</b></div></div>
+</article>
+<article class="node is-off">
+<div class="node-hd"><span class="region">日</span><div class="grow"><p class="node-name">日本节点（2）</p><p class="node-sub">REALITY · HY2 · TUIC</p></div><span class="rate">1x</span><span class="status bad">离线</span></div>
+<p class="callout bad"><i class="i i-offline"></i><span><b>探活失败 4 分钟</b>，已从订阅中暂时摘除。恢复后自动加入，你只需在客户端更新订阅。</span></p>
+<div class="node-metrics"><div><span>配置端口</span><b>1000 Mbps</b></div><div><span>每 IP 上限</span><b>—</b></div><div><span>北京参考 RTT</span><b>—</b></div><div><span>连接 IP</span><b>0</b></div></div>
+</article>
+<article class="node">
+<div class="node-hd"><span class="region">日</span><div class="grow"><p class="node-name">cn2gia救命线路</p><p class="node-sub">REALITY · HY2 · TUIC</p></div><span class="rate r18">1.8x</span><span class="status good">运行中</span></div>
+<div class="node-uses"><span class="tag tag-red">极端情况备用</span><span class="tag tag-red">1 GB 扣 1.8 GB</span><span class="tag">独立日本直出</span></div>
+<div class="node-metrics"><div><span>配置端口</span><b>1000 Mbps</b></div><div><span>每 IP 上限</span><b>100 Mbps</b></div><div><span>北京参考 RTT</span><b>92 ms</b></div><div><span>连接 IP</span><b>1</b></div></div>
+</article>
+</div>
+<div class="split-7-5 align-start">
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-route"></i>故障切换分组</h2><div class="panel-extra"><span>Clash 系客户端 60 秒内自动切换</span></div></header>
+<div class="panel-bd flush">
+<div class="table-wrap">
+<table class="table to-cards">
+<thead><tr><th>策略组</th><th>首选</th><th>故障时</th><th>适合</th></tr></thead>
+<tbody>
+<tr><td class="card-title"><b>MTF · 1x 优先</b></td><td data-label="首选"><span class="rate">1x</span></td><td data-label="故障时">在 1x 节点间切换</td><td data-label="适合">日常</td></tr>
+<tr><td class="card-title"><b>MTF · 1.5x 优先</b></td><td data-label="首选"><span class="rate r15">1.5x</span></td><td data-label="故障时"><span class="chain"><span class="rate r15">1.5x</span><i class="i i-arrow"></i><span class="rate">1x</span></span></td><td data-label="适合">IP 信誉敏感</td></tr>
+<tr><td class="card-title"><b>MTF · 1.8x 优先</b></td><td data-label="首选"><span class="rate r18">1.8x</span></td><td data-label="故障时"><span class="chain"><span class="rate r18">1.8x</span><i class="i i-arrow"></i><span class="rate r15">1.5x</span><i class="i i-arrow"></i><span class="rate">1x</span></span></td><td data-label="适合">应急救命</td></tr>
+<tr><td class="card-title"><b>MTF · 2x 优先</b></td><td data-label="首选"><span class="rate r2">2x</span></td><td data-label="故障时">逐级切到更低倍率</td><td data-label="适合">解锁需求</td></tr>
+<tr><td class="card-title"><b>MTF · 自动择优</b></td><td data-label="首选">按延迟</td><td data-label="故障时">不管倍率</td><td data-label="适合">省心</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-layers"></i>三个协议怎么选</h2></header>
+<div class="panel-bd stack tight">
+<div class="proto"><div class="row"><b>REALITY</b><span class="tag tag-gold">默认</span></div><p>节点名不带后缀的那条（VLESS-REALITY），抗封锁最强。</p></div>
+<div class="proto"><div class="row"><b>· HY2</b><span class="tag">UDP 443</span></div><p>网络差、丢包高、校园网或移动网络下优先试这个。</p></div>
+<div class="proto"><div class="row"><b>· TUIC</b><span class="tag">备选</span></div><p>HY2 的备选，HY2 不通时换它。</p></div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<footer class="foot">
+<div class="foot-in">
+<nav class="foot-links" aria-label="页脚导航"><a href="bandwidth.html">带宽看板</a><a href="ranking.html">流量排行</a><a href="telegram.html">Telegram 绑定</a><a href="docs.html">服务条款</a><a href="https://x.com/YuwenMewo">关注站长 X @YuwenMewo</a></nav>
+<p class="foot-org"><span class="emblem" role="img" aria-label="站徽"></span><span>主办：MTF公益机场站务组</span><span>联系：contact@mtf.llc</span><span>公益免费 · 非商业 · 不记录访问内容</span></p>
+<p class="demo-note"><i class="i i-info sm"></i>静态 UI 样本：邮箱、IP、邀请码与用量均为虚构示例，按钮不会调用线上接口。</p>
+</div>
+</footer>
+<nav class="tabbar" aria-label="快捷导航">
+<a class="tab" href="dashboard.html"><i class="i i-home"></i><span>首页</span></a>
+<a class="tab" href="checkin.html"><i class="i i-calendar"></i><span>签到</span></a>
+<a class="tab" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽</span></a>
+<a class="tab" href="telegram.html"><i class="i i-send"></i><span>绑定</span></a>
+<button class="tab" type="button" data-drawer-open="1"><i class="i i-grid"></i><span>更多</span></button>
+</nav>
+</div>
+</div>
+<div class="scrim" data-drawer-close="1"></div>
+</div>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

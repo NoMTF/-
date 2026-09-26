@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-CN" class="is-live">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>用户与 IP · MTF公益机场</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/gov-art.css">
+<link rel="stylesheet" href="assets/css/gov.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<!-- 由 design/canvas 的 admin-users.dc.html 生成；样式见 assets/css/gov.css -->
+<div class="app">
+<div class="shell">
+<aside class="side" aria-label="管理导航">
+<div class="side-inner">
+<button class="icon-btn on-red side-close" type="button" data-drawer-close="1" aria-label="关闭菜单"><i class="i i-close"></i></button>
+<a class="side-brand" href="admin.html"><span class="emblem lg" role="img" aria-label="MTF公益机场站徽"></span><span class="side-name">MTF公益机场</span><span class="side-en">站务管理 · ADMIN CONSOLE</span></a>
+<nav class="nav">
+<p class="nav-group">站务管理</p>
+<a class="nav-link" href="admin.html"><i class="i i-shield"></i><span>运维总览</span></a>
+<a class="nav-link is-active" href="admin-users.html"><i class="i i-users"></i><span>用户与 IP</span></a>
+<a class="nav-link" href="admin-invites.html"><i class="i i-tag"></i><span>邀请码生成</span></a>
+<a class="nav-link" href="admin-bans.html"><i class="i i-ban"></i><span>封禁管理</span><span class="nav-tag">6</span></a>
+<a class="nav-link" href="admin-notices.html"><i class="i i-megaphone"></i><span>公告管理</span></a>
+<p class="nav-group">快速前往</p>
+<a class="nav-link" href="dashboard.html"><i class="i i-home"></i><span>用户仪表盘</span></a>
+<a class="nav-link" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽看板</span></a>
+<a class="nav-link" href="nodes.html"><i class="i i-server"></i><span>节点状态</span></a>
+<a class="nav-link" href="docs.html"><i class="i i-book"></i><span>使用文档</span></a>
+</nav>
+<div class="side-foot">
+<p class="side-live"><span class="live-dot"></span>当前在线 <b class="num">24</b><span class="sep"></span>已注册 <b class="num">279</b></p>
+<blockquote class="side-quote">来源 IP 与使用行为仅管理员可见；细粒度记录只保留 1 小时。<cite>——《服务条款》第四条</cite></blockquote>
+</div>
+</div>
+</aside>
+<div class="main">
+<header class="mbar">
+<span class="emblem sm" role="img" aria-label="MTF公益机场站徽"></span>
+<p class="mbar-title"><b>用户与 IP</b><span>站务管理</span></p>
+<button class="icon-btn on-red" type="button" data-drawer-open="1" aria-label="打开菜单"><i class="i i-menu"></i></button>
+</header>
+<header class="topbar">
+<p class="crumbs"><i class="i i-shield sm"></i><span>站务管理</span><span class="sep">/</span><b>用户与 IP</b></p>
+<div class="top-actions">
+<button class="api-toggle" type="button" data-api-toggle="1"><i class="i i-code sm"></i>接口标注</button>
+<div class="theme-switch" role="group" aria-label="配色主题"><button type="button" data-theme-set="red"><span class="sw red"></span>朱红</button><button type="button" data-theme-set="navy"><span class="sw navy"></span>藏青</button></div>
+<span class="tag tag-solid"><i class="i i-shield"></i>管理员</span>
+<div class="user-chip"><span class="avatar">管</span><span>admin@example.com</span></div>
+<a class="icon-btn" href="login.html" aria-label="退出登录" data-api="清除本地 auth_data"><i class="i i-logout"></i></a>
+</div>
+</header>
+<div class="ticker alert">
+<span class="ticker-tag"><i class="i i-alert sm"></i>站务</span>
+<p class="ticker-text"><b>#1026 在线设备已满 5/5</b>可能多人共用，建议先核查再处理</p>
+<a class="ticker-more" href="#user-detail">查看详情<i class="i i-right sm"></i></a>
+</div>
+<main class="content">
+<header class="page-head">
+<div class="grow">
+<p class="kicker">站务管理</p>
+<h1 class="page-title">用户与 IP</h1>
+<p class="page-sub">查看用户的来源 IP、节点与用量，处理滥用。只显示时间、节点、来源 IP 和流量，本架构下无法获取访问的目标域名。</p>
+</div>
+</header>
+<nav class="subnav" aria-label="站务管理分页">
+<a href="admin.html"><i class="i i-shield sm"></i>总览</a><a class="is-active" href="admin-users.html"><i class="i i-users sm"></i>用户与 IP</a><a href="admin-invites.html"><i class="i i-tag sm"></i>邀请码</a><a href="admin-bans.html"><i class="i i-ban sm"></i>封禁</a><a href="admin-notices.html"><i class="i i-megaphone sm"></i>公告</a>
+</nav>
+<div class="stack">
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-filter"></i>筛选</h2></header>
+<div class="panel-bd">
+<form class="filter-bar" data-api="GET /api/v1/mtf/admin/users?q=&amp;ip=&amp;status=">
+<div class="field"><label class="label" for="au-q">邮箱或用户 ID</label><div class="control"><i class="i i-search"></i><input class="input" id="au-q" type="search" placeholder="例如 user1024 或 1024"></div></div>
+<div class="field"><label class="label" for="au-ip">来源 IP</label><div class="control"><i class="i i-globe"></i><input class="input mono" id="au-ip" type="text" placeholder="192.0.2.10"></div></div>
+<div class="field"><label class="label" for="au-status">状态</label><div class="control"><select class="input" id="au-status"><option>全部</option><option>正常</option><option>设备已满</option><option>Telegram 未绑定</option><option>已封禁</option></select><i class="i i-down caret"></i></div></div>
+<div class="btn-row filter-actions"><button class="btn btn-primary" type="button" data-toast="示例：静态样本没有真实搜索"><i class="i i-search"></i>查询</button><button class="btn" type="reset">重置</button></div>
+</form>
+</div>
+</section>
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-users"></i>用户列表</h2><div class="panel-extra"><span>共 279 位 · 当前显示 5 位示例</span></div></header>
+<div class="panel-bd flush">
+<div class="table-wrap">
+<table class="table to-cards">
+<thead><tr><th>用户</th><th>状态</th><th class="r">今日计费</th><th>本月已用 / 额度</th><th>在线设备</th><th>来源 IP</th><th>最近登录</th><th>操作</th></tr></thead>
+<tbody>
+<tr class="is-me"><td class="card-title"><b>#1024</b><span class="cell-sub">user1024@example.com</span></td><td data-label="状态"><span class="tag tag-good">正常</span></td><td class="r" data-label="今日计费">2.4 GB</td><td data-label="本月"><span class="mini-meter"><span class="meter"><span style="width: 37.6%"></span></span><b>30.1 / 80</b></span></td><td data-label="在线设备">2 / 5</td><td data-label="来源 IP"><span class="ip">192.0.2.10</span> +1</td><td data-label="最近登录">09-26 22:51</td><td data-label="操作"><span class="btn-row"><a class="btn btn-sm" href="#user-detail">详情</a><button class="btn btn-sm btn-danger" type="button" data-open="ban-confirm">封禁</button></span></td></tr>
+<tr><td class="card-title"><b>#1025</b><span class="cell-sub">user1025@example.net</span></td><td data-label="状态"><span class="tag tag-good">正常</span></td><td class="r" data-label="今日计费">1.1 GB</td><td data-label="本月"><span class="mini-meter"><span class="meter"><span style="width: 18%"></span></span><b>12.6 / 70</b></span></td><td data-label="在线设备">1 / 5</td><td data-label="来源 IP"><span class="ip">198.51.100.20</span></td><td data-label="最近登录">09-26 20:13</td><td data-label="操作"><span class="btn-row"><a class="btn btn-sm" href="#user-detail">详情</a><button class="btn btn-sm btn-danger" type="button" data-open="ban-confirm">封禁</button></span></td></tr>
+<tr><td class="card-title"><b>#1026</b><span class="cell-sub">user1026@example.org</span></td><td data-label="状态"><span class="tag tag-warn">设备已满</span></td><td class="r" data-label="今日计费">0.6 GB</td><td data-label="本月"><span class="mini-meter"><span class="meter warn"><span style="width: 45.8%"></span></span><b>41.2 / 90</b></span></td><td data-label="在线设备"><b style="color: var(--warn)">5 / 5</b></td><td data-label="来源 IP"><span class="ip">203.0.113.30</span> +4</td><td data-label="最近登录">09-26 23:02</td><td data-label="操作"><span class="btn-row"><a class="btn btn-sm" href="#user-detail">详情</a><button class="btn btn-sm btn-danger" type="button" data-open="ban-confirm">封禁</button></span></td></tr>
+<tr><td class="card-title"><b>#1028</b><span class="cell-sub">user1028@example.net</span></td><td data-label="状态"><span class="tag tag-warn">未绑定 TG</span></td><td class="r" data-label="今日计费">0.2 GB</td><td data-label="本月"><span class="mini-meter"><span class="meter"><span style="width: 5%"></span></span><b>3.1 / 62</b></span></td><td data-label="在线设备">1 / 5</td><td data-label="来源 IP"><span class="ip">192.0.2.77</span></td><td data-label="最近登录">09-25 09:30</td><td data-label="操作"><span class="btn-row"><a class="btn btn-sm" href="#user-detail">详情</a><button class="btn btn-sm btn-danger" type="button" data-open="ban-confirm">封禁</button></span></td></tr>
+<tr><td class="card-title"><b>#1027</b><span class="cell-sub">user1027@example.com</span></td><td data-label="状态"><span class="tag tag-bad">已封禁</span></td><td class="r" data-label="今日计费">0 GB</td><td data-label="本月"><span class="mini-meter"><span class="meter"><span style="width: 0%; min-width: 0"></span></span><b>—</b></span></td><td data-label="在线设备">0 / 5</td><td data-label="来源 IP">—</td><td data-label="最近登录">09-20 14:05</td><td data-label="操作"><button class="btn btn-sm" type="button" data-toast="示例：已解封（静态样本不会修改）" data-api="POST /api/v1/mtf/admin/unban">解封</button></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="panel" id="user-detail">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-idcard"></i>用户详情 · #1024</h2><div class="panel-extra"><span class="mono">user1024@example.com</span><span class="tag tag-good">正常</span></div></header>
+<div class="panel-bd stack" data-api="GET /api/v1/mtf/admin/user/1024">
+<div class="stats" style="--cols: 4">
+<div class="stat"><p class="stat-label">今日计费</p><p class="stat-value num">2.4<small>GB</small></p></div>
+<div class="stat"><p class="stat-label">本月已用</p><p class="stat-value num">30.1<small>/ 80 GB</small></p></div>
+<div class="stat"><p class="stat-label">在线 IP</p><p class="stat-value num">2<small>/ 5</small></p></div>
+<div class="stat"><p class="stat-label">Telegram</p><p class="stat-value" style="color: var(--good)">已绑定</p></div>
+</div>
+<div class="split-7-5 align-start">
+<div class="stack tight">
+<p class="label">近 1 小时连接快照（时刻 · 节点 · 来源 IP · 流量增量）</p>
+<ul class="timeline">
+<li><time>23:10</time><span>日本节点（1）· HY2 · <span class="ip">192.0.2.10</span></span><b class="num">+84 MB</b></li>
+<li><time>23:05</time><span>日本节点（1）· HY2 · <span class="ip">192.0.2.10</span></span><b class="num">+120 MB</b></li>
+<li><time>22:58</time><span>香港移动优化 · REALITY · <span class="ip">192.0.2.44</span></span><b class="num">+36 MB</b></li>
+<li><time>22:51</time><span>日本节点（1）· REALITY · <span class="ip">192.0.2.10</span></span><b class="num">+210 MB</b></li>
+</ul>
+<p class="callout info"><i class="i i-info"></i><span>细粒度记录仅保留 1 小时；本架构下无法获取访问的目标域名。</span></p>
+</div>
+<div class="stack tight">
+<p class="label">实时设备</p>
+<ul class="todo">
+<li><span class="todo-ico"><i class="i i-device"></i></span><div class="grow"><b class="mono">192.0.2.10</b><span>日本节点（1）· HY2</span></div><button class="btn btn-sm btn-danger" type="button" data-open="ban-confirm" data-api="POST /api/v1/mtf/admin/ban（kind=ip）">封禁 IP</button></li>
+<li><span class="todo-ico"><i class="i i-device"></i></span><div class="grow"><b class="mono">192.0.2.44</b><span>香港移动优化 · REALITY</span></div><button class="btn btn-sm btn-danger" type="button" data-open="ban-confirm" data-api="POST /api/v1/mtf/admin/ban（kind=ip）">封禁 IP</button></li>
+</ul>
+<p class="label">近 5 天汇总</p>
+<div class="kv"><div><span>09-26</span><b>2.4 GB</b></div><div><span>09-25</span><b>3.1 GB</b></div><div><span>09-24</span><b>1.9 GB</b></div><div><span>09-23</span><b>2.7 GB</b></div><div><span>09-22</span><b>1.2 GB</b></div><div><span>保留</span><b>5 天后自动删除</b></div></div>
+</div>
+</div>
+<div class="btn-row"><button class="btn btn-danger solid" type="button" data-open="ban-confirm" data-api="POST /api/v1/mtf/admin/ban（kind=user）"><i class="i i-ban"></i>封禁账户</button><button class="btn btn-danger" type="button" data-open="ban-confirm" data-api="POST /api/v1/mtf/admin/ban（kind=ip）"><i class="i i-globe"></i>封禁当前全部 IP</button></div>
+</div>
+</section>
+</div>
+</main>
+<footer class="foot">
+<div class="foot-in">
+<p class="foot-org"><span class="emblem" role="img" aria-label="站徽"></span><span>站务管理 · 仅管理员可见</span><span>接口：/api/v1/mtf/admin/*（管理员鉴权）</span></p>
+<p class="demo-note"><i class="i i-info sm"></i>静态 UI 样本：用户、邮箱、IP 与用量均为虚构示例（文档保留地址段），按钮不会封禁任何人。</p>
+</div>
+</footer>
+<nav class="tabbar" aria-label="管理快捷导航">
+<a class="tab" href="admin.html"><i class="i i-shield"></i><span>总览</span></a>
+<a class="tab is-active" href="admin-users.html"><i class="i i-users"></i><span>用户</span></a>
+<a class="tab" href="admin-bans.html"><i class="i i-ban"></i><span>封禁</span></a>
+<a class="tab" href="admin-notices.html"><i class="i i-megaphone"></i><span>公告</span></a>
+<button class="tab" type="button" data-drawer-open="1"><i class="i i-grid"></i><span>更多</span></button>
+</nav>
+</div>
+</div>
+<div class="scrim" data-drawer-close="1"></div>
+<div class="modal-scrim is-hidden" id="ban-confirm" data-modal="1">
+<div class="modal" role="dialog" aria-modal="true" aria-labelledby="ban-title">
+<div class="modal-hd"><i class="i i-ban" style="color: var(--bad)"></i><p class="modal-title" id="ban-title">确认封禁？</p><button class="icon-btn" type="button" data-close="1" aria-label="关闭"><i class="i i-close"></i></button></div>
+<div class="modal-bd stack tight">
+<p>将封禁 <b>#1024 user1024@example.com</b>，并断开其当前 2 个来源 IP 的连接。</p>
+<div class="field"><label class="label" for="ban-reason">原因（会写入封禁记录）</label><input class="input" id="ban-reason" type="text" placeholder="例如：多人共用账号"></div>
+<div class="field"><label class="label" for="ban-hours">时长</label><div class="control"><select class="input" id="ban-hours"><option>永久</option><option>24 小时</option><option>7 天</option><option>30 天</option></select><i class="i i-down caret"></i></div></div>
+</div>
+<div class="modal-ft"><button class="btn" type="button" data-close="1">取消</button><button class="btn btn-danger solid" type="button" data-close="1" data-toast="示例：已封禁（静态样本不会封禁任何人）" data-api="POST /api/v1/mtf/admin/ban">确认封禁</button></div>
+</div>
+</div>
+</div>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

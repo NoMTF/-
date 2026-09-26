@@ -1,0 +1,10 @@
+/* site.css —— 仅原型页使用：本地字体与页面重置。
+   字体为按站内用字裁剪的子集（SIL OFL 1.1，许可证见 assets/fonts/）。
+   接入线上时可改用完整字体或 Google Fonts，字体名保持一致即可。 */
+@font-face{font-family:"Noto Serif SC"; src:url(../fonts/NotoSerifSC-subset.woff2) format("woff2"); font-weight:200 900; font-display:swap}
+@font-face{font-family:"Noto Sans SC"; src:url(../fonts/NotoSansSC-subset.woff2) format("woff2"); font-weight:100 900; font-display:swap}
+@font-face{font-family:"Ma Shan Zheng"; src:url(../fonts/MaShanZheng-subset.woff2) format("woff2"); font-weight:400; font-display:swap}
+html,body{margin:0; padding:0}
+body{min-height:100vh; background:#F5EEE2}
+html.theme-navy body{background:#ECF0F6}
+html body > .app{min-height:100vh}

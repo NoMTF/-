@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN" class="is-live">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>流量排行 · MTF公益机场</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/gov-art.css">
+<link rel="stylesheet" href="assets/css/gov.css">
+<script src="assets/js/boot.js"></script>
+</head>
+<body>
+<!-- 由 design/canvas 的 ranking.dc.html 生成；样式见 assets/css/gov.css -->
+<div class="app">
+<div class="shell">
+<aside class="side" aria-label="主导航">
+<div class="side-inner">
+<button class="icon-btn on-red side-close" type="button" data-drawer-close="1" aria-label="关闭菜单"><i class="i i-close"></i></button>
+<a class="side-brand" href="dashboard.html"><span class="emblem lg" role="img" aria-label="MTF公益机场站徽"></span><span class="side-name">MTF公益机场</span><span class="side-en">MTF PUBLIC WELFARE NETWORK</span></a>
+<nav class="nav">
+<p class="nav-group">便民服务</p>
+<a class="nav-link" href="dashboard.html"><i class="i i-home"></i><span>仪表盘</span></a>
+<a class="nav-link" href="docs.html"><i class="i i-book"></i><span>使用文档</span></a>
+<a class="nav-link" href="checkin.html"><i class="i i-calendar"></i><span>每日签到</span><span class="nav-tag">+2GB</span></a>
+<a class="nav-link is-active" href="ranking.html"><i class="i i-trophy"></i><span>流量排行</span></a>
+<p class="nav-group">线路资源</p>
+<a class="nav-link" href="nodes.html"><i class="i i-server"></i><span>节点状态</span></a>
+<a class="nav-link" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽看板</span></a>
+<a class="nav-link" href="invites.html"><i class="i i-mail"></i><span>我的邀请</span></a>
+<p class="nav-group">个人事务</p>
+<a class="nav-link" href="profile.html"><i class="i i-user"></i><span>个人中心</span></a>
+<a class="nav-link" href="telegram.html"><i class="i i-send"></i><span>Telegram 绑定</span><span class="nav-tag">待办</span></a>
+<a class="nav-link" href="tickets.html"><i class="i i-ticket"></i><span>我的工单</span></a>
+<a class="nav-link" href="traffic.html"><i class="i i-chart"></i><span>流量明细</span></a>
+<p class="nav-group">站务管理</p>
+<a class="nav-link" href="admin.html"><i class="i i-shield"></i><span>管理后台</span><span class="nav-tag">管理员</span></a>
+</nav>
+<div class="side-foot">
+<p class="side-live"><span class="live-dot"></span>当前在线 <b class="num">24</b><span class="sep"></span>已注册 <b class="num">279</b></p>
+<blockquote class="side-quote">带宽和成本都有限，资源要留给真正需要它的人。<cite>——《服务条款》第二条</cite></blockquote>
+</div>
+</div>
+</aside>
+<div class="main">
+<header class="mbar">
+<span class="emblem sm" role="img" aria-label="MTF公益机场站徽"></span>
+<p class="mbar-title"><b>流量排行</b><span>MTF公益机场</span></p>
+<button class="icon-btn on-red" type="button" data-drawer-open="1" aria-label="打开菜单"><i class="i i-menu"></i></button>
+</header>
+<header class="topbar">
+<p class="crumbs"><i class="i i-home sm"></i><span>便民服务</span><span class="sep">/</span><b>流量排行</b></p>
+<div class="top-actions">
+<button class="api-toggle" type="button" data-api-toggle="1"><i class="i i-code sm"></i>接口标注</button>
+<div class="theme-switch" role="group" aria-label="配色主题"><button type="button" data-theme-set="red"><span class="sw red"></span>朱红</button><button type="button" data-theme-set="navy"><span class="sw navy"></span>藏青</button></div>
+<button class="icon-btn" type="button" aria-label="通知" data-toast="有 2 条公告未读，已在仪表盘的通知公告中标出"><i class="i i-bell"></i><span class="dot-badge"></span></button>
+<div class="user-chip"><span class="avatar">示</span><span>demo@example.com</span></div>
+<a class="icon-btn" href="login.html" aria-label="退出登录" data-api="清除本地 auth_data"><i class="i i-logout"></i></a>
+</div>
+</header>
+<div class="ticker">
+<span class="ticker-tag"><i class="i i-megaphone sm"></i>公告</span>
+<p class="ticker-text"><b>节约带宽光荣，日常优先 1x！</b>排行只按实际上传 + 下载统计，与倍率无关</p>
+<a class="ticker-more" href="docs.html">流量规则<i class="i i-right sm"></i></a>
+</div>
+<main class="content">
+<header class="page-head">
+<div class="grow">
+<p class="kicker">便民服务</p>
+<h1 class="page-title">流量排行</h1>
+<p class="page-sub">按当天实际上传 + 下载流量排序；节点倍率只影响配额扣除，不影响排行。邮箱已打码，只列前 20 名。</p>
+</div>
+</header>
+<div class="stack" data-tabs="rank" data-loading="1" data-api="GET /api/v1/mtf/ranking?offset=0|1|2|6">
+<div class="stats" style="--cols: 3; --mcols: 1">
+<div class="stat accent"><p class="stat-label"><i class="i i-globe"></i>今日全站消耗</p><p class="stat-value num">49.4<small>GB</small></p><p class="stat-note">2026-09-26 · 截至 23:10</p></div>
+<div class="stat"><p class="stat-label"><i class="i i-user"></i>我的今日用量</p><p class="stat-value num">0.42<small>GB · 第 37 名</small></p><p class="stat-note">未进前 20，名次单独显示在榜单末尾</p></div>
+<div class="stat"><p class="stat-label"><i class="i i-award"></i>今日第一名</p><p class="stat-value num">5.11<small>GB</small></p><p class="stat-note">单 IP 每日用量上限 15 GB</p></div>
+</div>
+<section class="panel">
+<header class="panel-hd"><h2 class="panel-title"><i class="i i-trophy"></i>流量排行榜</h2>
+<div class="panel-extra"><div class="seg" role="tablist" aria-label="选择日期"><button class="seg-btn is-active" type="button" role="tab" data-tab="d0">今天</button><button class="seg-btn" type="button" role="tab" data-tab="d1">昨天</button><button class="seg-btn" type="button" role="tab" data-tab="d2">前天</button><button class="seg-btn" type="button" role="tab" data-tab="d6">6 天前</button></div></div>
+</header>
+<div class="panel-bd">
+<div class="tab-skeleton" aria-hidden="true">
+<div class="loading-row"><span class="skel circle"></span><span class="skel" style="width: 38%"></span><span class="skel" style="flex: 1"></span></div>
+<div class="loading-row"><span class="skel circle"></span><span class="skel" style="width: 30%"></span><span class="skel" style="flex: 1"></span></div>
+<div class="loading-row"><span class="skel circle"></span><span class="skel" style="width: 42%"></span><span class="skel" style="flex: 1"></span></div>
+<p class="hint" style="margin-top: 10px">正在读取排行…</p>
+</div>
+<div class="tab-panel stack" data-panel="d0">
+<div class="podium">
+<div class="pod"><span class="medal silver">2</span><p class="pod-name">m***o@example.net</p><p class="pod-val">3.25<small>GB</small></p></div>
+<div class="pod first"><span class="medal">1</span><p class="pod-name">a***1@example.com</p><p class="pod-val">5.11<small>GB</small></p></div>
+<div class="pod"><span class="medal bronze">3</span><p class="pod-name">k***7@example.org</p><p class="pod-val">2.14<small>GB</small></p></div>
+</div>
+<ol class="rank-list">
+<li class="rank-row"><span class="rank-no">4</span><span class="rank-mail">t***n@example.com</span><span class="rank-bar"><span style="width: 28.4%"></span></span><span class="rank-val">1.45 GB</span></li>
+<li class="rank-row"><span class="rank-no">5</span><span class="rank-mail">r***2@example.net</span><span class="rank-bar"><span style="width: 21.9%"></span></span><span class="rank-val">1.12 GB</span></li>
+<li class="rank-row"><span class="rank-no">6</span><span class="rank-mail">s***9@example.org</span><span class="rank-bar"><span style="width: 17.2%"></span></span><span class="rank-val">0.88 GB</span></li>
+<li class="rank-row"><span class="rank-no">7</span><span class="rank-mail">y***a@example.com</span><span class="rank-bar"><span style="width: 15.9%"></span></span><span class="rank-val">0.81 GB</span></li>
+<li class="rank-row"><span class="rank-no">8</span><span class="rank-mail">h***3@example.net</span><span class="rank-bar"><span style="width: 14.9%"></span></span><span class="rank-val">0.76 GB</span></li>
+<li class="rank-gap">第 9–20 名略</li>
+<li class="rank-row is-me"><span class="rank-no">37</span><span class="rank-mail">d***o@example.com（你）</span><span class="rank-bar"><span style="width: 8.2%"></span></span><span class="rank-val">0.42 GB</span></li>
+</ol>
+</div>
+<div class="tab-panel stack is-hidden" data-panel="d1">
+<div class="podium">
+<div class="pod"><span class="medal silver">2</span><p class="pod-name">a***1@example.com</p><p class="pod-val">4.10<small>GB</small></p></div>
+<div class="pod first"><span class="medal">1</span><p class="pod-name">m***o@example.net</p><p class="pod-val">4.62<small>GB</small></p></div>
+<div class="pod"><span class="medal bronze">3</span><p class="pod-name">t***n@example.com</p><p class="pod-val">2.87<small>GB</small></p></div>
+</div>
+<ol class="rank-list">
+<li class="rank-row"><span class="rank-no">4</span><span class="rank-mail">k***7@example.org</span><span class="rank-bar"><span style="width: 42.4%"></span></span><span class="rank-val">1.96 GB</span></li>
+<li class="rank-row"><span class="rank-no">5</span><span class="rank-mail">s***9@example.org</span><span class="rank-bar"><span style="width: 28.8%"></span></span><span class="rank-val">1.33 GB</span></li>
+<li class="rank-row"><span class="rank-no">6</span><span class="rank-mail">y***a@example.com</span><span class="rank-bar"><span style="width: 22.1%"></span></span><span class="rank-val">1.02 GB</span></li>
+<li class="rank-gap">第 7–20 名略</li>
+<li class="rank-row is-me"><span class="rank-no">29</span><span class="rank-mail">d***o@example.com（你）</span><span class="rank-bar"><span style="width: 15.4%"></span></span><span class="rank-val">0.71 GB</span></li>
+</ol>
+</div>
+<div class="tab-panel stack is-hidden" data-panel="d2">
+<div class="podium">
+<div class="pod"><span class="medal silver">2</span><p class="pod-name">r***2@example.net</p><p class="pod-val">3.02<small>GB</small></p></div>
+<div class="pod first"><span class="medal">1</span><p class="pod-name">a***1@example.com</p><p class="pod-val">3.88<small>GB</small></p></div>
+<div class="pod"><span class="medal bronze">3</span><p class="pod-name">m***o@example.net</p><p class="pod-val">2.41<small>GB</small></p></div>
+</div>
+<ol class="rank-list">
+<li class="rank-row"><span class="rank-no">4</span><span class="rank-mail">h***3@example.net</span><span class="rank-bar"><span style="width: 38.7%"></span></span><span class="rank-val">1.50 GB</span></li>
+<li class="rank-row"><span class="rank-no">5</span><span class="rank-mail">k***7@example.org</span><span class="rank-bar"><span style="width: 31.2%"></span></span><span class="rank-val">1.21 GB</span></li>
+<li class="rank-gap">第 6–20 名略</li>
+<li class="rank-row is-me"><span class="rank-no">33</span><span class="rank-mail">d***o@example.com（你）</span><span class="rank-bar"><span style="width: 16.2%"></span></span><span class="rank-val">0.63 GB</span></li>
+</ol>
+</div>
+<div class="tab-panel is-hidden" data-panel="d6">
+<div class="empty"><span class="empty-seal"><i class="i i-inbox xl"></i></span><b>这一天还没有流量记录</b><span>切换到其他日期看看；排行按当天实际用量统计。</span></div>
+</div>
+</div>
+<div class="panel-ft"><i class="i i-info sm"></i><span>邮箱已打码。只取前 20 名，你自己没进前 20 时，名次单独显示在榜单末尾。</span></div>
+</section>
+</div>
+</main>
+<footer class="foot">
+<div class="foot-in">
+<nav class="foot-links" aria-label="页脚导航"><a href="bandwidth.html">带宽看板</a><a href="ranking.html">流量排行</a><a href="telegram.html">Telegram 绑定</a><a href="docs.html">服务条款</a><a href="https://x.com/YuwenMewo">关注站长 X @YuwenMewo</a></nav>
+<p class="foot-org"><span class="emblem" role="img" aria-label="站徽"></span><span>主办：MTF公益机场站务组</span><span>联系：contact@mtf.llc</span><span>公益免费 · 非商业 · 不记录访问内容</span></p>
+<p class="demo-note"><i class="i i-info sm"></i>静态 UI 样本：邮箱、IP、邀请码与用量均为虚构示例，按钮不会调用线上接口。</p>
+</div>
+</footer>
+<nav class="tabbar" aria-label="快捷导航">
+<a class="tab" href="dashboard.html"><i class="i i-home"></i><span>首页</span></a>
+<a class="tab" href="checkin.html"><i class="i i-calendar"></i><span>签到</span></a>
+<a class="tab" href="bandwidth.html"><i class="i i-gauge"></i><span>带宽</span></a>
+<a class="tab" href="telegram.html"><i class="i i-send"></i><span>绑定</span></a>
+<button class="tab" type="button" data-drawer-open="1"><i class="i i-grid"></i><span>更多</span></button>
+</nav>
+</div>
+</div>
+<div class="scrim" data-drawer-close="1"></div>
+</div>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>
