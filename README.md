@@ -42,4 +42,4 @@
 
 ## 上线
 
-本仓库只包含设计与静态原型。线上是 XBoard + MtfCore 插件，需要按 `docs/INTEGRATION.md` 把样式与结构接进 `panel/MtfCore/setup/custom.html`、`custom.js` 和 Blade 视图，再在面板服务器上执行 `frontend-setup.php` 与 `octane:reload`。
+本仓库只包含设计与静态原型。线上是 XBoard + MtfCore 插件；接入已经做完，以上线包 `MTF-gov-theme-2026-09-26.zip` 单独交付（含服务端源码，不放公开仓库），在面板机上执行 `bash mtf-frontend-deploy.sh deploy <MtfCore 目录>` 即可上线，`rollback` 一键回退。做法与差异见 `docs/INTEGRATION.md`。

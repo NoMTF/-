@@ -2,6 +2,13 @@
 
 本仓库的 `site/` 是**静态原型**，不是可以直接替换线上文件的主题包。线上用户端仍是 XBoard 编译好的 Vue SPA（Naive UI），定制全部通过 MtfCore 插件注入。下面说明如何把这套视觉接进现有实现，以及每一步对应哪个文件。
 
+> **进度（2026-09-26）**：以下步骤已经在 MTFLink 源码上实现并在本地模拟环境（真实 SPA + 模拟接口）逐页验证，桌面 / 手机 / 暗色共 62 项检查通过。
+> 成品以上线包 `MTF-gov-theme-2026-09-26.zip` 单独交付（插件文件、`gov-theme.patch`、一键上线 / 回滚脚本 `ops/mtf-frontend-deploy.sh`、改前改后截图），
+> **没有放进本仓库**：本仓库公开，而上线包含服务端源码和 Telegram 主群邀请链接。实际做法与下文有三处不同：
+> 样式表走新增的同源路由 `/mtf-static/`（与 `/mtf-custom.js` 同样优先读 `/opt/mtf/state/`）；
+> 字体全部自托管（线上 CSP 的 `font-src` 只有 `'self'`，Google Fonts 用不了），思源宋体按站内用字频次切片；
+> 响应式直接写成 `@media (max-width: 767.98px)`（与 SPA 自己的 md 断点一致），并适配了 SPA 的暗色模式。
+
 ## 1. 线上定制的现状（来自 MTFLink 源码 `docs/airport.md`）
 
 | 部位 | 现有文件 | 注入方式 |
@@ -41,7 +48,7 @@ docker compose exec -T xboard php artisan octane:reload   # 必须，否则其�
 3. **面板内视图**：`custom.js` 里的 `renderCheckin` / `renderRanking` / `renderTelegram` / `renderBandwidth` 目前拼接 `mtf-card` 等类名。把拼接的 HTML 换成原型对应页面 `main.content` 内部的结构（类名见下表），数据字段保持不变，逐项对照 `docs/API-MAPPING.md`。
 4. **Blade 独立页面**：`_layout.blade.php` 换成原型的外壳（`.app > .shell > .side + .main`，或访客页用 `.auth`）；`checkin` `ranking` `bandwidth` `admin` 四个视图替换正文。访客打开 `/bandwidth` 时用不带侧栏的布局即可。
 5. **公告弹窗**：`custom.js` 的 `showNotice` 改用 `.modal-scrim > .modal.wide > article.doc` 红头文书结构；文号可按公告 id 生成。
-6. **字体**：线上可直接引 Google Fonts 的 Noto Serif SC / Noto Sans SC / Ma Shan Zheng（大陆访问不稳定时改为自托管，`site/assets/fonts/` 里有按用字裁剪的子集，重新裁剪脚本思路见 `site/assets/css/site.css` 注释）。
+6. **字体**：必须自托管——线上 CSP 是 `font-src 'self' data:`，Google Fonts 会被拦。`site/assets/fonts/` 里是原型用的按用字裁剪子集；上线包里的做法是思源宋体 Bold 按站内用字频次切片、配 `unicode-range` 按需加载。
 7. **响应式**：原型用 `.is-m` 类切换手机布局（由 `boot.js` 按 760px 断点加在 `<html>` 上）。接入线上时可以保留 `boot.js`，也可以把 `gov.css` 里所有 `.is-m ` 前缀的规则整体改写进 `@media (max-width: 760px)`。
 
 ## 3. 页面与组件文件清单
