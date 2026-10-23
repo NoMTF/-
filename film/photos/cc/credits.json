@@ -1,0 +1,110 @@
+{
+ "gorge_bridge": {
+  "title": "Cataract Gorge, Launceston TAS - Bridge",
+  "creator": "lukewebber",
+  "license": "CC BY 2.0",
+  "source": "https://www.flickr.com/photos/32041268@N07/8689142612"
+ },
+ "gorge_pool": {
+  "title": "Swimming pool , chairlift, First Basin and suspension bridge - Cataract Gorge [Launceston]",
+  "creator": "Jorge Lascar",
+  "license": "CC BY 2.0",
+  "source": "https://www.flickr.com/photos/8721758@N06/4552506880"
+ },
+ "launceston": {
+  "title": "Launceston Tasmania",
+  "creator": "Steven Penton",
+  "license": "CC BY 2.0",
+  "source": "https://www.flickr.com/photos/136315829@N03/49260737163"
+ },
+ "utas": {
+  "title": "University of Tasmania",
+  "creator": "x_jamesmorris",
+  "license": "CC BY 2.0",
+  "source": "https://www.flickr.com/photos/89963685@N00/3213368329"
+ },
+ "canberra_hosp": {
+  "title": "Canberra Hospital from Red Hill-1=",
+  "creator": "Sheba Also 18 Million Views",
+  "license": "CC BY-SA 2.0",
+  "source": "https://www.flickr.com/photos/34534185@N00/5265315441"
+ },
+ "rpa2": {
+  "title": "Royal Prince Alfred Hospital - Sydney",
+  "creator": "superturtle",
+  "license": "CC BY 2.0",
+  "source": "https://www.flickr.com/photos/76335816@N00/121564073"
+ },
+ "slide_scope": {
+  "title": "Histologic Slide Under MIcroscope",
+  "creator": "euthman",
+  "license": "CC BY-SA 2.0",
+  "source": "https://www.flickr.com/photos/78147607@N00/350879065"
+ },
+ "microscope": {
+  "title": "The Main Tool of a Pathologist",
+  "creator": "joebeone",
+  "license": "CC BY 2.0",
+  "source": "https://www.flickr.com/photos/71753172@N00/331332936"
+ },
+ "tcells": {
+  "title": "Killer T cells surround a cancer cell",
+  "creator": "National Institutes of Health (NIH)",
+  "license": "PDM",
+  "source": "https://www.flickr.com/photos/132318516@N08/20673870162"
+ },
+ "tcells2": {
+  "title": "Killer T cells surround a cancer cell",
+  "creator": "NIH Image Galle",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/w/index.php?curid=186913759"
+ },
+ "gbm_mri": {
+  "title": "Glioblastoma - MR coronal with contrast",
+  "creator": "Christaras A",
+  "license": "CC BY 2.5",
+  "source": "https://commons.wikimedia.org/w/index.php?curid=1247035"
+ },
+ "bondi": {
+  "title": "Bondi Beach",
+  "creator": "penreyes",
+  "license": "CC BY 2.0",
+  "source": "https://www.flickr.com/photos/36377696@N00/2845161307"
+ },
+ "harbour": {
+  "title": "Sydney Harbour Bridge & Opera House",
+  "creator": "dkolitha",
+  "license": "CC BY 2.0",
+  "source": "https://www.flickr.com/photos/22213338@N06/20335132744"
+ },
+ "ivdrip": {
+  "title": "Intravenous drip",
+  "creator": "matsuyuki",
+  "license": "CC BY-SA 2.0",
+  "source": "https://www.flickr.com/photos/12173213@N00/8306068659"
+ },
+ "footy": {
+  "title": "Australian Football League (AFL) Clinic with MTs Yasda",
+  "creator": "Australian Embassy Jakarta",
+  "license": "CC BY 2.0",
+  "source": "https://www.flickr.com/photos/138532424@N02/52186163055"
+ },
+ "footy2": {
+  "title": "Australian Football League (AFL) Clinic with MTs Yasda",
+  "creator": "Australian Embassy Jakarta",
+  "license": "CC BY 2.0",
+  "source": "https://www.flickr.com/photos/138532424@N02/52186163270"
+ },
+ "rpa": {
+  "title": "Camperdown Royal Prince Alfred Hospital 1",
+  "creator": "J Bar",
+  "license": "CC BY 3.0",
+  "source": "https://commons.wikimedia.org/w/index.php?curid=3281561"
+ },
+ "mel_histo": {
+  "title": "Histopathology of superficial spreading melanoma",
+  "creator": "Juliana Casagrande Tavoloni Braga, Mariana Petaccia Macedo, Clovis Pinto, Jo\u00e3o Duprat, Maria Dirlei Begnami, Giovanni Pellacani, Gisele Gargantini Rezze",
+  "license": "CC BY 4.0",
+  "source": "https://commons.wikimedia.org/w/index.php?curid=87004389"
+ }
+}

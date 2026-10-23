@@ -316,7 +316,7 @@ function journalArt() {
 function nightArt() {
   const sky = uid('sk'); seed(42); let st = '';
   for (let i = 0; i < 60; i++) st += `<circle class="star" cx="${rnd(0, 1920).toFixed(0)}" cy="${rnd(0, 700).toFixed(0)}" r="${rnd(1.5, 4.5).toFixed(1)}" fill="#fff"/>`;
-  return svgw('0 0 1920 1080', `<defs>${grad(sky, [[0, '#0d1838'], [.7, '#2a2f6b'], [1, '#6a3c6e']])}</defs><rect width="1920" height="1080" fill="url(#${sky})"/>${st}<path transform="translate(230,-50)" d="M1560,170 A90,90 0 1 0 1640,300 A72,72 0 1 1 1560,170 Z" fill="#fff3c4"/>
+  return svgw('0 0 1920 1080', `<defs>${grad(sky, [[0, '#0d1838'], [.7, '#2a2f6b'], [1, '#6a3c6e']])}</defs><rect width="1920" height="1080" fill="url(#${sky})"/>${st}<path transform="translate(230,-95)" d="M1560,170 A90,90 0 1 0 1640,300 A72,72 0 1 1 1560,170 Z" fill="#fff3c4"/>
    <path d="M0,900 Q480,840 960,890 Q1440,940 1920,880 L1920,1080 L0,1080 Z" fill="#1a1530"/>`);
 }
 function candleArt() {

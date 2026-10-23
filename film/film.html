@@ -22,9 +22,11 @@ html,body{margin:0;padding:0;background:#000;overflow:hidden}
 .cav{font-family:Caveat;font-weight:700}
 .label{font-family:Nunito;font-weight:900;color:#3b1f0e;background:#fff;border-radius:999px;padding:0 34px;box-shadow:0 8px 18px rgba(70,20,0,.3)}
 .ch{display:inline-block;transform-origin:50% 80%}
+.card.photo{background:#222}
+.pcap{position:absolute;left:0;right:0;bottom:0;padding:34px 22px 14px;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.72));color:#fff;font-family:Nunito;font-weight:800;font-size:28px;line-height:1.2;text-align:left;white-space:normal}
 </style></head><body>
 <div id="stage"><div id="bgtex"></div><div id="bgov"></div></div>
 <script src="geo.js"></script><script src="timeline.js"></script>
-<script src="lib.js"></script><script src="art_chars.js"></script><script src="art.js"></script><script src="scenes.js"></script>
-<script>document.fonts.ready.then(()=>{window.READY=true;});</script>
+<script src="lib.js"></script><script src="art_chars.js"></script><script src="art.js"></script><script src="credits.js"></script><script src="scenes.js"></script>
+<script>Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode().catch(e => console.log('IMG FAIL ' + i.src)))]).then(()=>{window.READY=true;});</script>
 </body></html>

@@ -1,5 +1,6 @@
 // Scene choreography for "The Life of Richard Scolyer". All times come from timeline.js.
 const ORANGE = '#EA6218', BROWN = '#3b1f0e';
+const PR = n => `photos/press/${n}.jpg`, CC = n => `photos/cc/${n}.jpg`;
 const T0 = id => ITEMS[id].start, TV = id => ITEMS[id].vend;
 const pill = (t, size = 44, bg = '#fff', fg = BROWN) => `<span class="label" style="font-size:${size}px;line-height:${size * 1.7}px;background:${bg};color:${fg}">${t}</span>`;
 const chars = (t, cls = '') => [...t].map(c => c === ' ' ? '<span class="ch" style="width:.3em"> </span>' : `<span class="ch ${cls}">${c}</span>`).join('');
@@ -37,10 +38,10 @@ function titleCard(id, lines, look, extra) {
 {
   const sc = new Scene('intro', { t0: 0, t1: TV('l_gday'), z: 20 });
   const gday = ITEMS.l_gday, tName = gday.start + gday.dur * (gday.text.indexOf('Richard.') / gday.text.length) - 0.1;
-  const portrait = sc.card(portraitArt(), { x: 960, y: 560, w: 700, h: 790, in: 'none', kb: [1.0, 1.08, 0, -10], outAt: tName - 0.25, out: 'pop', outDur: 0.45 });
-  const cl = sc.svg(curtain(), { x: 490, y: 540, w: 1000, h: 1080, in: 'none', outAt: tName - 0.3, out: 'left', origin: '0% 50%', sfx: null, cls: '' });
+  sc.photo(PR('portrait_abc'), { x: 960, y: 560, w: 700, h: 790, pos: '36% 30%', bw: true, in: 'none', kb: [1.05, 1.14, 0, -10], outAt: tName - 0.25, out: 'pop', outDur: 0.45 });
+  const cl = sc.svg(curtain(), { x: 490, y: 540, w: 1000, h: 1080, in: 'none', outAt: tName - 0.3, out: 'left', origin: '0% 50%', sfx: null });
   const cr = sc.svg(curtain(), { x: 1430, y: 540, w: 1000, h: 1080, in: 'none', outAt: tName - 0.3, out: 'right', origin: '100% 50%', sfx: null });
-  const val = sc.svg(valance(), { x: 960, y: 80, w: 1920, h: 170, in: 'none', outAt: tName - 0.3, out: 'up', sfx: null });
+  sc.svg(valance(), { x: 960, y: 80, w: 1920, h: 170, in: 'none', outAt: tName - 0.3, out: 'up', sfx: null });
   cl.classList.add('noshadow'); cr.classList.add('noshadow');
   const t1 = sc.text(`<span class="os" style="font-size:96px;color:#fff;background:rgba(80,80,80,.82);padding:4px 34px;letter-spacing:2px">THE LIFE OF</span>`, { x: 480, y: 800, w: 900, h: 130, in: 'left', at: 1.5, inDur: .7, outAt: tName - 0.5, out: 'left' });
   const t2 = sc.text(`<span class="os" style="font-size:104px;color:#fff;background:${ORANGE};padding:4px 34px;letter-spacing:2px;box-shadow:0 10px 24px rgba(0,0,0,.3)">RICHARD SCOLYER</span>`, { x: 590, y: 930, w: 1120, h: 140, in: 'left', at: 1.75, inDur: .7, outAt: tName - 0.4, out: 'left' });
@@ -48,8 +49,7 @@ function titleCard(id, lines, look, extra) {
   const nm = sc.text(`<span class="capra" style="font-size:260px">${chars('Richard')}</span>`, { x: 960, y: 520, w: 1400, h: 340, in: 'none', at: tName - 0.05, sfx: 'chime', out: 'up', outDur: .45 });
   EVENTS.push({ t: 0.5, type: 'curtain' });
   sc.on(lt => {
-    const p = ease.inout(prog(lt, 0.5, 1.6));
-    const sx = lerp(1, 0.3, p);
+    const sx = lerp(1, 0.3, ease.inout(prog(lt, 0.5, 1.6)));
     cl.style.transform += ` scaleX(${sx})`; cr.style.transform += ` scaleX(${sx})`;
     bounceChars(nm, lt, tName - 0.05, 0.06, 0.55);
   });
@@ -58,11 +58,12 @@ function titleCard(id, lines, look, extra) {
 // ============ CHILDHOOD ============
 {
   const sc = new Scene('l_born');
-  const map = sc.card(ausMapArt({ sea: true, pins: [['Launceston', 'Launceston', 36, -70]] }), { x: 960, y: 560, w: 1240, h: 860, kb: [1.0, 1.06, -40, -50], in: 'pop', out: 'left' });
-  const yr = sc.text(`<div style="width:250px;height:250px;border-radius:50%;background:#ffcf3f;border:7px solid ${BROWN};display:flex;align-items:center;justify-content:center;font-family:Capra;font-size:96px;color:${BROWN};box-shadow:0 12px 24px rgba(70,20,0,.35)">1966</div>`, { x: 470, y: 300, w: 260, h: 260, at: sc.w('1966'), in: 'spin', out: 'pop' });
-  const tasL = sc.text(pill('Tasmania', 50, '#2a9d8f', '#fff'), { x: 1290, y: 930, w: 400, h: 100, at: sc.w('Tasmania'), out: 'pop' });
-  const pin = map.querySelector('#pin-Launceston'), pb = pin.querySelector('.pinb'), pl = pin.querySelector('.pinl'), tas = map.querySelector('.tas');
   const tL = sc.w('Launceston');
+  const map = sc.card(ausMapArt({ sea: true, pins: [['Launceston', 'Launceston', 36, -70]] }), { x: 560, y: 560, w: 900, h: 780, rot: -2, kb: [1.0, 1.06, -30, -40], in: 'pop', out: 'left' });
+  sc.photo(CC('gorge_bridge'), { x: 1420, y: 500, w: 820, h: 615, rot: 3, at: tL + .1, in: 'right', out: 'right', cap: 'Cataract Gorge, Launceston' });
+  sc.text(`<div style="width:250px;height:250px;border-radius:50%;background:#ffcf3f;border:7px solid ${BROWN};display:flex;align-items:center;justify-content:center;font-family:Capra;font-size:96px;color:${BROWN};box-shadow:0 12px 24px rgba(70,20,0,.35)">1966</div>`, { x: 250, y: 230, w: 260, h: 260, at: sc.w('1966'), in: 'spin', out: 'pop' });
+  sc.text(pill('Tasmania', 50, '#2a9d8f', '#fff'), { x: 1420, y: 900, w: 400, h: 100, at: sc.w('Tasmania'), out: 'pop' });
+  const pin = map.querySelector('#pin-Launceston'), pb = pin.querySelector('.pinb'), pl = pin.querySelector('.pinl'), tas = map.querySelector('.tas');
   pin.setAttribute('transform', pin.getAttribute('transform') + ' scale(1.25)');
   EVENTS.push({ t: sc.t0 + tL, type: 'drop' });
   sc.on(lt => {
@@ -75,18 +76,15 @@ function titleCard(id, lines, look, extra) {
 }
 {
   const sc = new Scene('l_kid');
-  const a = sc.card(footyArt(), { x: 400, y: 400, w: 680, h: 476, rot: -4, at: sc.w('footy'), in: 'left', out: 'left' });
-  const b = sc.card(swimArt(), { x: 980, y: 660, w: 680, h: 476, rot: 3, at: sc.w('swimming'), in: 'up', out: 'down' });
-  const c = sc.card(caravanArt(), { x: 1530, y: 380, w: 680, h: 476, rot: -2, at: sc.w('bike'), in: 'right', out: 'right' });
-  sc.text(pill('Footy!', 46), { x: 400, y: 690, w: 300, h: 90, at: sc.w('footy') + .35, rot: -4, out: 'left' });
-  sc.text(pill('Swimming', 46), { x: 980, y: 940, w: 360, h: 90, at: sc.w('swimming') + .35, rot: 3, out: 'down' });
-  sc.text(pill('Caravan holidays', 46), { x: 1530, y: 670, w: 520, h: 90, at: sc.w('caravan') + .1, rot: -2, out: 'right' });
-  const ball = a.querySelector('.ball'), veh = c.querySelector('.veh');
-  sc.on(lt => {
-    const p = (lt * 0.7) % 1;
-    ball.setAttribute('transform', `translate(${lerp(300, 640, p)},${180 - Math.sin(p * Math.PI) * 120}) rotate(${p * 540})`);
-    veh.setAttribute('transform', `translate(${(lt - sc.w('bike')) * 40 - 60},${Math.sin(lt * 18) * 2})`);
-  });
+  sc.photo(PR('childhood_family'), { x: 960, y: 520, w: 620, h: 775, rot: 2, in: 'pop', out: 'down', pos: '50% 50%', cap: 'A young Richard (left) with his family in Launceston' });
+  const a = sc.card(footyArt(), { x: 340, y: 380, w: 560, h: 392, rot: -5, at: sc.w('footy'), in: 'left', out: 'left' });
+  sc.card(swimArt(), { x: 1580, y: 380, w: 560, h: 392, rot: 4, at: sc.w('swimming'), in: 'right', out: 'right' });
+  sc.text(pill('Footy!', 46), { x: 340, y: 620, w: 300, h: 90, at: sc.w('footy') + .35, rot: -5, out: 'left' });
+  sc.text(pill('Swimming', 46), { x: 1580, y: 620, w: 360, h: 90, at: sc.w('swimming') + .35, rot: 4, out: 'right' });
+  sc.card(caravanArt(), { x: 380, y: 820, w: 480, h: 336, rot: 3, at: sc.w('bike'), in: 'up', out: 'left' });
+  sc.text(pill('Family caravan holidays', 48, BROWN, '#fff'), { x: 1460, y: 900, w: 680, h: 100, at: sc.w('caravan'), out: 'right' });
+  const ball = a.querySelector('.ball');
+  sc.on(lt => { const p = (lt * 0.7) % 1; ball.setAttribute('transform', `translate(${lerp(300, 640, p)},${180 - Math.sin(p * Math.PI) * 120}) rotate(${p * 540})`); });
 }
 {
   const sc = new Scene('l_ordin');
@@ -105,16 +103,16 @@ titleCard('t_path', [['What is a', 110, BROWN], ['pathologist?', 200, '#fff']], 
 {
   const sc = new Scene('l_study');
   const tp = sc.w('pathologist'), tb = sc.w('behind');
-  sc.card(uniArt(), { x: 560, y: 470, w: 820, h: 574, rot: -3, in: 'left', outAt: tb, out: 'left' });
-  sc.text(pill('University of Tasmania', 50, '#2a9d8f', '#fff'), { x: 560, y: 830, w: 700, h: 100, rot: -3, at: sc.w('University'), outAt: tb, out: 'left' });
-  const def = `<div style="width:780px;background:#fff;border-radius:30px;padding:40px 46px;box-shadow:0 20px 40px rgba(70,20,0,.35);text-align:left;white-space:normal">
+  sc.photo(CC('utas'), { x: 560, y: 450, w: 820, h: 615, rot: -3, in: 'left', outAt: tp - .1, out: 'left', cap: 'University of Tasmania' });
+  sc.photo(PR('graduation_parents'), { x: 1390, y: 540, w: 600, h: 760, rot: 3, at: sc.w('then') - 1.2, in: 'right', outAt: tp - .1, out: 'right', pos: '50% 35%', cap: 'Graduation day with his mum and dad' });
+  sc.text(pill('Medicine', 50, '#2a9d8f', '#fff'), { x: 560, y: 830, w: 300, h: 100, rot: -3, at: sc.w('medicine'), outAt: tp - .1, out: 'left' });
+  const def = `<div style="width:760px;background:#fff;border-radius:30px;padding:40px 46px;box-shadow:0 20px 40px rgba(70,20,0,.35);text-align:left;white-space:normal">
      <div style="font-family:Capra;font-size:96px;color:${ORANGE};line-height:1">pathologist</div>
      <div style="font-family:Nunito;font-weight:700;font-size:40px;color:#8a6a5a;margin:8px 0 18px">path · OL · o · jist</div>
      <div style="font-family:Nunito;font-weight:800;font-size:46px;color:${BROWN};line-height:1.25">A doctor who studies tiny pieces of the body to find out what disease someone has.</div></div>`;
-  sc.text(def, { x: 1350, y: 470, w: 840, h: 520, rot: 2, at: tp, in: 'right', out: 'right' });
-  const det = sc.svg(person({ hat: 'detective', propR: PROP.magnifier('R'), aR: -70, mouth: 'grin', eyes: 'open', brows: 'up' }), { x: 560, y: 620, w: 340, h: 590, at: tb + .2, in: 'up', out: 'down', anim: lt => ({ x: Math.sin(lt * 1.6) * 30 }) });
-  sc.text(pill('Behind the scenes… like a detective', 46, BROWN, '#fff'), { x: 960, y: 980, w: 900, h: 100, at: sc.w('detective'), out: 'down' });
-  sc.on(lt => wave(det, 'R', lt, -70, 12, 3));
+  sc.text(def, { x: 1400, y: 470, w: 820, h: 520, rot: 2, at: tp, in: 'right', out: 'right' });
+  sc.photo(PR('microscope_mia'), { x: 500, y: 500, w: 780, h: 597, rot: -2, at: tp + .1, in: 'left', out: 'left', cap: 'Richard at his microscope' });
+  sc.text(pill('Behind the scenes… like a detective', 46, BROWN, '#fff'), { x: 960, y: 985, w: 900, h: 100, at: tb, out: 'down' });
 }
 {
   const sc = new Scene('l_sample');
@@ -129,10 +127,10 @@ titleCard('t_path', [['What is a', 110, BROWN], ['pathologist?', 200, '#fff']], 
 }
 {
   const sc = new Scene('l_micro');
-  sc.svg(microscopeArt(), { x: 560, y: 560, w: 560, h: 728, in: 'left', out: 'left' });
-  const v = sc.card(cellsArt('normal', 2), { x: 1330, y: 520, w: 680, h: 680, radius: 340, at: sc.w('microscope'), in: 'zoom', out: 'right', kb: [1.0, 1.25, 0, 0] });
-  v.style.background = 'transparent';
-  sc.text(pill('Under the microscope', 48), { x: 1330, y: 930, w: 620, h: 100, at: sc.w('microscope') + .4, out: 'right' });
+  sc.photo(CC('slide_scope'), { x: 560, y: 540, w: 560, h: 780, rot: -3, in: 'left', out: 'left', pos: '50% 60%' });
+  const v = sc.photo(CC('mel_histo'), { x: 1330, y: 500, w: 660, h: 660, radius: 330, at: sc.w('microscope'), in: 'zoom', out: 'right', kb: [1.4, 1.8, 0, 0], pos: '30% 40%' });
+  v.style.border = '18px solid #2f3e5c';
+  sc.text(pill('A real view down the microscope', 46), { x: 1330, y: 930, w: 760, h: 100, at: sc.w('microscope') + .4, out: 'right' });
 }
 {
   const sc = new Scene('l_harm');
@@ -151,9 +149,9 @@ titleCard('t_mel', [["Australia's", 190, '#fff'], ['cancer', 130, BROWN]], { hat
 {
   const sc = new Scene('l_rpa');
   const tc = sc.w('Canberra'), ts = sc.w('Sydney'), tm = sc.w('melanoma');
-  const m = sc.card(ausMapArt({ sea: true, vb: '360 300 700 640', pins: [['Canberra', 'Canberra', -250, -60], ['Sydney', 'Sydney', -150, 70]] }), { x: 600, y: 520, w: 900, h: 820, rot: -2, in: 'left', outAt: tm - .2, out: 'left', kb: [1, 1.05, 0, 0] });
-  sc.card(sydneyArt(), { x: 1400, y: 470, w: 820, h: 574, rot: 3, at: ts, in: 'right', outAt: tm - .2, out: 'right' });
-  sc.text(pill('Sydney', 50), { x: 1400, y: 800, w: 280, h: 100, rot: 3, at: ts + .3, outAt: tm - .2, out: 'right' });
+  const m = sc.card(ausMapArt({ sea: true, vb: '360 300 700 640', pins: [['Canberra', 'Canberra', -250, -60], ['Sydney', 'Sydney', -150, 70]] }), { x: 500, y: 540, w: 800, h: 740, rot: -2, in: 'left', outAt: tm - .2, out: 'left', kb: [1, 1.05, 0, 0] });
+  sc.photo(CC('canberra_hosp'), { x: 1390, y: 300, w: 700, h: 430, rot: 2, at: tc, in: 'right', outAt: tm - .2, out: 'right', cap: 'Canberra Hospital' });
+  sc.photo(CC('rpa'), { x: 1390, y: 770, w: 700, h: 450, rot: -2, at: ts, in: 'right', outAt: tm - .2, out: 'right', cap: 'Royal Prince Alfred Hospital, Sydney' });
   const pins = [[m.querySelector('#pin-Canberra'), tc], [m.querySelector('#pin-Sydney'), ts]];
   pins.forEach(([p, t]) => EVENTS.push({ t: sc.t0 + t, type: 'drop' }));
   sc.on(lt => pins.forEach(([p, t]) => {
@@ -175,20 +173,19 @@ titleCard('t_mel', [["Australia's", 190, '#fff'], ['cancer', 130, BROWN]], { hat
   sc.text(pill('Skin cancer', 52, '#7b4fb8', '#fff'), { x: 470, y: 920, w: 400, h: 100, at: tsk + .3, out: 'left' });
   sc.svg(ausMapArt({ land: '#ffd36b' }), { x: 1340, y: 600, w: 640, h: 590, at: ta, in: 'pop', outAt: tsu - .1, out: 'pop', outDur: .3 });
   sc.text(pill("Australia's national cancer", 48, BROWN, '#fff'), { x: 1340, y: 930, w: 720, h: 100, at: ta + .4, outAt: tsu - .1, out: 'pop', outDur: .3 });
-  const beach = sc.card(beachArt(), { x: 1340, y: 600, w: 820, h: 574, rot: 2, at: tsu + .1, in: 'right', out: 'right' });
-  sc.text(pill('One of the highest rates in the world!', 46, '#ffcf3f', BROWN), { x: 1240, y: 960, w: 1000, h: 100, at: th, in: 'up', out: 'down' });
-  const sun = beach.querySelector('.sun .rays');
-  sc.on(lt => sun.setAttribute('transform', `rotate(${lt * 30})`));
+  sc.photo(CC('bondi'), { x: 1340, y: 590, w: 820, h: 615, rot: 2, at: tsu + .1, in: 'right', out: 'right', cap: 'Bondi Beach, Sydney' });
+  sc.text(pill('One of the highest rates in the world!', 46, '#ffcf3f', BROWN), { x: 1240, y: 970, w: 1000, h: 100, at: th, in: 'up', out: 'down' });
 }
 {
   const sc = new Scene('l_best');
-  const g = sc.svg(globeArt(), { x: 960, y: 590, w: 760, h: 760, in: 'pop', out: 'pop' });
-  sc.text(pill('One of the best on the planet', 56, BROWN, '#fff'), { x: 960, y: 140, w: 960, h: 110, at: sc.w('best'), in: 'down', out: 'up' });
-  const star = sc.svg(sparkle('#ffd33f'), { x: 960, y: 590, w: 130, h: 130, at: 1.6, in: 'spin', out: 'pop', sfx: 'sparkle' });
+  const g = sc.svg(globeArt(), { x: 640, y: 590, w: 700, h: 700, in: 'pop', out: 'pop' });
+  sc.photo(PR('portrait_mia'), { x: 1390, y: 560, w: 620, h: 760, rot: 3, at: .5, in: 'right', out: 'right', pos: '50% 25%' });
+  sc.text(pill('One of the best on the planet', 56, BROWN, '#fff'), { x: 960, y: 120, w: 960, h: 110, at: sc.w('best'), in: 'down', out: 'up' });
+  const star = sc.svg(sparkle('#ffd33f'), { x: 640, y: 590, w: 120, h: 120, at: 1.6, in: 'spin', out: 'pop', sfx: 'sparkle' });
   sc.on(lt => {
     const lon = lerp(20, 140, ease.out(prog(lt, 0, 2.2))), lat = lerp(10, -22, ease.out(prog(lt, 0, 2.2)));
     const proj = updateGlobe(g, lon, lat); const [x, y] = proj(151.2, -33.9);
-    star.style.left = (960 + x * 760 / 520 - 65) + 'px'; star.style.top = (590 + y * 760 / 520 - 65) + 'px';
+    star.style.left = (640 + x * 700 / 520 - 60) + 'px'; star.style.top = (590 + y * 700 / 520 - 60) + 'px';
   });
 }
 {
@@ -220,13 +217,10 @@ titleCard('t_team', [['A dream', 120, BROWN], ['team', 230, '#fff']], { mouth: '
 });
 {
   const sc = new Scene('l_met');
-  sc.card(instituteArt(), { x: 960, y: 430, w: 1200, h: 747, in: 'pop', out: 'up' });
-  sc.text(`<div style="width:220px;height:220px;border-radius:50%;background:#ffcf3f;border:7px solid ${BROWN};display:flex;align-items:center;justify-content:center;font-family:Capra;font-size:84px;color:${BROWN}">2009</div>`, { x: 330, y: 220, w: 230, h: 230, at: sc.w('2009'), in: 'spin', out: 'pop' });
-  const r = sc.svg(person({ mouth: 'grin', aR: -120 }), { x: 520, y: 760, w: 280, h: 485, at: .3, in: 'left', out: 'left' });
-  const g = sc.svg(person({ ...LOOK.georgina, mouth: 'grin', aL: 120 }), { x: 1400, y: 760, w: 280, h: 485, at: sc.w('Georgina'), in: 'right', out: 'right' });
-  sc.text(pill('Richard', 44), { x: 520, y: 1020, w: 260, h: 90, at: .6, out: 'left' });
-  sc.text(pill('Georgina Long', 44), { x: 1400, y: 1020, w: 400, h: 90, at: sc.w('Georgina') + .3, out: 'right' });
-  sc.on(lt => { wave(r, 'R', lt, -120, 25); wave(g, 'L', lt, 120, 25); });
+  sc.photo(PR('with_georgina'), { x: 960, y: 500, w: 1280, h: 720, in: 'pop', out: 'up', pos: '50% 30%' });
+  sc.text(`<div style="width:220px;height:220px;border-radius:50%;background:#ffcf3f;border:7px solid ${BROWN};display:flex;align-items:center;justify-content:center;font-family:Capra;font-size:84px;color:${BROWN}">2009</div>`, { x: 300, y: 190, w: 230, h: 230, at: sc.w('2009'), in: 'spin', out: 'pop' });
+  sc.text(pill('Georgina Long', 50), { x: 760, y: 950, w: 420, h: 100, at: sc.w('Georgina'), out: 'down' });
+  sc.text(pill('Richard Scolyer', 50), { x: 1180, y: 950, w: 440, h: 100, at: .5, out: 'down' });
 }
 {
   const sc = new Scene('l_detect');
@@ -251,9 +245,9 @@ titleCard('t_team', [['A dream', 120, BROWN], ['team', 230, '#fff']], { mouth: '
 }
 {
   const sc = new Scene('l_immuno');
-  sc.svg(ivArt(), { x: 600, y: 560, w: 470, h: 730, in: 'swing', inDur: 1, origin: '50% 0%', out: 'left' });
-  const w = sc.text(`<div class="capra" style="font-size:150px;line-height:1.05;text-align:left">${chars('IMMUNO-')}<br>${chars('THERAPY')}</div>`, { x: 1300, y: 520, w: 900, h: 400, at: sc.w('called'), in: 'none', out: 'right', sfx: 'sparkle' });
-  for (let i = 0; i < 5; i++) sc.svg(sparkle(i % 2 ? '#fff' : '#ffd33f'), { x: 940 + i * 180, y: 300 + (i % 2) * 460, w: 70, h: 70, at: sc.w('called') + .3 + i * .1, in: 'spin', out: 'pop', sfx: null, float: 10 });
+  sc.photo(CC('ivdrip'), { x: 560, y: 540, w: 760, h: 570, rot: -3, in: 'left', out: 'left' });
+  const w = sc.text(`<div class="capra" style="font-size:150px;line-height:1.05;text-align:left">${chars('IMMUNO-')}<br>${chars('THERAPY')}</div>`, { x: 1380, y: 520, w: 900, h: 400, at: sc.w('called'), in: 'none', out: 'right', sfx: 'sparkle' });
+  for (let i = 0; i < 5; i++) sc.svg(sparkle(i % 2 ? '#fff' : '#ffd33f'), { x: 1020 + i * 180, y: 300 + (i % 2) * 460, w: 70, h: 70, at: sc.w('called') + .3 + i * .1, in: 'spin', out: 'pop', sfx: null, float: 10 });
   sc.on(lt => bounceChars(w, lt, sc.w('called'), .03, .45));
 }
 {
@@ -270,6 +264,7 @@ titleCard('t_team', [['A dream', 120, BROWN], ['team', 230, '#fff']], { mouth: '
   });
   const z = sc.text(`<span class="nun" style="font-size:64px;color:#fff;text-shadow:0 4px 0 rgba(0,0,0,.2)">Zzz…</span>`, { x: 480, y: 220, w: 260, h: 100, at: .6, outAt: tw, out: 'pop', float: 12 });
   sc.text(pill('Your immune system', 52, '#2a62b8', '#fff'), { x: 520, y: 900, w: 620, h: 104, at: ti, out: 'down' });
+  sc.photo(CC('tcells'), { x: 960, y: 190, w: 420, h: 280, rot: 2, at: ti + .2, in: 'down', out: 'up', cap: 'Real T cells (green) attacking a cancer cell' });
   sc.text(pill('Cancer', 48, '#7b4fb8', '#fff'), { x: 1450, y: 730, w: 260, h: 96, at: .6, outAt: tfi + .6, out: 'pop' });
   sc.text(`<span class="capra" style="font-size:160px">POW!</span>`, { x: 1420, y: 360, w: 600, h: 220, rot: -8, at: tfi + .7, in: 'bigpop', out: 'pop', sfx: 'pow' });
 }
@@ -297,18 +292,22 @@ bgKey(0, 0); bgKey(T0('t_twist') - 0.2, 0); bgKey(T0('t_twist') + 1.0, 0.42); bg
 titleCard('t_twist', [['A shocking', 120, '#ffd9c2'], ['twist', 240, '#fff']], { mouth: 'o', eyes: 'wide', brows: 'worried', aL: 160, aR: -160 });
 {
   const sc = new Scene('l_2023');
-  sc.svg(calendarArt(2023), { x: 700, y: 560, w: 520, h: 572, rot: -5, in: 'drop', out: 'left' });
-  const st = sc.svg(stormArt(), { x: 1300, y: 420, w: 760, h: 456, at: sc.w('shocking') - .3, in: 'right', inDur: .8, out: 'right', sfx: 'thunder' });
-  const bolt = st.querySelector('.bolt');
-  sc.on(lt => { const f = lt > sc.w('shocking') + .3 ? ((lt * 7) % 1 < .5 ? 1 : .25) : 0; bolt.style.opacity = f; });
+  const ts = sc.w('shocking');
+  const ph = sc.photo(PR('aquathon_emily'), { x: 640, y: 520, w: 960, h: 590, rot: -3, in: 'left', out: 'left', pos: '45% 40%', cap: 'Fit and healthy: Richard with his daughter Emily' });
+  sc.svg(calendarArt(2023), { x: 1450, y: 600, w: 440, h: 484, rot: 5, at: sc.w('2023') - .1, in: 'drop', out: 'right' });
+  const st = sc.svg(stormArt(), { x: 1000, y: 230, w: 700, h: 420, at: ts - .3, in: 'right', inDur: .8, out: 'right', sfx: 'thunder' });
+  const bolt = st.querySelector('.bolt'), img = ph.querySelector('img');
+  sc.on(lt => { const f = lt > ts + .3 ? ((lt * 7) % 1 < .5 ? 1 : .25) : 0; bolt.style.opacity = f; img.style.filter = `saturate(${(1 - .7 * prog(lt, ts, 1)).toFixed(2)}) brightness(${(1 - .25 * prog(lt, ts, 1)).toFixed(2)})`; });
 }
 {
   const sc = new Scene('l_seiz');
-  const tt = sc.w('tumour');
-  const m = sc.card(mriArt(true), { x: 960, y: 530, w: 720, h: 748, in: 'pop', out: 'pop', kb: [1, 1.06, 0, 0] });
-  sc.text(pill('Brain scan', 48), { x: 960, y: 960, w: 340, h: 96, at: .4, out: 'pop' });
-  const ring = sc.svg(svgw('0 0 200 200', `<circle cx="100" cy="100" r="80" fill="none" stroke="#ff3b3b" stroke-width="12" stroke-dasharray="503" stroke-dashoffset="503" class="ring" stroke-linecap="round"/>`, 'xMidYMid meet'), { x: 960 - 720 / 2 + 170 * 720 / 520, y: 530 - 748 / 2 + 230 * 748 / 540, w: 200, h: 200, at: tt, in: 'none', out: 'pop', sfx: 'ding' });
-  sc.text(pill('Tumour', 50, '#ff3b3b', '#fff'), { x: 520, y: 300, w: 300, h: 100, at: tt + .3, out: 'pop' });
+  const tsn = sc.w('scans'), tt = sc.w('tumour');
+  sc.photo(PR('mri_room'), { x: 560, y: 540, w: 640, h: 800, rot: -3, in: 'left', out: 'left', pos: '50% 50%' });
+  sc.photo(CC('gbm_mri'), { x: 1360, y: 520, w: 640, h: 622, at: tsn, in: 'pop', out: 'pop', kb: null });
+  sc.text(pill('Brain scan', 48), { x: 1360, y: 900, w: 340, h: 96, at: tsn + .4, out: 'pop' });
+  const ring = sc.svg(svgw('0 0 200 200', `<circle cx="100" cy="100" r="80" fill="none" stroke="#ff3b3b" stroke-width="10" stroke-dasharray="503" stroke-dashoffset="503" class="ring" stroke-linecap="round"/>`, 'xMidYMid meet'), { x: 1360 - 320 + 0.35 * 640, y: 520 - 311 + 0.29 * 622, w: 250, h: 250, at: tt, in: 'none', out: 'pop', sfx: 'ding' });
+  ring.classList.add('noshadow');
+  sc.text(pill('Tumour', 50, '#ff3b3b', '#fff'), { x: 1080, y: 170, w: 300, h: 100, at: tt + .3, out: 'pop' });
   const rr = ring.querySelector('.ring');
   sc.on(lt => rr.setAttribute('stroke-dashoffset', (503 * (1 - ease.out(prog(lt, tt, .7)))).toFixed(1)));
 }
@@ -329,8 +328,8 @@ titleCard('t_twist', [['A shocking', 120, '#ffd9c2'], ['twist', 240, '#fff']], {
 {
   const sc = new Scene('l_love');
   const tw = sc.w('words');
-  [['life', lifeArt(), 380, -4], ['family', familyArt(false), 960, 2], ['work', workArt(), 1540, -2]].forEach(([wd, art, x, r], i) => {
-    sc.card(art, { x, y: 470, w: 540, h: 400, rot: r, at: sc.w(wd) - .15, in: 'up', outAt: tw - .1, out: 'down' });
+  [['life', PR('city2surf'), 380, -4, '50% 35%'], ['family', PR('family_bench'), 960, 2, '50% 40%'], ['work', PR('microscope_mia'), 1540, -2, '60% 40%']].forEach(([wd, src, x, r, pos]) => {
+    sc.photo(src, { x, y: 470, w: 540, h: 400, rot: r, at: sc.w(wd) - .15, in: 'up', outAt: tw - .1, out: 'down', pos });
     sc.text(pill(wd === 'life' ? 'His life' : wd === 'family' ? 'His family' : 'His work', 48), { x, y: 730, w: 340, h: 96, rot: r, at: sc.w(wd) + .15, outAt: tw - .1, out: 'down' });
   });
   for (let i = 0; i < 6; i++) sc.svg(svgw('0 0 100 90', heartG('#ff4d6d'), 'xMidYMid meet'), { x: 300 + i * 270, y: 900, w: 70, h: 63, at: .5 + i * .2, in: 'pop', outAt: tw - .1, out: 'pop', sfx: null, drift: [0, -60], float: 8 });
@@ -338,10 +337,11 @@ titleCard('t_twist', [['A shocking', 120, '#ffd9c2'], ['twist', 240, '#fff']], {
 {
   const sc = new Scene('l_quote1');
   const q = ITEMS.l_quote1.text;
-  const el = sc.text(`<div style="width:1380px;background:${BROWN};border-radius:34px;padding:60px 80px 50px;box-shadow:0 24px 50px rgba(0,0,0,.45);white-space:normal;text-align:left;position:relative">
+  sc.photo(PR('bauer_portrait'), { x: 330, y: 540, w: 470, h: 700, rot: -3, in: 'left', out: 'left', pos: '50% 25%' });
+  const el = sc.text(`<div style="width:1180px;background:${BROWN};border-radius:34px;padding:56px 70px 46px;box-shadow:0 24px 50px rgba(0,0,0,.45);white-space:normal;text-align:left;position:relative">
     <div style="position:absolute;left:30px;top:-70px;font-family:Capra;font-size:260px;color:${ORANGE};line-height:1">“</div>
-    <div class="q" style="font-family:Nunito;font-weight:900;font-size:66px;line-height:1.3;color:#fff">${wordsHTML(q)}</div>
-    <div style="font-family:Nunito;font-weight:700;font-size:36px;color:#ffb27a;margin-top:30px;text-align:right">— Richard Scolyer, ABC <i>Australian Story</i>, 2023</div></div>`, { x: 960, y: 540, w: 1400, h: 700, in: 'pop', out: 'pop' });
+    <div class="q" style="font-family:Nunito;font-weight:900;font-size:60px;line-height:1.3;color:#fff">${wordsHTML(q)}</div>
+    <div style="font-family:Nunito;font-weight:700;font-size:34px;color:#ffb27a;margin-top:28px;text-align:right">— Richard Scolyer, ABC <i>Australian Story</i>, 2023</div></div>`, { x: 1180, y: 540, w: 1200, h: 700, in: 'pop', out: 'pop' });
   sc.on(lt => revealWords(el, lt, 0, ITEMS.l_quote1.dur, q));
 }
 
@@ -365,15 +365,13 @@ titleCard('t_zero', [['Patient', 150, '#fff'], ['zero', 250, BROWN]], { ...LOOK.
 {
   const sc = new Scene('l_volun');
   const tz = sc.w('zero'), tf = sc.w('first'), tbs = sc.w('before');
-  const r = sc.svg(person({ ...LOOK.gown, mouth: 'grin', brows: 'determined', aR: -165 }), { x: 560, y: 640, w: 380, h: 660, in: 'up', out: 'left' });
-  sc.text(pill('I volunteer!', 50, '#fff', BROWN), { x: 300, y: 300, w: 400, h: 100, rot: -5, at: .4, out: 'pop' });
+  sc.photo(PR('hospital_treatment'), { x: 480, y: 540, w: 640, h: 800, rot: -3, in: 'left', out: 'left', pos: '50% 40%', cap: 'Richard during his treatment' });
   sc.text(`<div style="font-family:Capra;font-size:120px;color:#e63950;border:12px solid #e63950;border-radius:24px;padding:0 40px;background:rgba(255,255,255,.92);line-height:1.15">PATIENT ZERO</div>`, { x: 1290, y: 300, w: 980, h: 200, rot: -7, at: tz - .1, in: 'stamp', inDur: .35, out: 'pop' });
   sc.text(`<div style="font-family:Nunito;font-weight:900;font-size:66px;color:${BROWN};background:#ffcf3f;border:6px solid ${BROWN};border-radius:999px;padding:6px 50px">🌏 WORLD FIRST!</div>`, { x: 1290, y: 520, w: 760, h: 140, at: tf, in: 'bigpop', out: 'pop', sfx: 'chime' });
   const step = (n, t, c) => `<div style="display:flex;align-items:center;gap:18px;background:#fff;border-radius:26px;padding:16px 30px;box-shadow:0 10px 20px rgba(70,20,0,.3)"><div style="width:70px;height:70px;border-radius:50%;background:${c};color:#fff;font-family:Capra;font-size:50px;display:flex;align-items:center;justify-content:center">${n}</div><div class="nun" style="font-size:46px;color:${BROWN}">${t}</div></div>`;
   sc.text(step(1, 'Immunotherapy', '#2a9d8f'), { x: 1060, y: 800, w: 520, h: 120, at: tbs - .2, in: 'left', out: 'down' });
   sc.text(`<span class="capra" style="font-size:90px">→</span>`, { x: 1370, y: 800, w: 100, h: 120, at: tbs + .1, in: 'pop', out: 'down', sfx: null });
   sc.text(step(2, 'Surgery', '#e63950'), { x: 1620, y: 800, w: 400, h: 120, at: sc.w('surgery'), in: 'right', out: 'down' });
-  sc.on(lt => wave(r, 'R', lt, -165, 12, 6));
 }
 {
   const sc = new Scene('l_vacc');
@@ -387,9 +385,10 @@ titleCard('t_zero', [['Patient', 150, '#fff'], ['zero', 250, BROWN]], { ...LOOK.
 {
   const sc = new Scene('l_risk');
   const tr = sc.w('right');
-  const s = sc.svg(scaleArt(), { x: 960, y: 560, w: 1100, h: 754, in: 'pop', out: 'pop' });
-  sc.text(pill('A big risk', 54, '#ffcf3f', BROWN), { x: 470, y: 900, w: 380, h: 110, at: .3, out: 'pop' });
-  sc.text(pill('The right thing to do', 54, '#e63950', '#fff'), { x: 1420, y: 900, w: 640, h: 110, at: tr, out: 'pop' });
+  sc.photo(PR('surgery_katie'), { x: 520, y: 500, w: 820, h: 578, rot: -3, in: 'left', out: 'left', cap: 'Surgery day, with his wife Katie' });
+  const s = sc.svg(scaleArt(), { x: 1400, y: 470, w: 820, h: 562, at: .3, in: 'pop', out: 'pop' });
+  sc.text(pill('A big risk', 50, '#ffcf3f', BROWN), { x: 1170, y: 860, w: 360, h: 104, at: .5, out: 'pop' });
+  sc.text(pill('The right thing to do', 50, '#e63950', '#fff'), { x: 1580, y: 960, w: 600, h: 104, at: tr, out: 'pop' });
   const beam = s.querySelector('.beam'), pl = s.querySelector('.panL'), pr = s.querySelector('.panR');
   sc.on(lt => {
     const a = lerp(-10, 12, ease.elastic(prog(lt, tr, 1.4))) + (lt < tr ? Math.sin(lt * 3) * 2 : 0);
@@ -415,32 +414,29 @@ titleCard('t_zero', [['Patient', 150, '#fff'], ['zero', 250, BROWN]], { ...LOOK.
 titleCard('t_aoty', [['Australians', 200, '#fff'], ['of the Year', 130, BROWN]], { ...LOOK.suit, mouth: 'grin', eyes: 'happy', propR: PROP.trophy('R'), aR: -165 });
 {
   const sc = new Scene('l_aoty');
-  sc.svg(stageArt(), { x: 960, y: 540, w: 1920, h: 1080, cls: 'noshadow', in: 'fade', inDur: .5, out: 'fade', sfx: null });
-  const r = sc.svg(person({ ...LOOK.suit, mouth: 'grin', eyes: 'happy', aR: -160, propR: PROP.trophy('R') }), { x: 800, y: 640, w: 340, h: 590, at: .3, in: 'up', out: 'down', anim: lt => ({ y: -Math.abs(Math.sin(lt * 3.6)) * 14 }) });
-  const g = sc.svg(person({ ...LOOK.georgina, coat: '#7b4fb8', mouth: 'grin', eyes: 'happy', aL: 160 }), { x: 1120, y: 640, w: 340, h: 590, at: .45, in: 'up', out: 'down', anim: lt => ({ y: -Math.abs(Math.sin(lt * 3.6 + 1.2)) * 14 }) });
-  sc.text(`<div style="font-family:Capra;font-size:100px;color:#fff;background:#e63950;border:8px solid #ffd33f;border-radius:26px;padding:4px 50px;box-shadow:0 14px 30px rgba(0,0,0,.45)">Australians of the Year</div>`, { x: 960, y: 150, w: 1500, h: 190, at: sc.w('Australians'), in: 'bigpop', out: 'up', sfx: 'chime' });
-  sc.text(`<div style="width:200px;height:200px;border-radius:50%;background:#ffcf3f;border:7px solid ${BROWN};display:flex;align-items:center;justify-content:center;font-family:Capra;font-size:76px;color:${BROWN}">2024</div>`, { x: 300, y: 330, w: 210, h: 210, at: sc.w('2024'), in: 'spin', out: 'pop' });
-  // confetti
+  sc.photo(PR('aoty'), { x: 960, y: 600, w: 1320, h: 880, in: 'zoom', inDur: .6, out: 'fade', pos: '50% 30%', cap: 'Georgina Long and Richard Scolyer, 2024 Australians of the Year' });
+  sc.text(`<div style="font-family:Capra;font-size:100px;color:#fff;background:#e63950;border:8px solid #ffd33f;border-radius:26px;padding:4px 50px;box-shadow:0 14px 30px rgba(0,0,0,.45)">Australians of the Year</div>`, { x: 960, y: 125, w: 1500, h: 190, at: sc.w('Australians'), in: 'bigpop', out: 'up', sfx: 'chime' });
+  sc.text(`<div style="width:200px;height:200px;border-radius:50%;background:#ffcf3f;border:7px solid ${BROWN};display:flex;align-items:center;justify-content:center;font-family:Capra;font-size:76px;color:${BROWN}">2024</div>`, { x: 220, y: 300, w: 210, h: 210, at: sc.w('2024'), in: 'spin', out: 'pop' });
   seed(99); let conf = ''; const P = [];
   for (let i = 0; i < 90; i++) { P.push([rnd(0, 1920), rnd(-1100, 0), rnd(140, 260), rnd(0, 6.28), rnd(2, 5)]); conf += `<rect class="cf" width="16" height="26" rx="3" fill="${['#ffd33f', '#e63950', '#2a9d8f', '#fff', '#7ec8f0', '#ff8a3d'][i % 6]}"/>`; }
-  const cf = sc.svg(`<svg viewBox="0 0 1920 1080" style="overflow:visible">${conf}</svg>`, { x: 960, y: 540, w: 1920, h: 1080, at: sc.w('Australians'), in: 'none', out: 'fade', sfx: null, cls: '' });
-  cf.classList.add('noshadow');
+  const cf = sc.svg(`<svg viewBox="0 0 1920 1080" style="overflow:visible">${conf}</svg>`, { x: 960, y: 540, w: 1920, h: 1080, at: sc.w('Australians'), in: 'none', out: 'fade', sfx: null, cls: 'noshadow' });
   const rects = cf.querySelectorAll('.cf'), t0 = sc.w('Australians');
   sc.on(lt => {
     const tt = lt - t0;
     rects.forEach((e, i) => { const [x, y0, v, ph, sp] = P[i]; const y = y0 + v * tt * 2.2; e.setAttribute('transform', `translate(${(x + Math.sin(tt * sp + ph) * 40).toFixed(1)},${(y % 1250 + (y > 1150 ? -1250 : 0)).toFixed(1)}) rotate(${(tt * 200 * sp + ph * 50) % 360})`); });
-    wave(g, 'L', lt, 160, 14, 6);
   });
 }
 {
   const sc = new Scene('l_going');
   const tb = sc.w('Tour'), tp = sc.w('two hundred'), tk = sc.w('King');
-  sc.card(bikeArt(), { x: 400, y: 400, w: 660, h: 462, rot: -4, at: tb - .2, in: 'left', out: 'left' });
-  sc.text(pill('Tour de Cure', 48), { x: 400, y: 680, w: 400, h: 96, rot: -4, at: tb + .2, out: 'left' });
-  sc.card(shoeArt(), { x: 980, y: 650, w: 660, h: 462, rot: 3, at: tp - .2, in: 'up', out: 'down' });
-  sc.text(pill('250th parkrun', 48), { x: 980, y: 930, w: 420, h: 96, rot: 3, at: tp + .3, out: 'down' });
-  sc.card(crownHatArt(), { x: 1530, y: 380, w: 660, h: 462, rot: -2, at: tk - .2, in: 'right', out: 'right' });
-  sc.text(pill('An Akubra for the King', 48), { x: 1530, y: 660, w: 620, h: 96, rot: -2, at: sc.w('Akubra'), out: 'right' });
+  sc.photo(PR('tdc_hobart'), { x: 960, y: 520, w: 1000, h: 667, in: 'pop', outAt: tb - .35, out: 'pop', outDur: .3, pos: '50% 40%' });
+  sc.text(pill("Richard didn't slow down!", 56, BROWN, '#fff'), { x: 960, y: 930, w: 760, h: 110, at: .3, outAt: tb - .35, out: 'pop', outDur: .3 });
+  sc.photo(PR('tdc_group'), { x: 400, y: 400, w: 680, h: 453, rot: -4, at: tb - .2, in: 'left', out: 'left' });
+  sc.text(pill('Tour de Cure', 48), { x: 400, y: 660, w: 400, h: 96, rot: -4, at: tb + .2, out: 'left' });
+  sc.photo(PR('parkrun250'), { x: 980, y: 660, w: 680, h: 510, rot: 3, at: tp - .2, in: 'up', out: 'down' });
+  sc.text(pill('250th parkrun', 48), { x: 980, y: 950, w: 420, h: 96, rot: 3, at: tp + .3, out: 'down' });
+  sc.photo(PR('king_akubra'), { x: 1530, y: 390, w: 680, h: 453, rot: -2, at: tk - .2, in: 'right', out: 'right', pos: '40% 40%' });
+  sc.text(pill('An Akubra for the King', 48), { x: 1530, y: 650, w: 620, h: 96, rot: -2, at: sc.w('Akubra'), out: 'right' });
 }
 {
   const sc = new Scene('l_nature');
@@ -459,21 +455,22 @@ titleCard('t_lives', [['Changing', 140, BROWN], ['lives', 260, '#fff']], { mouth
 {
   const sc = new Scene('l_back');
   const tc = sc.w('came back'), tb = sc.w('But');
-  sc.card(mriArt(true, 21), { x: 960, y: 500, w: 560, h: 582, in: 'pop', outAt: tb - .1, out: 'pop', kb: [1, 1.05, 0, 0] });
-  sc.text(pill('2025: the cancer came back', 50, BROWN, '#fff'), { x: 960, y: 900, w: 760, h: 104, at: tc - .2, outAt: tb - .1, out: 'pop' });
-  sc.card(familyArt(true), { x: 960, y: 480, w: 1300, h: 770, at: tb, in: 'up', out: 'up', kb: [1, 1.08, -30, 0] });
-  [['living', 'Living', 520], ['loving', 'Loving', 960], ['fun', 'Having fun', 1400]].forEach(([w, t, x]) => sc.text(pill(t, 56, '#fff', BROWN), { x, y: 960, w: 420, h: 110, at: sc.w(w) - .1, in: 'bigpop', out: 'down' }));
-  for (let i = 0; i < 5; i++) sc.svg(svgw('0 0 100 90', heartG('#ff4d6d'), 'xMidYMid meet'), { x: 600 + i * 180, y: 760, w: 60, h: 54, at: tb + .6 + i * .3, in: 'pop', out: 'fade', sfx: null, drift: [0, -90], float: 8 });
+  sc.photo(PR('profile_dressing'), { x: 960, y: 480, w: 1000, h: 525, in: 'pop', outAt: tb - .1, out: 'pop', pos: '40% 40%' });
+  sc.text(pill('2025: the cancer came back', 50, BROWN, '#fff'), { x: 960, y: 860, w: 760, h: 104, at: tc - .2, outAt: tb - .1, out: 'pop' });
+  sc.photo(PR('family5'), { x: 760, y: 470, w: 1080, h: 608, rot: -2, at: tb, in: 'up', out: 'up', pos: '50% 35%' });
+  sc.photo(PR('parkrun_rainbow'), { x: 1560, y: 400, w: 520, h: 390, rot: 4, at: sc.w('fun') - .3, in: 'right', out: 'right' });
+  [['living', 'Living', 460], ['loving', 'Loving', 900], ['fun', 'Having fun', 1380]].forEach(([w, t, x]) => sc.text(pill(t, 56, '#fff', BROWN), { x, y: 940, w: 420, h: 110, at: sc.w(w) - .1, in: 'bigpop', out: 'down' }));
 }
 {
   const sc = new Scene('l_died');
   const ta = sc.w('almost');
   sc.svg(nightArt(), { x: 960, y: 540, w: 1920, h: 1080, cls: 'noshadow', in: 'fade', inDur: 1, out: 'fade', outDur: .6, sfx: null });
-  const cnd = sc.svg(candleArt(), { x: 460, y: 640, w: 300, h: 630, at: .5, in: 'fade', inDur: 1, out: 'fade', sfx: null });
-  sc.text(`<div style="text-align:center"><div style="font-family:Capra;font-size:84px;color:#fff3c4">Professor Richard Scolyer AO</div><div class="nun" style="font-size:64px;color:#fff;margin-top:8px">1966 – 2026</div></div>`, { x: 1060, y: 330, w: 1400, h: 260, at: .9, in: 'fade', inDur: 1.2, out: 'fade', sfx: null });
-  const bars = sc.text(`<div style="width:1000px;text-align:left">
-     <div class="nun" style="font-size:40px;color:#cfd6ff;margin-bottom:8px">Most people with glioblastoma</div><div style="height:66px;width:290px;background:#8f97c9;border-radius:14px;display:flex;align-items:center;padding-left:24px;font-family:Nunito;font-weight:900;font-size:38px;color:#fff;box-sizing:border-box">about 1 year</div>
-     <div class="nun" style="font-size:40px;color:#fff3c4;margin:30px 0 8px">Richard</div><div class="rb" style="height:66px;width:870px;background:#ffb21e;border-radius:14px;display:flex;align-items:center;padding-left:24px;font-family:Nunito;font-weight:900;font-size:38px;color:${BROWN};box-sizing:border-box;transform-origin:0 50%">almost 3 years</div></div>`, { x: 1150, y: 760, w: 1000, h: 330, at: ta - .3, in: 'fade', inDur: .6, out: 'fade', sfx: null });
+  sc.photo(PR('story_portrait'), { x: 470, y: 520, w: 640, h: 760, at: .4, in: 'fade', inDur: 1.2, out: 'fade', pos: '50% 30%', sfx: null, kb: [1.0, 1.06, 0, 0] });
+  const cnd = sc.svg(candleArt(), { x: 820, y: 860, w: 150, h: 315, at: .9, in: 'fade', inDur: 1, out: 'fade', sfx: null });
+  sc.text(`<div style="text-align:center"><div style="font-family:Capra;font-size:70px;color:#fff3c4">Professor Richard Scolyer AO</div><div class="nun" style="font-size:60px;color:#fff;margin-top:8px">1966 – 2026</div></div>`, { x: 1250, y: 340, w: 1100, h: 240, at: .9, in: 'fade', inDur: 1.2, out: 'fade', sfx: null });
+  const bars = sc.text(`<div style="width:860px;text-align:left">
+     <div class="nun" style="font-size:38px;color:#cfd6ff;margin-bottom:8px">Most people with glioblastoma</div><div style="height:62px;width:260px;background:#8f97c9;border-radius:14px;display:flex;align-items:center;padding-left:22px;font-family:Nunito;font-weight:900;font-size:36px;color:#fff;box-sizing:border-box">about 1 year</div>
+     <div class="nun" style="font-size:38px;color:#fff3c4;margin:28px 0 8px">Richard</div><div class="rb" style="height:62px;width:780px;background:#ffb21e;border-radius:14px;display:flex;align-items:center;padding-left:22px;font-family:Nunito;font-weight:900;font-size:36px;color:${BROWN};box-sizing:border-box;transform-origin:0 50%">almost 3 years</div></div>`, { x: 1330, y: 720, w: 860, h: 320, at: ta - .3, in: 'fade', inDur: .6, out: 'fade', sfx: null });
   const rb = bars.querySelector('.rb'), fl = cnd.querySelector('.flame'), stars = sc.els[0].el.querySelectorAll('.star');
   sc.on(lt => {
     rb.style.transform = `scaleX(${(0.33 + 0.67 * ease.out(prog(lt, ta + .2, 1.6))).toFixed(3)})`;
@@ -534,19 +531,18 @@ titleCard('t_learn', [['What we can', 120, BROWN], ['learn', 260, '#fff']], { mo
 {
   const sc = new Scene('l_crack');
   const q = 'I would be delighted and humbled to be remembered as a proud everyday Aussie who ‘gave it a crack’…';
-  sc.svg(letterArt(), { x: 960, y: 560, w: 1240, h: 854, rot: -2, in: 'up', out: 'up' });
-  const t = sc.text(`<div style="width:1000px;white-space:normal;text-align:left;font-family:Caveat;font-weight:700;font-size:78px;line-height:84px;color:#24406e">${wordsHTML(q)}<div style="text-align:right;margin-top:16px">— Richard</div></div>`, { x: 990, y: 560, w: 1040, h: 700, rot: -2, at: .5, in: 'fade', inDur: .3, out: 'up', sfx: null });
+  sc.svg(letterArt(), { x: 860, y: 580, w: 1180, h: 812, rot: -2, in: 'up', out: 'up' });
+  const t = sc.text(`<div style="width:960px;white-space:normal;text-align:left;font-family:Caveat;font-weight:700;font-size:74px;line-height:80px;color:#24406e">${wordsHTML(q)}<div style="text-align:right;margin-top:16px">— Richard</div></div>`, { x: 890, y: 580, w: 1000, h: 680, rot: -2, at: .5, in: 'fade', inDur: .3, out: 'up', sfx: null });
   t.querySelectorAll('.wd').forEach(w => { if (/crack|gave|it|Aussie|everyday|proud/.test(w.textContent)) w.style.color = '#c0392b'; });
-  sc.svg(svgw('0 0 300 140', `<path d="M-10,92 Q150,40 310,92 Q314,110 290,108 Q150,82 10,108 Q-14,110 -10,92 Z" fill="#7a5230" ${SW}/><path d="M60,92 Q66,4 150,0 Q234,4 240,92 Q150,74 60,92 Z" fill="#8c6038" ${SW}/><path d="M62,80 Q150,62 238,80" stroke="#4a2f18" stroke-width="14" fill="none"/>`, 'xMidYMid meet'), { x: 1560, y: 200, w: 300, h: 140, rot: 12, at: sc.w('Aussie'), in: 'drop', out: 'up' });
+  sc.photo(PR('hat_medal'), { x: 1570, y: 230, w: 560, h: 315, rot: 6, at: sc.w('Aussie') - .2, in: 'drop', out: 'up', cap: 'His AO medal, award and Akubra' });
   sc.on(lt => { let pos = 0; const els = t.querySelectorAll('.wd'), t0 = .6, dur = ITEMS.l_crack.dur - .6; els.forEach(w => { const p = prog(lt, t0 + dur * pos / q.length, .2); pos += w.textContent.length + 1; w.style.opacity = p; }); });
 }
 {
   const sc = new Scene('l_proof', { t1: TV('l_proof') + 0.4 });
-  const arts = [footyArt(), uniArt(), cellsArt('normal', 4), beachArt(), instituteArt(), workArt(), bikeArt(), familyArt(true), sydneyArt(), labArt(), lifeArt(), caravanArt()];
-  const grid = [];
-  arts.forEach((a, i) => {
+  const pics = [PR('childhood_family'), PR('graduation_parents'), PR('microscope_mia'), PR('with_georgina'), PR('aoty'), PR('king_akubra'), PR('tdc_hobart'), PR('parkrun_rainbow'), PR('family_bench'), PR('hondoc_sign'), PR('aquathon_emily'), PR('sitting_blue')];
+  pics.forEach((src, i) => {
     const c = i % 4, r = Math.floor(i / 4), x = 270 + c * 460, y = 200 + r * 340;
-    grid.push(sc.card(a, { x, y, w: 420, h: 300, rot: [-3, 2, -1, 3][(i + r) % 4], at: i * .14, in: 'pop', out: 'fade', outDur: .5, sfx: i % 3 ? null : 'pop', radius: 22 }));
+    sc.photo(src, { x, y, w: 420, h: 300, rot: [-3, 2, -1, 3][(i + r) % 4], at: i * .14, in: 'pop', out: 'fade', outDur: .5, sfx: i % 3 ? null : 'pop', radius: 22, pos: '50% 35%' });
   });
   sc.text(`<div style="background:${ORANGE};border:10px solid #fff;border-radius:40px;padding:30px 60px;box-shadow:0 20px 50px rgba(0,0,0,.45);text-align:center"><div style="font-family:Capra;font-size:96px;color:#fff;line-height:1.05">One person can make<br>a <span style="color:#ffe14d">huge difference</span></div></div>`, { x: 960, y: 540, w: 1500, h: 400, at: sc.w('one person') + .2, in: 'bigpop', inDur: .8, out: 'fade', outDur: .5, sfx: 'chime' });
   sc.on(lt => { const s = 1 - 0.06 * prog(lt, 0, sc.D); sc.root.style.transform = `scale(${s})`; });
@@ -556,12 +552,16 @@ titleCard('t_learn', [['What we can', 120, BROWN], ['learn', 260, '#fff']], { mo
 {
   const t0 = T0('outro'), t1 = ITEMS.outro.end;
   const sc = new Scene('outro', { t0, t1, z: 20, tail: 0.2 });
-  const cl = sc.svg(curtain(), { x: 490, y: 540, w: 1000, h: 1080, in: 'none', out: 'none', sfx: null }), cr = sc.svg(curtain(), { x: 1430, y: 540, w: 1000, h: 1080, in: 'none', out: 'none', sfx: null });
-  cl.classList.add('noshadow'); cr.classList.add('noshadow'); cl.style.transformOrigin = '0% 50%'; cr.style.transformOrigin = '100% 50%';
+  const cl = sc.svg(curtain(), { x: 490, y: 540, w: 1000, h: 1080, in: 'none', out: 'none', sfx: null, cls: 'noshadow' }), cr = sc.svg(curtain(), { x: 1430, y: 540, w: 1000, h: 1080, in: 'none', out: 'none', sfx: null, cls: 'noshadow' });
+  cl.style.transformOrigin = '0% 50%'; cr.style.transformOrigin = '100% 50%';
   sc.svg(valance(), { x: 960, y: 80, w: 1920, h: 170, in: 'down', inDur: .6, out: 'none', sfx: null });
-  sc.text(`<span class="capra" style="font-size:150px">Thank you, Richard.</span>`, { x: 960, y: 470, w: 1600, h: 220, at: 1.5, in: 'pop', out: 'none', sfx: 'chime' });
-  sc.text(`<span class="nun" style="font-size:54px;color:#fff3c4">Professor Richard Scolyer AO · 1966 – 2026</span>`, { x: 960, y: 640, w: 1500, h: 100, at: 2.3, in: 'fade', out: 'none', sfx: null });
-  sc.text(`<div class="nun" style="font-size:26px;font-weight:700;color:rgba(255,235,220,.85);line-height:1.5;white-space:normal;width:1500px">Illustrations, music and narration (synthetic voice) created for this film. Facts from ABC News, Melanoma Institute Australia,<br>The University of Sydney and Wikipedia. Quotes are Richard Scolyer’s own words as reported by the ABC.</div>`, { x: 960, y: 960, w: 1560, h: 110, at: 3.6, in: 'fade', inDur: .8, out: 'none', sfx: null });
+  const tCred = 6.2;
+  sc.text(`<span class="capra" style="font-size:150px">Thank you, Richard.</span>`, { x: 960, y: 470, w: 1600, h: 220, at: 1.5, in: 'pop', outAt: tCred - .4, out: 'up', sfx: 'chime' });
+  sc.text(`<span class="nun" style="font-size:54px;color:#fff3c4">Professor Richard Scolyer AO · 1966 – 2026</span>`, { x: 960, y: 640, w: 1500, h: 100, at: 2.3, in: 'fade', outAt: tCred - .4, out: 'fade', sfx: null });
+  const credits = `<div style="width:1640px;background:rgba(40,8,4,.72);border-radius:30px;padding:34px 50px;white-space:normal;text-align:left;font-family:Nunito;color:#ffeadc">
+    <div style="font-family:Capra;font-size:56px;color:#fff;margin-bottom:14px;text-align:center">Thank you to</div>
+    <div style="font-size:25px;font-weight:700;line-height:1.45;columns:2;column-gap:60px">${window.CREDITS_HTML}</div></div>`;
+  sc.text(credits, { x: 960, y: 590, w: 1660, h: 860, at: tCred, in: 'fade', inDur: .8, out: 'none', sfx: null });
   const black = div('', ''); black.style.cssText = 'position:absolute;inset:0;background:#000;opacity:0;z-index:50'; sc.root.appendChild(black);
   EVENTS.push({ t: t0 + 0.1, type: 'curtain' });
   sc.on(lt => {

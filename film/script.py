@@ -52,7 +52,7 @@ SCRIPT = [
  ("l_leap",  "say",   "He once said: Enjoy your life. Contribute to the things you're passionate about. Don't just lean in, leap in. That's how you can make a difference."),
  ("l_crack", "say",   "In his final letter, he said he'd be delighted to be remembered as a proud everyday Aussie, who gave it a crack."),
  ("l_proof", "say",   "Richard is proof that one person, even when facing the toughest challenge of all, can make a huge difference in the world."),
- ("outro",   "gap",   8.0),
+ ("outro",   "gap",   13.5),
 ]
 SAY_FIX = {
   "G'day": "Gidday", "Launceston": "Lonseston", "1966": "nineteen sixty-six",

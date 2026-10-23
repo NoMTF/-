@@ -6,6 +6,7 @@ WORKERS=${WORKERS:-4}
 python3 tts.py bm_george 1.15 vo          # narration, one wav per line
 python3 timeline.py                       # timings -> timeline.json / timeline.js
 python3 geo.py                            # map outlines -> geo.js
+python3 credits.py                        # end-credits text -> credits.js
 python3 music.py                          # score -> music/*.wav
 python3 events.py                         # sound-effect cues from the animation
 python3 mix.py                            # narration + ducked score + effects -> mix_raw.wav

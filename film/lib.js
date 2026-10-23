@@ -99,6 +99,14 @@ class Scene {
     if (spec.kb === undefined) spec.kb = [1.0, 1.09, rnd(-20, 20), rnd(-14, 14)];
     return this.add(el, spec);
   }
+  // real photograph in a rounded card (optional caption, black & white)
+  photo(src, spec = {}) {
+    const pos = spec.pos || '50% 50%', filt = spec.bw ? 'filter:grayscale(1) contrast(1.08) brightness(1.03);' : '';
+    const cap = spec.cap ? `<div class="pcap">${spec.cap}</div>` : '';
+    const el = div('card photo', `<div class="kb"><img src="${src}" style="width:100%;height:100%;object-fit:cover;object-position:${pos};display:block;${filt}"></div>${cap}`);
+    if (spec.kb === undefined) spec.kb = [1.03, 1.12, rnd(-24, 24), rnd(-16, 16)];
+    return this.add(el, spec);
+  }
   // free-floating SVG (no card)
   svg(svg, spec = {}) { return this.add(div('free' + (spec.cls ? ' ' + spec.cls : ''), svg), spec); }
   text(html, spec = {}) {

@@ -203,6 +203,12 @@ def secF(seconds, outro_at):
     for p in [48, 55, 60, 64, 67, 72, 76]: s.note(STR, fb, 10, p, 70, hum=False); s.note(PNO, fb, 10, p, 62, hum=False)
     for k, p in enumerate(["C6", "E6", "G6", "C7"]): s.note(MEL, fb + k * .25, 4, n(p), 66, hum=False)
     s.note(DR, fb, 2, 49, 84, hum=False)
+    # gentle coda under the end credits
+    cb = fb + 6
+    for bi in range(4):
+        for (b, d, p) in THEME[bi]: s.note(PNO, cb + bi * 4 + b, d * 1.6, n(p) - 12, 44)
+        for p in voicing(THEME_CH[bi], 55, 3): s.note(STR, cb + bi * 4, 4, p, 36)
+    for p in [48, 55, 60, 64, 67]: s.note(STR, cb + 16, 8, p, 40, hum=False); s.note(PNO, cb + 16, 8, p, 40, hum=False)
     render("F", s, seconds)
     return fb * beat
 

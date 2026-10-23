@@ -10,3 +10,5 @@ events.json
 mix_raw.wav
 video_only.mp4
 __pycache__/
+photos/press/
+credits.js
